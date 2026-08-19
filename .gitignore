@@ -1,0 +1,117 @@
+# ============================================================
+# CUBIC ASIC project - generated / proprietary / heavy files
+# ============================================================
+
+# Tool work areas
+**/work/
+**/logfile/
+**/report/
+
+# Generated implementation outputs
+synthesis/dataout/
+innovus/dataout/
+out/
+debug_perL/
+
+# Conformal temporary databases
+**/*.cfm/
+lec_rvg/archive_*/
+
+# Simulation databases
+*.fsdb
+*.vpd
+*.vcd
+*.saif
+simv
+simv.*
+csrc/
+DVEfiles/
+ucli.key
+
+# Physical / extraction databases
+*.SPEF
+*.spef
+*.rcdb
+*.gds
+*.gds2
+*.oas
+
+# Compiled / foundry timing libraries
+*.db
+*.lib
+
+# Foundry simulation models - not redistributed
+GLS/tcbn*.v
+GLS/tphn*.v
+
+# Generated padded design
+gentop/top.v
+gentop/top.io
+
+# Tool-generated logs / command history
+*.log
+*.log?
+*.cmd
+*.cmd?
+*.err
+*.out
+*~
+
+# Backups
+*.bak*
+*.backup*
+
+# Root scratch files
+/exit
+/innovus.log*
+/innovus.cmd*
+/my*.out
+/my*.err
+
+# Out-of-scope / heavy signoff environments
+/calibre/
+/virtuoso/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+# ============================================================
+# Additional generated/debug files found during final audit
+# ============================================================
+
+# VCS compiled simulation products
+**/simv*
+**/simv*.daidir/
+**/*.daidir/
+**/*.sdb
+**/*.so
+GL_sim_saif/log_saif_L*
+
+# Editor temporary files
+*.swp
+
+# Innovus intermediate/debug ECO experiments
+innovus/scripts/apply_scan_en_fix_iter4.tcl
+innovus/scripts/backend_prep_hold_eco.tcl
+innovus/scripts/backend_prep_hold_eco_iter2.tcl
+innovus/scripts/backend_prep_hold_eco_iter3.tcl
+innovus/datain/extra_constraints.sdc.pre_resetfall
+
+# PrimeTime investigation/diagnostic history
+primetime/archive_*/
+primetime/.eco_change.tcl
+primetime/unfix
+primetime/top_pt.sdc
+primetime/datain/
+
+primetime/scripts/pt_clock_gating_hold_*.tcl
+primetime/scripts/pt_hold_*.tcl
+primetime/scripts/pt_min_special_*.tcl
+primetime/scripts/pt_reset_*.tcl
+primetime/scripts/pt_setup_special_*.tcl
+primetime/scripts/reset_fall_*.tcl
+primetime/archive_eco_change_flat15_20260819.tcl
+# Historical PrimeTime flow kept locally for reference
+primetime/archive_eco_change_flat15_20260819.tcl
+primetime/scripts/pt_run.tcl

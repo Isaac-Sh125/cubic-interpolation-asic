@@ -1,0 +1,3 @@
+GL_sim_saif/tb_asic_saif.sv
+synthesis/dataout/ASIC_Top_netlist.v
+GLS/tcbn28hpcplusbwp30p140.v

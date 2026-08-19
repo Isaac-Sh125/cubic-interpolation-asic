@@ -1,0 +1,12 @@
+# Compilation Unit Definition (CUD) - Euclide + VCS filelist.
+#     vcs -f innovus/build_pnr.cud -sverilog -kdb -full64 +vcs+fsdbon
+#
+# Post-layout gate-level simulation of the ROUTED netlist exported by
+# 'make backend_prep' (innovus/dataout/pt/top_post_layout.v).  This is the sim
+# that produces the per-L switching activity (SAIF) consumed by 'make power';
+# the SAIF shells already staged in innovus/datain/saif/core_L*.saif came from it.
+# Paths are relative to the final_script/ project root.
+-v GLS/tcbn28hpcplusbwp30p140.v
+-v GLS/tphn28hpcpgv18.v
+innovus/dataout/pt/top_post_layout.v
+gentop/tb_asic.sv

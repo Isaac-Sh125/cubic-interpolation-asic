@@ -1,0 +1,15 @@
+# The Compilation Unit Definition (CUD) is where files and folders that make the compilation unit are specified.
+# Euclide reads/edits this file natively; the Makefile feeds it to VCS with:
+#     vcs -f build.cud -sverilog -kdb -full64 +vcs+fsdbon
+#
+# Stage 1 - RTL functional simulation of the QAM-64 Cubic interpolator (ASIC_Top).
+#           run with:  make sim   [L=5 default; input in ../in, golden in ../out]
+# Paths are relative to the final_script/ project root (where make / Euclide run).
+RTL/Control_Unit.v
+RTL/SIPO.v
+RTL/Interpolator.v
+RTL/P2S_Interpolator.v
+RTL/FIR_LPF_TRANSPOSED.v
+RTL/MinAJ2_Datapath.v
+RTL/ASIC_top.v
+RTL/tb_asic.sv

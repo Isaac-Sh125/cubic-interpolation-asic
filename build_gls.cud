@@ -1,0 +1,11 @@
+# Compilation Unit Definition (CUD) - Euclide + VCS filelist.
+#     vcs -f build_gls.cud -sverilog -kdb -full64 +vcs+fsdbon
+#
+# Stage 3 - gate-level simulation of the SYNTHESISED, scan-inserted netlist.
+#           run with:  make gls
+# The 28nm std-cell simulation models are pulled on demand via -v (library file);
+# the gate testbench instantiates ASIC_Top and neutralises the scan chains.
+# Paths are relative to the final_script/ project root.
+-v GLS/tcbn28hpcplusbwp30p140.v
+synthesis/dataout/ASIC_Top_netlist.v
+GLS/tb_asic.sv

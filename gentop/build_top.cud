@@ -1,0 +1,6 @@
+# Padded-chip gate sim: tb -> padded top (real _G pads) -> core netlist + std cells + REAL 28nm IO pad model.
+gentop/tb_asic.sv
+gentop/top.v
+-v GLS/tcbn28hpcplusbwp30p140.v
+-v GLS/tphn28hpcpgv18.v
+gentop/pad_sim_stubs.v

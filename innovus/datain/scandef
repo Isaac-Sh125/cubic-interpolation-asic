@@ -1,0 +1,68 @@
+VERSION 5.5 ;
+NAMESCASESENSITIVE ON ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN ASIC_Top ;
+
+SCANCHAINS 3 ;
+
+- 1
++ START PIN scan_in1
++ FLOATING u_control/sub_count_reg[0] ( IN SI ) ( OUT Q )
+           u_control/sub_count_reg[1] ( IN SI ) ( OUT Q )
+           u_control/sub_count_reg[2] ( IN SI ) ( OUT Q )
+           u_control/sub_count_reg[3] ( IN SI ) ( OUT Q )
+           u_control/tick_60M_reg_reg ( IN SI ) ( OUT Q )
+           u_path_I/u_fir/y_valid_reg ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_out_reg[0] ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_out_reg[1] ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_out_reg[2] ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_out_reg[3] ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_out_reg[4] ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_out_reg[5] ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_out_reg[6] ( IN SI ) ( OUT Q )
+           sanity_out_ff_reg ( IN SI ) ( OUT Q )
++ PARTITION clk_45_45
++ STOP PIN scan_out1 ;
+
+- 2
++ START PIN scan_in2
++ FLOATING u_path_I/u_p2s/stream_out_reg[7] ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_out_reg[8] ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_out_reg[9] ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_out_reg[10] ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_out_reg[11] ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_out_reg[12] ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_out_reg[13] ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_out_reg[14] ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_out_reg[15] ( IN SI ) ( OUT Q )
+           u_path_I/u_p2s/stream_valid_reg ( IN SI ) ( OUT Q )
+           u_path_Q/u_fir/y_valid_reg ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_out_reg[0] ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_out_reg[1] ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_out_reg[2] ( IN SI ) ( OUT Q )
++ PARTITION clk_45_45
++ STOP PIN scan_out2 ;
+
+- 3
++ START PIN scan_in3
++ FLOATING u_path_Q/u_p2s/stream_out_reg[3] ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_out_reg[4] ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_out_reg[5] ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_out_reg[6] ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_out_reg[7] ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_out_reg[8] ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_out_reg[9] ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_out_reg[10] ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_out_reg[11] ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_out_reg[12] ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_out_reg[13] ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_out_reg[14] ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_out_reg[15] ( IN SI ) ( OUT Q )
+           u_path_Q/u_p2s/stream_valid_reg ( IN SI ) ( OUT Q )
++ PARTITION clk_45_45
++ STOP PIN scan_out3 ;
+
+END SCANCHAINS
+
+END DESIGN
