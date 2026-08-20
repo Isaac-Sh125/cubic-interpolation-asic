@@ -1,0 +1,15 @@
+======================================================================
+ MEASURED STATIC POWER (SAIF per L)  design=top   (mW)
+ Thu Aug 20 10:14:19 IDT 2026
+ corner  : SlowView (ss 0.81V 125C, SlowRC/cworst)
+ activity: real SAIF from GL_sim_saif (scope design_tb/dut -> block I0)
+======================================================================
+
+L                  chip   core(I0)   interp_I   interp_Q      fir_I
+L2              22.9837     4.3920     1.1970     1.2040     0.7344
+L3              28.8508     5.0040     1.2270     1.2340     1.0020
+L4              34.9646     5.7110     1.2200     1.2270     1.3320
+L5              40.3975     6.2380     1.2590     1.2660     1.5480
+
+Compare vs vectorless 0.2 (power_signoff/summary.txt): SAIF core should be
+much lower - clock gating idles the paths the flat 0.2 assumed were busy.

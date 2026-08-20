@@ -124,6 +124,10 @@ pnr_stage:
 	$(SUBMIT) tcsh innovus/run_stage.tcsh $(STAGE) $(PREV)
 
 # export the PrimeTime/LVS netlists + SPEF + GDS from the routed design
+# Run the validated post-route ECO chain
+final_eco:
+	tcsh innovus/run_final_eco.tcsh
+
 backend_prep:
 	cd innovus/work && /tools/common/wrappers/innovus -no_gui -files ../scripts/backend_prep.tcl -log ../logfile/backend_prep
 
@@ -133,7 +137,7 @@ backend_prep_final:
 
 # Voltus power from the per-L switching activity (needs the routed design)
 power:
-	$(SUBMIT) sh -c 'cd innovus/work && innovus -no_gui -files ../scripts/power_saif.tcl -log ../logfile/power'
+	cd innovus/work && /tools/common/wrappers/innovus -no_gui -files ../scripts/power_saif_final_iter4b.tcl -log ../logfile/power_saif_final_iter4b
 
 # the per-L SAIF (measured activity) power_saif.tcl consumes.  Already staged in
 # innovus/datain/saif/ from a post-layout gate sim (see innovus/build_pnr.cud);
@@ -177,6 +181,7 @@ flow_help:
 	@echo "        make lec        Conformal RTL-to-netlist equivalence"
 	@echo "     4  make gls_pads   pad-level gate simulation"
 	@echo "     5  make pnr        Innovus place and route"
+	@echo "        make final_eco  validated post-route ECO chain"
 	@echo ""
 	@echo "   Final implementation:"
 	@echo "        post-route ECO scripts: innovus/scripts/"
@@ -184,7 +189,7 @@ flow_help:
 	@echo "     6  make pt          final setup/hold x slow/typ/fast PrimeTime matrix"
 	@echo ""
 	@echo "   Optional analysis:"
-	@echo "        make power       activity-based power analysis"
+	@echo "        make power       final Iter4B SAIF-based power analysis"
 	@echo "        make saif        check SAIF availability"
 	@echo ""
 	@echo "   make flow             run main flow through P&R"
@@ -194,4 +199,4 @@ flow_help:
 	@echo "   L=$(L)                interpolation factor, supported 2..5"
 	@echo ""
 
-.PHONY: flow sim syn gls lec gls_pads gentop pnr pnr_stage backend_prep backend_prep_final power saif pt clean clean_all help flow_help
+.PHONY: flow sim syn gls lec gls_pads gentop pnr pnr_stage final_eco backend_prep backend_prep_final power saif pt clean clean_all help flow_help

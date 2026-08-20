@@ -1,0 +1,1167 @@
+****************************************
+Report : timing
+	-path_type full_clock
+	-delay_type min
+	-nosplit
+	-slack_lesser_than 1000.000000
+	-max_paths 30
+	-group clk
+	-sort_by slack
+Design : top
+Version: X-2025.06-SP2-1
+Date   : Thu Aug 20 10:22:02 2026
+****************************************
+
+
+  Startpoint: I0/u_path_Q_u_interp/sample_cnt_reg_8_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_Q_u_interp/sample_cnt_reg_8_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023665 & 0.085412 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_8_/CP (DFCNQD1BWP30P140)                          0.000938 & 0.086350 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_8_/Q (DFCNQD1BWP30P140)                           0.044500 & 0.130850 f
+  I0/u_path_Q_u_interp/U12087/Z (OA21D0BWP30P140)                                       0.016607 & 0.147457 f
+  I0/u_path_Q_u_interp/sample_cnt_reg_8_/D (DFCNQD1BWP30P140)                           0.000008 & 0.147465 f
+  data arrival time                                                                                0.147465
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023682 & 0.085747 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_8_/CP (DFCNQD1BWP30P140)                          0.000938 & 0.086685 r
+  clock reconvergence pessimism                                                         0.000000   0.086685
+  clock uncertainty                                                                     0.050000   0.136685
+  library hold time                                                                     0.010776   0.147461
+  data required time                                                                               0.147461
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.147461
+  data arrival time                                                                                -0.147465
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.000004
+
+
+  Startpoint: I0/u_path_I_u_interp/p2_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_I_u_interp/p1_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00009/Z (CKBD12BWP30P140)                          0.022541 & 0.084288 r
+  I0/u_path_I_u_interp/p2_reg_5_/CP (DFCNQD1BWP30P140)                                  0.001779 & 0.086067 r
+  I0/u_path_I_u_interp/p2_reg_5_/Q (DFCNQD1BWP30P140)                                   0.058377 & 0.144444 f
+  I0/u_path_I_u_interp/p1_reg_5_/D (DFCNQD1BWP30P140)                                   0.000752 & 0.145196 f
+  data arrival time                                                                                0.145196
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00010/Z (CKBD12BWP30P140)                          0.024396 & 0.086461 r
+  I0/u_path_I_u_interp/p1_reg_5_/CP (DFCNQD1BWP30P140)                                  0.003627 & 0.090087 r
+  clock reconvergence pessimism                                                         0.000000   0.090087
+  clock uncertainty                                                                     0.050000   0.140087
+  library hold time                                                                     0.005084   0.145172
+  data required time                                                                               0.145172
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.145172
+  data arrival time                                                                                -0.145196
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.000024
+
+
+  Startpoint: I0/u_control_cfg_reg_reg_3_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_control_run_en_reg (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                          Incr       Path
+  -----------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                      0.000000   0.000000
+  clock source latency                                                       0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                    0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                   0.040099 & 0.040099 r
+  I0/CTS_ccl_a_buf_00015/Z (CKBD2BWP30P140)                                  0.021840 & 0.061939 r
+  I0/u_control_clk_gate_cfg_reg_reg_main_gate/Z (AN2D0BWP30P140)             0.027303 & 0.089242 r
+  I0/u_control_cfg_reg_reg_3_/CP (DFCNQD1BWP30P140)                          0.000029 & 0.089271 r
+  I0/u_control_cfg_reg_reg_3_/Q (DFCNQD1BWP30P140)                           0.040736 & 0.130007 f
+  I0/FE_PHC535_u_control_cfg_reg_3/Z (CKBD1BWP30P140)                        0.008267 & 0.138274 f
+  I0/U34/ZN (IOA21D0BWP30P140)                                               0.015253 & 0.153528 f
+  I0/u_control_run_en_reg/D (DFCNQD1BWP30P140)                               0.000006 & 0.153534 f
+  data arrival time                                                                     0.153534
+
+  clock clk (rise edge)                                                      0.000000   0.000000
+  clock source latency                                                       0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                    0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                   0.040099 & 0.040099 r
+  I0/CTS_ccl_a_buf_00015/Z (CKBD2BWP30P140)                                  0.022868 & 0.062967 r
+  I0/u_control_clk_gate_L_val_reg_main_gate/Z (AN2D0BWP30P140)               0.029605 & 0.092572 r
+  I0/u_control_run_en_reg/CP (DFCNQD1BWP30P140)                              0.000197 & 0.092769 r
+  clock reconvergence pessimism                                              0.000000   0.092769
+  clock uncertainty                                                          0.050000   0.142769
+  library hold time                                                          0.010518   0.153288
+  data required time                                                                    0.153288
+  -----------------------------------------------------------------------------------------------------
+  data required time                                                                    0.153288
+  data arrival time                                                                     -0.153534
+  -----------------------------------------------------------------------------------------------------
+  slack (MET)                                                                           0.000246
+
+
+  Startpoint: I0/u_path_Q_u_interp/sample_cnt_reg_10_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_Q_u_interp/sample_cnt_reg_10_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023665 & 0.085412 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_10_/CP (DFCNQD1BWP30P140)                         0.000954 & 0.086366 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_10_/Q (DFCNQD1BWP30P140)                          0.043829 & 0.130195 f
+  I0/u_path_Q_u_interp/U12279/Z (OA21D0BWP30P140)                                       0.017538 & 0.147733 f
+  I0/u_path_Q_u_interp/sample_cnt_reg_10_/D (DFCNQD1BWP30P140)                          0.000008 & 0.147741 f
+  data arrival time                                                                                0.147741
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023682 & 0.085747 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_10_/CP (DFCNQD1BWP30P140)                         0.000954 & 0.086701 r
+  clock reconvergence pessimism                                                         0.000000   0.086701
+  clock uncertainty                                                                     0.050000   0.136701
+  library hold time                                                                     0.010747   0.147449
+  data required time                                                                               0.147449
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.147449
+  data arrival time                                                                                -0.147741
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.000292
+
+
+  Startpoint: I0/u_path_I_u_fir/acc_stage_reg_2__35_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_I_u_fir/acc_stage_reg_3__35_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                             Incr       Path
+  --------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_I_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.026731 & 0.066831 r
+  I0/u_path_I_u_fir/CTS_ccl_a_buf_00012/Z (CKBD12BWP30P140)                     0.020664 & 0.087494 r
+  I0/u_path_I_u_fir/acc_stage_reg_2__35_/CP (DFCNQD1BWP30P140)                  0.005264 & 0.092759 r
+  I0/u_path_I_u_fir/acc_stage_reg_2__35_/Q (DFCNQD1BWP30P140)                   0.035433 & 0.128192 r
+  I0/u_path_I_u_fir/FE_PHC491_acc_stage_2__35/Z (BUFFD0BWP30P140)               0.013276 & 0.141468 r
+  I0/u_path_I_u_fir/U1429/ZN (XNR2UD0BWP30P140)                                 0.010671 & 0.152139 f
+  I0/u_path_I_u_fir/acc_stage_reg_3__35_/D (DFCNQD1BWP30P140)                   0.000011 & 0.152150 f
+  data arrival time                                                                        0.152150
+
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_I_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.027940 & 0.068039 r
+  I0/u_path_I_u_fir/CTS_ccl_a_buf_00011/Z (CKBD12BWP30P140)                     0.021990 & 0.090029 r
+  I0/u_path_I_u_fir/acc_stage_reg_3__35_/CP (DFCNQD1BWP30P140)                  0.002836 & 0.092865 r
+  clock reconvergence pessimism                                                 0.000000   0.092865
+  clock uncertainty                                                             0.050000   0.142865
+  library hold time                                                             0.008975   0.151840
+  data required time                                                                       0.151840
+  --------------------------------------------------------------------------------------------------------
+  data required time                                                                       0.151840
+  data arrival time                                                                        -0.152150
+  --------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                              0.000310
+
+
+  Startpoint: I0/u_path_Q_u_interp/sample_cnt_reg_11_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_Q_u_interp/sample_cnt_reg_11_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023665 & 0.085412 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_11_/CP (DFCNQD1BWP30P140)                         0.000957 & 0.086369 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_11_/Q (DFCNQD1BWP30P140)                          0.041312 & 0.127681 f
+  I0/u_path_Q_u_interp/U11271/ZN (CKND0BWP30P140)                                       0.008813 & 0.136494 r
+  I0/u_path_Q_u_interp/U11274/ZN (AOI21D0BWP30P140)                                     0.010650 & 0.147145 f
+  I0/u_path_Q_u_interp/sample_cnt_reg_11_/D (DFCNQD1BWP30P140)                          0.000002 & 0.147147 f
+  data arrival time                                                                                0.147147
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023682 & 0.085747 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_11_/CP (DFCNQD1BWP30P140)                         0.000957 & 0.086704 r
+  clock reconvergence pessimism                                                         0.000000   0.086704
+  clock uncertainty                                                                     0.050000   0.136704
+  library hold time                                                                     0.010132   0.146836
+  data required time                                                                               0.146836
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.146836
+  data arrival time                                                                                -0.147147
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.000311
+
+
+  Startpoint: I0/u_path_Q_u_fir/acc_stage_reg_3__10_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_Q_u_fir/acc_stage_reg_4__10_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                             Incr       Path
+  --------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.025267 & 0.065366 r
+  I0/u_path_Q_u_fir/CTS_ccl_a_buf_00006/Z (CKBD12BWP30P140)                     0.020716 & 0.086081 r
+  I0/u_path_Q_u_fir/acc_stage_reg_3__10_/CP (DFCNQD1BWP30P140)                  0.000153 & 0.086235 r
+  I0/u_path_Q_u_fir/acc_stage_reg_3__10_/Q (DFCNQD1BWP30P140)                   0.042087 & 0.128321 f
+  I0/u_path_Q_u_fir/intadd_574_U25/S (FA1D0BWP30P140)                           0.023812 & 0.152133 f
+  I0/u_path_Q_u_fir/acc_stage_reg_4__10_/D (DFCNQD1BWP30P140)                   0.000004 & 0.152137 f
+  data arrival time                                                                        0.152137
+
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.026444 & 0.066543 r
+  I0/u_path_Q_u_fir/CTS_ccl_a_buf_00005/Z (CKBD12BWP30P140)                     0.022547 & 0.089090 r
+  I0/u_path_Q_u_fir/acc_stage_reg_4__10_/CP (DFCNQD1BWP30P140)                  0.002566 & 0.091656 r
+  clock reconvergence pessimism                                                 0.000000   0.091656
+  clock uncertainty                                                             0.050000   0.141656
+  library hold time                                                             0.010081   0.151737
+  data required time                                                                       0.151737
+  --------------------------------------------------------------------------------------------------------
+  data required time                                                                       0.151737
+  data arrival time                                                                        -0.152137
+  --------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                              0.000400
+
+
+  Startpoint: I0/u_path_I_u_interp/sample_cnt_reg_7_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_I_u_interp/sample_cnt_reg_7_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00009/Z (CKBD12BWP30P140)                          0.022541 & 0.084288 r
+  I0/u_path_I_u_interp/sample_cnt_reg_7_/CP (DFCNQD1BWP30P140)                          0.007993 & 0.092281 r
+  I0/u_path_I_u_interp/sample_cnt_reg_7_/Q (DFCNQD1BWP30P140)                           0.040644 & 0.132925 f
+  I0/u_path_I_u_interp/U11223/ZN (CKND0BWP30P140)                                       0.008151 & 0.141076 r
+  I0/u_path_I_u_interp/U11226/ZN (AOI21D0BWP30P140)                                     0.011658 & 0.152734 f
+  I0/u_path_I_u_interp/sample_cnt_reg_7_/D (DFCNQD1BWP30P140)                           0.000007 & 0.152740 f
+  data arrival time                                                                                0.152740
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00009/Z (CKBD12BWP30P140)                          0.022555 & 0.084620 r
+  I0/u_path_I_u_interp/sample_cnt_reg_7_/CP (DFCNQD1BWP30P140)                          0.007993 & 0.092613 r
+  clock reconvergence pessimism                                                         0.000000   0.092613
+  clock uncertainty                                                                     0.050000   0.142613
+  library hold time                                                                     0.009689   0.152302
+  data required time                                                                               0.152302
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.152302
+  data arrival time                                                                                -0.152740
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.000439
+
+
+  Startpoint: I0/u_path_I_u_interp/p2_reg_8_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_I_u_interp/p1_reg_8_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00009/Z (CKBD12BWP30P140)                          0.022541 & 0.084288 r
+  I0/u_path_I_u_interp/p2_reg_8_/CP (DFCNQD1BWP30P140)                                  0.002327 & 0.086615 r
+  I0/u_path_I_u_interp/p2_reg_8_/Q (DFCNQD1BWP30P140)                                   0.051921 & 0.138536 f
+  I0/u_path_I_u_interp/FE_PHC532_p2_8/Z (CKBD1BWP30P140)                                0.013242 & 0.151778 f
+  I0/u_path_I_u_interp/p1_reg_8_/D (DFCNQD1BWP30P140)                                   0.000005 & 0.151782 f
+  data arrival time                                                                                0.151782
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00010/Z (CKBD12BWP30P140)                          0.024396 & 0.086461 r
+  I0/u_path_I_u_interp/p1_reg_8_/CP (DFCNQD1BWP30P140)                                  0.003644 & 0.090104 r
+  clock reconvergence pessimism                                                         0.000000   0.090104
+  clock uncertainty                                                                     0.050000   0.140104
+  library hold time                                                                     0.011196   0.151300
+  data required time                                                                               0.151300
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.151300
+  data arrival time                                                                                -0.151782
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.000482
+
+
+  Startpoint: I0/u_path_Q_u_interp/p2_reg_0_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_Q_u_interp/p1_reg_0_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023665 & 0.085412 r
+  I0/u_path_Q_u_interp/p2_reg_0_/CP (DFCNQD1BWP30P140)                                  0.005359 & 0.090771 r
+  I0/u_path_Q_u_interp/p2_reg_0_/Q (DFCNQD1BWP30P140)                                   0.057451 & 0.148222 f
+  I0/u_path_Q_u_interp/p1_reg_0_/D (DFCNQD1BWP30P140)                                   0.000282 & 0.148504 f
+  data arrival time                                                                                0.148504
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023682 & 0.085747 r
+  I0/u_path_Q_u_interp/p1_reg_0_/CP (DFCNQD1BWP30P140)                                  0.005746 & 0.091493 r
+  clock reconvergence pessimism                                                         0.000000   0.091493
+  clock uncertainty                                                                     0.050000   0.141493
+  library hold time                                                                     0.006519   0.148012
+  data required time                                                                               0.148012
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.148012
+  data arrival time                                                                                -0.148504
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.000492
+
+
+  Startpoint: I0/u_path_I_u_fir/acc_stage_reg_7__35_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_I_u_fir/acc_stage_reg_8__35_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                             Incr       Path
+  --------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_I_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.026731 & 0.066831 r
+  I0/u_path_I_u_fir/CTS_ccl_a_buf_00011/Z (CKBD12BWP30P140)                     0.021965 & 0.088795 r
+  I0/u_path_I_u_fir/acc_stage_reg_7__35_/CP (DFCNQD1BWP30P140)                  0.002693 & 0.091488 r
+  I0/u_path_I_u_fir/acc_stage_reg_7__35_/Q (DFCNQD1BWP30P140)                   0.034766 & 0.126255 r
+  I0/u_path_I_u_fir/FE_PHC496_acc_stage_7__35/Z (BUFFD0BWP30P140)               0.013125 & 0.139379 r
+  I0/u_path_I_u_fir/U1377/Z (XOR2UD0BWP30P140)                                  0.011233 & 0.150612 f
+  I0/u_path_I_u_fir/acc_stage_reg_8__35_/D (DFCNQD1BWP30P140)                   0.000014 & 0.150626 f
+  data arrival time                                                                        0.150626
+
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_I_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.027940 & 0.068039 r
+  I0/u_path_I_u_fir/CTS_ccl_a_buf_00011/Z (CKBD12BWP30P140)                     0.021990 & 0.090029 r
+  I0/u_path_I_u_fir/acc_stage_reg_8__35_/CP (DFCNQD1BWP30P140)                  0.001504 & 0.091533 r
+  clock reconvergence pessimism                                                 0.000000   0.091533
+  clock uncertainty                                                             0.050000   0.141533
+  library hold time                                                             0.008562   0.150095
+  data required time                                                                       0.150095
+  --------------------------------------------------------------------------------------------------------
+  data required time                                                                       0.150095
+  data arrival time                                                                        -0.150626
+  --------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                              0.000532
+
+
+  Startpoint: I0/u_path_Q_u_interp/sample_cnt_reg_3_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_Q_u_interp/sample_cnt_reg_3_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023665 & 0.085412 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_3_/CP (DFCNQD1BWP30P140)                          0.000883 & 0.086295 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_3_/Q (DFCNQD1BWP30P140)                           0.041215 & 0.127510 f
+  I0/u_path_Q_u_interp/U11254/ZN (CKND0BWP30P140)                                       0.008477 & 0.135987 r
+  I0/u_path_Q_u_interp/U11257/ZN (AOI21D0BWP30P140)                                     0.011222 & 0.147209 f
+  I0/u_path_Q_u_interp/sample_cnt_reg_3_/D (DFCNQD1BWP30P140)                           0.000003 & 0.147212 f
+  data arrival time                                                                                0.147212
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023682 & 0.085747 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_3_/CP (DFCNQD1BWP30P140)                          0.000883 & 0.086629 r
+  clock reconvergence pessimism                                                         0.000000   0.086629
+  clock uncertainty                                                                     0.050000   0.136629
+  library hold time                                                                     0.010045   0.146675
+  data required time                                                                               0.146675
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.146675
+  data arrival time                                                                                -0.147212
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.000537
+
+
+  Startpoint: I0/u_path_Q_u_interp/sample_cnt_reg_15_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_Q_u_interp/sample_cnt_reg_15_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023665 & 0.085412 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_15_/CP (DFCNQD1BWP30P140)                         0.000936 & 0.086348 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_15_/Q (DFCNQD1BWP30P140)                          0.039430 & 0.125777 r
+  I0/u_path_Q_u_interp/U12091/ZN (XNR2UD0BWP30P140)                                     0.011642 & 0.137419 f
+  I0/u_path_Q_u_interp/FE_PHC625_N32/Z (CKBD1BWP30P140)                                 0.011363 & 0.148782 f
+  I0/u_path_Q_u_interp/sample_cnt_reg_15_/D (DFCNQD1BWP30P140)                          0.000005 & 0.148787 f
+  data arrival time                                                                                0.148787
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023682 & 0.085747 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_15_/CP (DFCNQD1BWP30P140)                         0.000936 & 0.086683 r
+  clock reconvergence pessimism                                                         0.000000   0.086683
+  clock uncertainty                                                                     0.050000   0.136683
+  library hold time                                                                     0.011406   0.148089
+  data required time                                                                               0.148089
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.148089
+  data arrival time                                                                                -0.148787
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.000697
+
+
+  Startpoint: I0/u_path_Q_u_fir/acc_stage_reg_9__20_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_Q_u_fir/y_out_reg_6_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                             Incr       Path
+  --------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.025267 & 0.065366 r
+  I0/u_path_Q_u_fir/CTS_ccl_a_buf_00007/Z (CKBD12BWP30P140)                     0.018988 & 0.084354 r
+  I0/u_path_Q_u_fir/acc_stage_reg_9__20_/CP (DFCNQD1BWP30P140)                  0.004581 & 0.088935 r
+  I0/u_path_Q_u_fir/acc_stage_reg_9__20_/Q (DFCNQD1BWP30P140)                   0.039717 & 0.128651 f
+  I0/u_path_Q_u_fir/U39/ZN (IOA21D0BWP30P140)                                   0.020728 & 0.149380 f
+  I0/u_path_Q_u_fir/y_out_reg_6_/D (DFCNQD1BWP30P140)                           0.000041 & 0.149420 f
+  data arrival time                                                                        0.149420
+
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.026444 & 0.066543 r
+  I0/u_path_Q_u_fir/CTS_ccl_a_buf_00007/Z (CKBD12BWP30P140)                     0.019013 & 0.085556 r
+  I0/u_path_Q_u_fir/y_out_reg_6_/CP (DFCNQD1BWP30P140)                          0.005230 & 0.090787 r
+  clock reconvergence pessimism                                                 0.000000   0.090787
+  clock uncertainty                                                             0.050000   0.140787
+  library hold time                                                             0.007925   0.148712
+  data required time                                                                       0.148712
+  --------------------------------------------------------------------------------------------------------
+  data required time                                                                       0.148712
+  data arrival time                                                                        -0.149420
+  --------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                              0.000709
+
+
+  Startpoint: I0/u_path_Q_u_fir/acc_stage_reg_6__29_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_Q_u_fir/acc_stage_reg_7__29_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                             Incr       Path
+  --------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.025267 & 0.065366 r
+  I0/u_path_Q_u_fir/CTS_ccl_a_buf_00007/Z (CKBD12BWP30P140)                     0.018988 & 0.084354 r
+  I0/u_path_Q_u_fir/acc_stage_reg_6__29_/CP (DFCNQD1BWP30P140)                  0.004798 & 0.089152 r
+  I0/u_path_Q_u_fir/acc_stage_reg_6__29_/Q (DFCNQD1BWP30P140)                   0.042624 & 0.131776 f
+  I0/u_path_Q_u_fir/intadd_591_U6/S (FA1D0BWP30P140)                            0.024203 & 0.155980 f
+  I0/u_path_Q_u_fir/acc_stage_reg_7__29_/D (DFCNQD1BWP30P140)                   0.000008 & 0.155988 f
+  data arrival time                                                                        0.155988
+
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.026444 & 0.066543 r
+  I0/u_path_Q_u_fir/CTS_ccl_a_buf_00008/Z (BUFFD8BWP30P140)                     0.024205 & 0.090748 r
+  I0/u_path_Q_u_fir/acc_stage_reg_7__29_/CP (DFCNQD1BWP30P140)                  0.003575 & 0.094323 r
+  clock reconvergence pessimism                                                 0.000000   0.094323
+  clock uncertainty                                                             0.050000   0.144323
+  library hold time                                                             0.010787   0.155110
+  data required time                                                                       0.155110
+  --------------------------------------------------------------------------------------------------------
+  data required time                                                                       0.155110
+  data arrival time                                                                        -0.155988
+  --------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                              0.000877
+
+
+  Startpoint: I0/u_path_I_u_interp/p2_reg_4_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_I_u_interp/p1_reg_4_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00009/Z (CKBD12BWP30P140)                          0.022541 & 0.084288 r
+  I0/u_path_I_u_interp/p2_reg_4_/CP (DFCNQD1BWP30P140)                                  0.002414 & 0.086702 r
+  I0/u_path_I_u_interp/p2_reg_4_/Q (DFCNQD1BWP30P140)                                   0.049279 & 0.135981 f
+  I0/u_path_I_u_interp/FE_PHC488_p2_4/Z (BUFFD0BWP30P140)                               0.015691 & 0.151672 f
+  I0/u_path_I_u_interp/p1_reg_4_/D (DFCNQD1BWP30P140)                                   0.000006 & 0.151679 f
+  data arrival time                                                                                0.151679
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00010/Z (CKBD12BWP30P140)                          0.024396 & 0.086461 r
+  I0/u_path_I_u_interp/p1_reg_4_/CP (DFCNQD1BWP30P140)                                  0.003586 & 0.090046 r
+  clock reconvergence pessimism                                                         0.000000   0.090046
+  clock uncertainty                                                                     0.050000   0.140046
+  library hold time                                                                     0.010740   0.150786
+  data required time                                                                               0.150786
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.150786
+  data arrival time                                                                                -0.151679
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.000893
+
+
+  Startpoint: I0/u_path_Q_u_fir/acc_stage_reg_9__16_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_Q_u_fir/y_out_reg_2_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                             Incr       Path
+  --------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.025267 & 0.065366 r
+  I0/u_path_Q_u_fir/CTS_ccl_a_buf_00006/Z (CKBD12BWP30P140)                     0.020716 & 0.086081 r
+  I0/u_path_Q_u_fir/acc_stage_reg_9__16_/CP (DFCNQD1BWP30P140)                  0.002460 & 0.088541 r
+  I0/u_path_Q_u_fir/acc_stage_reg_9__16_/Q (DFCNQD1BWP30P140)                   0.039304 & 0.127845 f
+  I0/u_path_Q_u_fir/U46/ZN (IOA21D0BWP30P140)                                   0.022112 & 0.149957 f
+  I0/u_path_Q_u_fir/y_out_reg_2_/D (DFCNQD1BWP30P140)                           0.000071 & 0.150028 f
+  data arrival time                                                                        0.150028
+
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.026444 & 0.066543 r
+  I0/u_path_Q_u_fir/CTS_ccl_a_buf_00005/Z (CKBD12BWP30P140)                     0.022547 & 0.089090 r
+  I0/u_path_Q_u_fir/y_out_reg_2_/CP (DFCNQD1BWP30P140)                          0.002637 & 0.091727 r
+  clock reconvergence pessimism                                                 0.000000   0.091727
+  clock uncertainty                                                             0.050000   0.141727
+  library hold time                                                             0.007400   0.149127
+  data required time                                                                       0.149127
+  --------------------------------------------------------------------------------------------------------
+  data required time                                                                       0.149127
+  data arrival time                                                                        -0.150028
+  --------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                              0.000901
+
+
+  Startpoint: I0/u_path_Q_u_interp/p2_reg_12_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_Q_u_interp/p1_reg_12_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023665 & 0.085412 r
+  I0/u_path_Q_u_interp/p2_reg_12_/CP (DFCNQD1BWP30P140)                                 0.004792 & 0.090205 r
+  I0/u_path_Q_u_interp/p2_reg_12_/Q (DFCNQD1BWP30P140)                                  0.049183 & 0.139388 f
+  I0/u_path_Q_u_interp/FE_PHC494_p2_12/Z (BUFFD1BWP30P140)                              0.014533 & 0.153920 f
+  I0/u_path_Q_u_interp/p1_reg_12_/D (DFCNQD1BWP30P140)                                  0.000002 & 0.153922 f
+  data arrival time                                                                                0.153922
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023682 & 0.085747 r
+  I0/u_path_Q_u_interp/p1_reg_12_/CP (DFCNQD1BWP30P140)                                 0.005695 & 0.091442 r
+  clock reconvergence pessimism                                                         0.000000   0.091442
+  clock uncertainty                                                                     0.050000   0.141442
+  library hold time                                                                     0.011523   0.152965
+  data required time                                                                               0.152965
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.152965
+  data arrival time                                                                                -0.153922
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.000958
+
+
+  Startpoint: I0/u_path_I_u_sipo_shift_reg_reg_8_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_I_u_sipo_shift_reg_reg_9_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                  Incr       Path
+  -------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                              0.000000   0.000000
+  clock source latency                                                               0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                            0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                           0.040099 & 0.040099 r
+  I0/CTS_cfo_buf_00038/Z (CKBD6BWP30P140)                                            0.015967 & 0.056066 r
+  I0/u_path_Q_u_sipo_clk_gate_shift_reg_reg_main_gate/Z (AN2D4BWP30P140)             0.027890 & 0.083956 r
+  I0/u_path_I_u_sipo_shift_reg_reg_8_/CP (DFCNQD1BWP30P140)                          0.003104 & 0.087060 r
+  I0/u_path_I_u_sipo_shift_reg_reg_8_/Q (DFCNQD1BWP30P140)                           0.040964 & 0.128024 f
+  I0/FE_PHC628_u_path_I_w_sipo_out_8/Z (CKBD1BWP30P140)                              0.008351 & 0.136375 f
+  I0/FE_PHC525_u_path_I_w_sipo_out_8/Z (BUFFD0BWP30P140)                             0.013534 & 0.149909 f
+  I0/u_path_I_u_sipo_shift_reg_reg_9_/D (DFCNQD1BWP30P140)                           0.000009 & 0.149918 f
+  data arrival time                                                                             0.149918
+
+  clock clk (rise edge)                                                              0.000000   0.000000
+  clock source latency                                                               0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                            0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                           0.040099 & 0.040099 r
+  I0/CTS_cfo_buf_00038/Z (CKBD6BWP30P140)                                            0.016639 & 0.056738 r
+  I0/u_path_Q_u_sipo_clk_gate_shift_reg_reg_main_gate/Z (AN2D4BWP30P140)             0.028180 & 0.084918 r
+  I0/u_path_I_u_sipo_shift_reg_reg_9_/CP (DFCNQD1BWP30P140)                          0.003138 & 0.088056 r
+  clock reconvergence pessimism                                                      0.000000   0.088056
+  clock uncertainty                                                                  0.050000   0.138056
+  library hold time                                                                  0.010824   0.148880
+  data required time                                                                            0.148880
+  -------------------------------------------------------------------------------------------------------------
+  data required time                                                                            0.148880
+  data arrival time                                                                             -0.149918
+  -------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                   0.001038
+
+
+  Startpoint: I0/u_path_I_u_interp/p2_reg_13_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_I_u_interp/p1_reg_13_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00009/Z (CKBD12BWP30P140)                          0.022541 & 0.084288 r
+  I0/u_path_I_u_interp/p2_reg_13_/CP (DFCNQD1BWP30P140)                                 0.002426 & 0.086714 r
+  I0/u_path_I_u_interp/p2_reg_13_/Q (DFCNQD1BWP30P140)                                  0.049802 & 0.136516 f
+  I0/u_path_I_u_interp/FE_PHC493_p2_13/Z (BUFFD0BWP30P140)                              0.015801 & 0.152317 f
+  I0/u_path_I_u_interp/p1_reg_13_/D (DFCNQD1BWP30P140)                                  0.000006 & 0.152323 f
+  data arrival time                                                                                0.152323
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00010/Z (CKBD12BWP30P140)                          0.024396 & 0.086461 r
+  I0/u_path_I_u_interp/p1_reg_13_/CP (DFCNQD1BWP30P140)                                 0.003991 & 0.090452 r
+  clock reconvergence pessimism                                                         0.000000   0.090452
+  clock uncertainty                                                                     0.050000   0.140452
+  library hold time                                                                     0.010780   0.151231
+  data required time                                                                               0.151231
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.151231
+  data arrival time                                                                                -0.152323
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.001092
+
+
+  Startpoint: I0/u_path_Q_u_interp/sample_cnt_reg_0_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_Q_u_interp/sample_cnt_reg_1_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023665 & 0.085412 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_0_/CP (DFCNQD1BWP30P140)                          0.000868 & 0.086280 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_0_/Q (DFCNQD1BWP30P140)                           0.040850 & 0.127130 r
+  I0/u_path_Q_u_interp/U12278/Z (XOR2UD0BWP30P140)                                      0.010050 & 0.137180 f
+  I0/u_path_Q_u_interp/FE_PHC531_N18/Z (CKBD1BWP30P140)                                 0.011532 & 0.148713 f
+  I0/u_path_Q_u_interp/sample_cnt_reg_1_/D (DFCNQD1BWP30P140)                           0.000014 & 0.148726 f
+  data arrival time                                                                                0.148726
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023682 & 0.085747 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_1_/CP (DFCNQD1BWP30P140)                          0.000615 & 0.086362 r
+  clock reconvergence pessimism                                                         0.000000   0.086362
+  clock uncertainty                                                                     0.050000   0.136362
+  library hold time                                                                     0.011211   0.147573
+  data required time                                                                               0.147573
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.147573
+  data arrival time                                                                                -0.148726
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.001153
+
+
+  Startpoint: I0/u_path_Q_u_interp/p3_reg_10_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_Q_u_interp/p2_reg_10_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023665 & 0.085412 r
+  I0/u_path_Q_u_interp/p3_reg_10_/CP (DFCNQD1BWP30P140)                                 0.002321 & 0.087733 r
+  I0/u_path_Q_u_interp/p3_reg_10_/Q (DFCNQD1BWP30P140)                                  0.059422 & 0.147155 f
+  I0/u_path_Q_u_interp/p2_reg_10_/D (DFCNQD1BWP30P140)                                  0.000248 & 0.147403 f
+  data arrival time                                                                                0.147403
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023682 & 0.085747 r
+  I0/u_path_Q_u_interp/p2_reg_10_/CP (DFCNQD1BWP30P140)                                 0.004773 & 0.090520 r
+  clock reconvergence pessimism                                                         0.000000   0.090520
+  clock uncertainty                                                                     0.050000   0.140520
+  library hold time                                                                     0.005727   0.146248
+  data required time                                                                               0.146248
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.146248
+  data arrival time                                                                                -0.147403
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.001155
+
+
+  Startpoint: I0/u_path_Q_u_interp/sample_cnt_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_Q_u_interp/sample_cnt_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023665 & 0.085412 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_5_/CP (DFCNQD1BWP30P140)                          0.000815 & 0.086227 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_5_/Q (DFCNQD1BWP30P140)                           0.039755 & 0.125982 f
+  I0/u_path_Q_u_interp/U134/ZN (CKND0BWP30P140)                                         0.010019 & 0.136001 r
+  I0/u_path_Q_u_interp/U11262/ZN (AOI21D0BWP30P140)                                     0.011766 & 0.147766 f
+  I0/u_path_Q_u_interp/sample_cnt_reg_5_/D (DFCNQD1BWP30P140)                           0.000004 & 0.147771 f
+  data arrival time                                                                                0.147771
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_Q_u_interp/CTS_ccl_a_buf_00003/Z (BUFFD8BWP30P140)                          0.023682 & 0.085747 r
+  I0/u_path_Q_u_interp/sample_cnt_reg_5_/CP (DFCNQD1BWP30P140)                          0.000815 & 0.086562 r
+  clock reconvergence pessimism                                                         0.000000   0.086562
+  clock uncertainty                                                                     0.050000   0.136562
+  library hold time                                                                     0.009981   0.146543
+  data required time                                                                               0.146543
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.146543
+  data arrival time                                                                                -0.147771
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.001227
+
+
+  Startpoint: I0/u_path_I_u_fir/acc_stage_reg_8__35_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_I_u_fir/acc_stage_reg_9__35_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                             Incr       Path
+  --------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_I_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.026731 & 0.066831 r
+  I0/u_path_I_u_fir/CTS_ccl_a_buf_00011/Z (CKBD12BWP30P140)                     0.021965 & 0.088795 r
+  I0/u_path_I_u_fir/acc_stage_reg_8__35_/CP (DFCNQD1BWP30P140)                  0.001504 & 0.090299 r
+  I0/u_path_I_u_fir/acc_stage_reg_8__35_/Q (DFCNQD1BWP30P140)                   0.034967 & 0.125266 r
+  I0/u_path_I_u_fir/FE_PHC492_acc_stage_8__35/Z (BUFFD0BWP30P140)               0.014267 & 0.139533 r
+  I0/u_path_I_u_fir/U1302/Z (XOR2UD0BWP30P140)                                  0.011538 & 0.151071 f
+  I0/u_path_I_u_fir/acc_stage_reg_9__35_/D (DFCNQD1BWP30P140)                   0.000016 & 0.151087 f
+  data arrival time                                                                        0.151087
+
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_I_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.027940 & 0.068039 r
+  I0/u_path_I_u_fir/CTS_ccl_a_buf_00011/Z (CKBD12BWP30P140)                     0.021990 & 0.090029 r
+  I0/u_path_I_u_fir/acc_stage_reg_9__35_/CP (DFCNQD1BWP30P140)                  0.001306 & 0.091335 r
+  clock reconvergence pessimism                                                 0.000000   0.091335
+  clock uncertainty                                                             0.050000   0.141335
+  library hold time                                                             0.008514   0.149849
+  data required time                                                                       0.149849
+  --------------------------------------------------------------------------------------------------------
+  data required time                                                                       0.149849
+  data arrival time                                                                        -0.151087
+  --------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                              0.001239
+
+
+  Startpoint: I0/u_path_I_u_interp/sample_cnt_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_I_u_interp/sample_cnt_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00009/Z (CKBD12BWP30P140)                          0.022541 & 0.084288 r
+  I0/u_path_I_u_interp/sample_cnt_reg_5_/CP (DFCNQD1BWP30P140)                          0.007825 & 0.092113 r
+  I0/u_path_I_u_interp/sample_cnt_reg_5_/Q (DFCNQD1BWP30P140)                           0.038792 & 0.130905 f
+  I0/u_path_I_u_interp/U141/ZN (CKND0BWP30P140)                                         0.010631 & 0.141536 r
+  I0/u_path_I_u_interp/U11222/ZN (AOI21D0BWP30P140)                                     0.011999 & 0.153535 f
+  I0/u_path_I_u_interp/sample_cnt_reg_5_/D (DFCNQD1BWP30P140)                           0.000008 & 0.153543 f
+  data arrival time                                                                                0.153543
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00009/Z (CKBD12BWP30P140)                          0.022555 & 0.084620 r
+  I0/u_path_I_u_interp/sample_cnt_reg_5_/CP (DFCNQD1BWP30P140)                          0.007825 & 0.092445 r
+  clock reconvergence pessimism                                                         0.000000   0.092445
+  clock uncertainty                                                                     0.050000   0.142445
+  library hold time                                                                     0.009856   0.152301
+  data required time                                                                               0.152301
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.152301
+  data arrival time                                                                                -0.153543
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.001242
+
+
+  Startpoint: I0/u_path_I_u_interp/sample_cnt_reg_0_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_I_u_interp/sample_cnt_reg_0_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00009/Z (CKBD12BWP30P140)                          0.022541 & 0.084288 r
+  I0/u_path_I_u_interp/sample_cnt_reg_0_/CP (DFCNQD1BWP30P140)                          0.007539 & 0.091827 r
+  I0/u_path_I_u_interp/sample_cnt_reg_0_/Q (DFCNQD1BWP30P140)                           0.040192 & 0.132020 r
+  I0/u_path_I_u_interp/U138/ZN (CKND0BWP30P140)                                         0.011538 & 0.143558 f
+  I0/u_path_I_u_interp/FE_PHC636_N17/Z (CKBD1BWP30P140)                                 0.011130 & 0.154688 f
+  I0/u_path_I_u_interp/sample_cnt_reg_0_/D (DFCNQD1BWP30P140)                           0.000010 & 0.154698 f
+  data arrival time                                                                                0.154698
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00009/Z (CKBD12BWP30P140)                          0.022555 & 0.084620 r
+  I0/u_path_I_u_interp/sample_cnt_reg_0_/CP (DFCNQD1BWP30P140)                          0.007539 & 0.092159 r
+  clock reconvergence pessimism                                                         0.000000   0.092159
+  clock uncertainty                                                                     0.050000   0.142159
+  library hold time                                                                     0.011205   0.153364
+  data required time                                                                               0.153364
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.153364
+  data arrival time                                                                                -0.154698
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.001334
+
+
+  Startpoint: I0/u_path_I_u_fir/acc_stage_reg_4__0_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_I_u_fir/acc_stage_reg_5__0_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                             Incr       Path
+  --------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_I_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.026731 & 0.066831 r
+  I0/u_path_I_u_fir/CTS_ccl_a_buf_00013/Z (BUFFD8BWP30P140)                     0.023811 & 0.090642 r
+  I0/u_path_I_u_fir/acc_stage_reg_4__0_/CP (DFCNQD1BWP30P140)                   0.001256 & 0.091897 r
+  I0/u_path_I_u_fir/acc_stage_reg_4__0_/Q (DFCNQD1BWP30P140)                    0.038008 & 0.129905 r
+  I0/u_path_I_u_fir/U63/Z (AN2D0BWP30P140)                                      0.020986 & 0.150891 r
+  I0/u_path_I_u_fir/U64/ZN (IAO21D1BWP30P140)                                   0.005954 & 0.156845 f
+  I0/u_path_I_u_fir/acc_stage_reg_5__0_/D (DFCNQD1BWP30P140)                    0.000003 & 0.156848 f
+  data arrival time                                                                        0.156848
+
+  clock clk (rise edge)                                                         0.000000   0.000000
+  clock source latency                                                          0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                       0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                      0.040099 & 0.040099 r
+  I0/u_path_I_u_fir/clk_gate_y_out_reg_main_gate/Z (AN2D8BWP30P140)             0.027940 & 0.068039 r
+  I0/u_path_I_u_fir/CTS_ccl_a_buf_00013/Z (BUFFD8BWP30P140)                     0.023830 & 0.091870 r
+  I0/u_path_I_u_fir/acc_stage_reg_5__0_/CP (DFCNQD1BWP30P140)                   0.002067 & 0.093937 r
+  clock reconvergence pessimism                                                 0.000000   0.093937
+  clock uncertainty                                                             0.050000   0.143937
+  library hold time                                                             0.011463   0.155400
+  data required time                                                                       0.155400
+  --------------------------------------------------------------------------------------------------------
+  data required time                                                                       0.155400
+  data arrival time                                                                        -0.156848
+  --------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                              0.001449
+
+
+  Startpoint: I0/u_path_I_u_sipo_shift_reg_reg_0_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_I_u_sipo_shift_reg_reg_1_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                  Incr       Path
+  -------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                              0.000000   0.000000
+  clock source latency                                                               0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                            0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                           0.040099 & 0.040099 r
+  I0/CTS_cfo_buf_00038/Z (CKBD6BWP30P140)                                            0.015967 & 0.056066 r
+  I0/u_path_Q_u_sipo_clk_gate_shift_reg_reg_main_gate/Z (AN2D4BWP30P140)             0.027890 & 0.083956 r
+  I0/u_path_I_u_sipo_shift_reg_reg_0_/CP (DFCNQD1BWP30P140)                          0.000529 & 0.084485 r
+  I0/u_path_I_u_sipo_shift_reg_reg_0_/Q (DFCNQD1BWP30P140)                           0.040574 & 0.125060 f
+  I0/FE_PHC482_u_path_I_w_sipo_out_0/Z (BUFFD0BWP30P140)                             0.021650 & 0.146710 f
+  I0/u_path_I_u_sipo_shift_reg_reg_1_/D (DFCNQD1BWP30P140)                           0.000112 & 0.146822 f
+  data arrival time                                                                             0.146822
+
+  clock clk (rise edge)                                                              0.000000   0.000000
+  clock source latency                                                               0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                            0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                           0.040099 & 0.040099 r
+  I0/CTS_cfo_buf_00038/Z (CKBD6BWP30P140)                                            0.016639 & 0.056738 r
+  I0/u_path_Q_u_sipo_clk_gate_shift_reg_reg_main_gate/Z (AN2D4BWP30P140)             0.028180 & 0.084918 r
+  I0/u_path_I_u_sipo_shift_reg_reg_1_/CP (DFCNQD1BWP30P140)                          0.002072 & 0.086990 r
+  clock reconvergence pessimism                                                      0.000000   0.086990
+  clock uncertainty                                                                  0.050000   0.136990
+  library hold time                                                                  0.008330   0.145320
+  data required time                                                                            0.145320
+  -------------------------------------------------------------------------------------------------------------
+  data required time                                                                            0.145320
+  data arrival time                                                                             -0.146822
+  -------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                   0.001502
+
+
+  Startpoint: I0/u_path_I_u_interp/p2_reg_6_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_I_u_interp/p1_reg_6_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00009/Z (CKBD12BWP30P140)                          0.022541 & 0.084288 r
+  I0/u_path_I_u_interp/p2_reg_6_/CP (DFCNQD1BWP30P140)                                  0.002412 & 0.086700 r
+  I0/u_path_I_u_interp/p2_reg_6_/Q (DFCNQD1BWP30P140)                                   0.052322 & 0.139022 f
+  I0/u_path_I_u_interp/FE_PHC527_p2_6/Z (CKBD1BWP30P140)                                0.013703 & 0.152724 f
+  I0/u_path_I_u_interp/p1_reg_6_/D (DFCNQD1BWP30P140)                                   0.000009 & 0.152733 f
+  data arrival time                                                                                0.152733
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00010/Z (CKBD12BWP30P140)                          0.024396 & 0.086461 r
+  I0/u_path_I_u_interp/p1_reg_6_/CP (DFCNQD1BWP30P140)                                  0.003600 & 0.090060 r
+  clock reconvergence pessimism                                                         0.000000   0.090060
+  clock uncertainty                                                                     0.050000   0.140060
+  library hold time                                                                     0.011104   0.151164
+  data required time                                                                               0.151164
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.151164
+  data arrival time                                                                                -0.152733
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.001569
+
+
+  Startpoint: I0/u_path_I_u_interp/p1_reg_11_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: I0/u_path_I_u_interp/y0_reg_11_ (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: I0/CTS_csf_buf_00017/Z
+  Path Group: clk
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021648 & 0.061747 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00010/Z (CKBD12BWP30P140)                          0.024382 & 0.086129 r
+  I0/u_path_I_u_interp/p1_reg_11_/CP (DFCNQD1BWP30P140)                                 0.003967 & 0.090096 r
+  I0/u_path_I_u_interp/p1_reg_11_/Q (DFCNQD1BWP30P140)                                  0.057518 & 0.147614 f
+  I0/u_path_I_u_interp/y0_reg_11_/D (DFCNQD1BWP30P140)                                  0.000102 & 0.147716 f
+  data arrival time                                                                                0.147716
+
+  clock clk (rise edge)                                                                 0.000000   0.000000
+  clock source latency                                                                  0.000000   0.000000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.040099 & 0.040099 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.021966 & 0.062065 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00010/Z (CKBD12BWP30P140)                          0.024396 & 0.086461 r
+  I0/u_path_I_u_interp/y0_reg_11_/CP (DFCNQD1BWP30P140)                                 0.003921 & 0.090382 r
+  clock reconvergence pessimism                                                         0.000000   0.090382
+  clock uncertainty                                                                     0.050000   0.140382
+  library hold time                                                                     0.005731   0.146113
+  data required time                                                                               0.146113
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.146113
+  data arrival time                                                                                -0.147716
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.001603
+
+Warning: report_timing has satisfied the max_paths criteria. There are 1147 further endpoints which have paths of interest with slack less than 1000.000000 that were not considered when generating this report. (UITE-502)
+
+1

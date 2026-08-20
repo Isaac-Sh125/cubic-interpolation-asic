@@ -1,0 +1,376 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : ASIC_Top
+Version: X-2025.06-SP4
+Date   : Mon Aug 17 15:20:21 2026
+****************************************
+
+Operating Conditions: ssg0p81v125c   Library: tcbn28hpcplusbwp30p140ssg0p81v125c
+Wire Load Model Mode: segmented
+
+  Startpoint: sanity_in_inv
+              (input port clocked by clk)
+  Endpoint: sanity_out_inv
+            (output port clocked by clk)
+  Path Group: FEEDTHR
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ASIC_Top           ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.20       0.20 r
+  sanity_in_inv (in)                       0.00       0.20 r
+  U46/ZN (CKND0BWP30P140)                  0.00       0.20 f
+  sanity_out_inv (out)                     0.00       0.20 f
+  data arrival time                                   0.20
+
+  clock clk (rise edge)                    1.04       1.04
+  clock network delay (ideal)              0.00       1.04
+  clock uncertainty                       -0.05       0.99
+  output external delay                   -0.20       0.79
+  data required time                                  0.79
+  -----------------------------------------------------------
+  data required time                                  0.79
+  data arrival time                                  -0.20
+  -----------------------------------------------------------
+  slack (MET)                                         0.59
+
+
+  Startpoint: sanity_in_ff
+              (input port clocked by clk)
+  Endpoint: sanity_out_ff_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: IN
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ASIC_Top           ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  sanity_in_ff (in)                                       0.00       0.20 r
+  sanity_out_ff_reg/D (SDFCNQD0BWP30P140)                 0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   1.04       1.04
+  clock network delay (ideal)                             0.00       1.04
+  clock uncertainty                                      -0.05       0.99
+  sanity_out_ff_reg/CP (SDFCNQD0BWP30P140)                0.00       0.99 r
+  library setup time                                     -0.03       0.96
+  data required time                                                 0.96
+  --------------------------------------------------------------------------
+  data required time                                                 0.96
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.76
+
+
+  Startpoint: u_path_I/u_fir/y_valid_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: output_valid
+            (output port clocked by clk)
+  Path Group: OUT
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SNPS_CLOCK_GATE_HIGH_FIR_LPF_TRANSPOSED_0_0
+                     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  FIR_LPF_TRANSPOSED_test_1
+                     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  SNPS_CLOCK_GATE_HIGH_FIR_LPF_TRANSPOSED_0_1
+                     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  FIR_LPF_TRANSPOSED_test_0
+                     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  SNPS_CLOCK_GATE_HIGH_Interpolator_0_0
+                     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  SNPS_CLOCK_GATE_HIGH_Interpolator_0_1
+                     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  SNPS_CLOCK_GATE_HIGH_SIPO_0_0
+                     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  Interpolator_0     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  Interpolator_1     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  SNPS_CLOCK_GATE_HIGH_Control_Unit_PACKET_LEN10000_0
+                     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  SNPS_CLOCK_GATE_HIGH_Control_Unit_PACKET_LEN10000_1
+                     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  ASIC_Top           ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_path_I/u_fir/y_valid_reg/CP (SDFCNQD0BWP30P140)       0.00       0.00 r
+  u_path_I/u_fir/y_valid_reg/Q (SDFCNQD0BWP30P140)        0.08       0.08 f
+  u_path_I/u_fir/y_valid (FIR_LPF_TRANSPOSED_test_0)      0.00       0.08 f
+  U45/Z (AN2D0BWP30P140)                                  0.02       0.10 f
+  output_valid (out)                                      0.00       0.10 f
+  data arrival time                                                  0.10
+
+  clock clk (rise edge)                                   1.04       1.04
+  clock network delay (ideal)                             0.00       1.04
+  clock uncertainty                                      -0.05       0.99
+  output external delay                                  -0.20       0.79
+  data required time                                                 0.79
+  --------------------------------------------------------------------------
+  data required time                                                 0.79
+  data arrival time                                                 -0.10
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.69
+
+
+  Startpoint: u_control/L_val_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_path_Q/u_fir/acc_stage_reg[3][35]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SNPS_CLOCK_GATE_HIGH_Control_Unit_PACKET_LEN10000_1
+                     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  ASIC_Top           ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  FIR_LPF_TRANSPOSED_test_1
+                     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  FIR_LPF_TRANSPOSED_test_0
+                     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  Interpolator_1     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  Interpolator_0     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_control/L_val_reg[2]/CP (DFCNQD1BWP30P140)            0.00       0.00 r
+  u_control/L_val_reg[2]/Q (DFCNQD1BWP30P140)             0.11       0.11 f
+  u_path_Q/u_fir/L_val[2] (FIR_LPF_TRANSPOSED_test_1)     0.00       0.11 f
+  u_path_Q/u_fir/U3/ZN (IND2D2BWP30P140)                  0.06       0.17 f
+  u_path_Q/u_fir/U52/ZN (NR2D0BWP30P140)                  0.23       0.40 r
+  u_path_Q/u_fir/U53/ZN (CKND0BWP30P140)                  0.17       0.56 f
+  u_path_Q/u_fir/U6/ZN (ND2D0BWP30P140)                   0.21       0.78 r
+  u_path_Q/u_fir/U7/ZN (CKND0BWP30P140)                   0.19       0.96 f
+  u_path_Q/u_fir/U1172/ZN (AOI22D0BWP30P140)              0.07       1.04 r
+  u_path_Q/u_fir/U1173/ZN (ND2D0BWP30P140)                0.04       1.08 f
+  u_path_Q/u_fir/U1176/ZN (OAI21D0BWP30P140)              0.03       1.11 r
+  u_path_Q/u_fir/U1179/CO (FA1D0BWP30P140)                0.06       1.17 r
+  u_path_Q/u_fir/U1178/S (FA1D0BWP30P140)                 0.08       1.25 f
+  u_path_Q/u_fir/intadd_589/U7/CO (FA1D0BWP30P140)        0.06       1.30 f
+  u_path_Q/u_fir/intadd_589/U6/CO (FA1D0BWP30P140)        0.05       1.35 f
+  u_path_Q/u_fir/intadd_589/U5/CO (FA1D0BWP30P140)        0.05       1.40 f
+  u_path_Q/u_fir/intadd_589/U4/CO (FA1D0BWP30P140)        0.05       1.45 f
+  u_path_Q/u_fir/intadd_589/U3/CO (FA1D0BWP30P140)        0.05       1.50 f
+  u_path_Q/u_fir/intadd_589/U2/CO (FA1D0BWP30P140)        0.04       1.54 f
+  u_path_Q/u_fir/U1151/ZN (CKND0BWP30P140)                0.02       1.57 r
+  u_path_Q/u_fir/U1167/CO (FA1D0BWP30P140)                0.05       1.61 r
+  u_path_Q/u_fir/U1166/ZN (CKND0BWP30P140)                0.02       1.63 f
+  u_path_Q/u_fir/intadd_592/U4/CO (FA1D0BWP30P140)        0.05       1.68 f
+  u_path_Q/u_fir/intadd_592/U3/CO (FA1D0BWP30P140)        0.05       1.73 f
+  u_path_Q/u_fir/intadd_592/U2/CO (FA1D0BWP30P140)        0.04       1.78 f
+  u_path_Q/u_fir/U1150/ZN (CKND0BWP30P140)                0.02       1.80 r
+  u_path_Q/u_fir/intadd_587/U9/CO (FA1D0BWP30P140)        0.05       1.85 r
+  u_path_Q/u_fir/intadd_587/U8/CO (FA1D0BWP30P140)        0.05       1.90 r
+  u_path_Q/u_fir/intadd_587/U7/CO (FA1D0BWP30P140)        0.05       1.95 r
+  u_path_Q/u_fir/intadd_587/U6/CO (FA1D0BWP30P140)        0.05       2.00 r
+  u_path_Q/u_fir/intadd_587/U5/CO (FA1D0BWP30P140)        0.05       2.05 r
+  u_path_Q/u_fir/intadd_587/U4/CO (FA1D0BWP30P140)        0.05       2.11 r
+  u_path_Q/u_fir/intadd_587/U3/CO (FA1D0BWP30P140)        0.05       2.16 r
+  u_path_Q/u_fir/intadd_587/U2/CO (FA1D0BWP30P140)        0.05       2.20 r
+  u_path_Q/u_fir/U1128/ZN (IND3D1BWP30P140)               0.02       2.22 r
+  u_path_Q/u_fir/U1129/ZN (ND2D0BWP30P140)                0.03       2.25 f
+  u_path_Q/u_fir/U1142/CO (FA1D0BWP30P140)                0.05       2.30 f
+  u_path_Q/u_fir/U1144/CO (FA1D0BWP30P140)                0.05       2.35 f
+  u_path_Q/u_fir/U1148/ZN (AOI21D0BWP30P140)              0.04       2.40 r
+  u_path_Q/u_fir/U1149/ZN (CKND0BWP30P140)                0.14       2.53 f
+  u_path_Q/u_fir/intadd_576/U7/CO (FA1D0BWP30P140)        0.11       2.64 f
+  u_path_Q/u_fir/intadd_576/U6/CO (FA1D0BWP30P140)        0.05       2.69 f
+  u_path_Q/u_fir/intadd_576/U5/CO (FA1D0BWP30P140)        0.05       2.74 f
+  u_path_Q/u_fir/intadd_576/U4/CO (FA1D0BWP30P140)        0.05       2.79 f
+  u_path_Q/u_fir/intadd_576/U3/CO (FA1D0BWP30P140)        0.05       2.84 f
+  u_path_Q/u_fir/intadd_576/U2/CO (FA1D0BWP30P140)        0.05       2.89 f
+  u_path_Q/u_fir/U1423/ZN (CKND0BWP30P140)                0.02       2.91 r
+  u_path_Q/u_fir/U1429/ZN (AOI33D0BWP30P140)              0.03       2.95 f
+  u_path_Q/u_fir/U1430/ZN (XNR2UD0BWP30P140)              0.05       2.99 r
+  u_path_Q/u_fir/acc_stage_reg[3][35]/D (DFCNQD1BWP30P140)
+                                                          0.00       2.99 r
+  data arrival time                                                  2.99
+
+  clock clk (rise edge)                                   3.12       3.12
+  clock network delay (ideal)                             0.00       3.12
+  clock uncertainty                                      -0.05       3.07
+  u_path_Q/u_fir/acc_stage_reg[3][35]/CP (DFCNQD1BWP30P140)
+                                                          0.00       3.07 r
+  library setup time                                     -0.02       3.05
+  data required time                                                 3.05
+  --------------------------------------------------------------------------
+  data required time                                                 3.05
+  data arrival time                                                 -2.99
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.05
+
+
+1
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : ASIC_Top
+Version: X-2025.06-SP4
+Date   : Mon Aug 17 15:20:21 2026
+****************************************
+
+Operating Conditions: ssg0p81v125c   Library: tcbn28hpcplusbwp30p140ssg0p81v125c
+Wire Load Model Mode: segmented
+
+  Startpoint: u_path_I/u_sipo/shift_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_path_I/u_interp/p3_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SNPS_CLOCK_GATE_HIGH_SIPO_0_0
+                     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  ASIC_Top           ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+  Interpolator_1     ZeroWireload          tcbn28hpcplusbwp30p140ssg0p81v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_path_I/u_sipo/shift_reg_reg[0]/CP (DFCNQD1BWP30P140)
+                                                          0.00       0.00 r
+  u_path_I/u_sipo/shift_reg_reg[0]/Q (DFCNQD1BWP30P140)
+                                                          0.07       0.07 f
+  u_path_I/u_interp/sipo_data[0] (Interpolator_1)         0.00       0.07 f
+  u_path_I/u_interp/p3_reg[0]/D (DFCNQD1BWP30P140)        0.00       0.07 f
+  data arrival time                                                  0.07
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.05       0.05
+  u_path_I/u_interp/p3_reg[0]/CP (DFCNQD1BWP30P140)       0.00       0.05 r
+  library hold time                                       0.02       0.07
+  data required time                                                 0.07
+  --------------------------------------------------------------------------
+  data required time                                                 0.07
+  data arrival time                                                 -0.07
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+ 
+****************************************
+Report : area
+Design : ASIC_Top
+Version: X-2025.06-SP4
+Date   : Mon Aug 17 15:20:21 2026
+****************************************
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ssg0p81v125c (File: /data/tsmc/28HPCPMMWAVE/dig_libs/TSMCHOME/digital/Front_End/timing_power_noise/NLDM/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ssg0p81v125c.db)
+
+Number of ports:                          358
+Number of nets:                         48235
+Number of cells:                        38841
+Number of combinational cells:          37692
+Number of sequential cells:              1138
+Number of macros/black boxes:               0
+Number of buf/inv:                       3880
+Number of references:                      34
+
+Combinational area:              36132.641678
+Buf/Inv area:                      992.754015
+Noncombinational area:            2600.387877
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 38733.029556
+Total area:                 undefined
+1
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : ASIC_Top
+Version: X-2025.06-SP4
+Date   : Mon Aug 17 15:20:21 2026
+****************************************
+
+
+   min_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   I_out[0]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   I_out[1]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   I_out[2]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   I_out[3]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   I_out[4]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   I_out[5]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   I_out[6]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   I_out[7]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   I_out[8]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   I_out[9]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   I_out[10]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   I_out[11]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   I_out[12]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   I_out[13]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   I_out[14]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   I_out[15]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[0]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[1]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[2]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[3]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[4]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[5]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[6]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[7]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[8]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[9]                     0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[10]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[11]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[12]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[13]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[14]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   Q_out[15]                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   output_valid                 0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   pll_active_960               0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   sanity_out_inv               0.00           0.00           0.00  (VIOLATED: increase significant digits)
+   scan_out1                    0.00           0.00           0.00  (VIOLATED: increase significant digits)
+
+   -----------------------------------------------------------------
+   Total                      36                 -0.01  
+
+   max_leakage_power
+
+                             Required        Actual
+   Design                   Leakage Power  Leakage Power     Slack
+   -----------------------------------------------------------------
+   ASIC_Top                     0.00       2333506.25     -2333506.25
+                                                                    (VIOLATED)
+
+
+1
+1

@@ -1,0 +1,45 @@
+// Command: report black box -NOHidden
+HIER: (G R) Control_Unit_PACKET_LEN10000
+HIER: (G R) MinAJ2_Datapath_0
+HIER: (G R) MinAJ2_Datapath_1
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            6      36     1      3         46      
+--------------------------------------------------------------------------------
+Revised           6      36     1      3         46      
+================================================================================
+// Command: analyze datapath -module -threads 4; usage; analyze datapath -wordlevel -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+CPU time     : 2996.17 seconds
+Memory usage : 575.02  M bytes
+// Command: add compared points -all
+// 40 compared points added to compare list
+// Command: compare -noneq_stop 1   
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF    BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           36     1      3         40      
+================================================================================
+// Command: save hier_compare result
+// Command: set system mode setup
+Processed 12 out of 12 module pairs	EQ: 12	NEQ: 0	ABORT: 0
+
+================================================================================
+Module Comparison Results
+--------------------------------------------------------------------------------
+Equivalent                     12
+--------------------------------------------------------------------------------
+Total                          12/12
+--------------------------------------------------------------------------------
+Hierarchical compare : Equivalent 
+================================================================================

@@ -1,0 +1,75 @@
+****************************************
+Report : constraint
+	-all_violators
+	-verbose
+Design : top
+Version: X-2025.06-SP2-1
+Date   : Thu Aug 20 10:21:21 2026
+****************************************
+
+
+
+    Pin: I0/u_path_I_u_interp/U4729/Z
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_I_u_interp/U6889/ZN
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_I_u_interp/U7066/Z
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_I_u_interp/U9789/Z
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_I_u_interp/clk_gate_sample_cnt_reg_latch/Q
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_Q_u_interp/U4719/Z
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_Q_u_interp/U6894/ZN
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_Q_u_interp/U7072/Z
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_Q_u_interp/U9815/Z
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+1

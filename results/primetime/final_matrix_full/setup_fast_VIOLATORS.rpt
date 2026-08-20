@@ -1,0 +1,177 @@
+****************************************
+Report : constraint
+	-all_violators
+	-verbose
+Design : top
+Version: X-2025.06-SP2-1
+Date   : Thu Aug 20 10:21:00 2026
+****************************************
+
+
+  Startpoint: I6/I1/C (internal path startpoint clocked by clk)
+  Endpoint: I0/u_path_Q_u_interp/y0_reg_11_
+               (removal check against rising-edge clock clk)
+  Path Group: **async_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.00       0.00
+  input external delay                                    0.05       0.05 r
+  I6/I1/C (PDDW04DGZ_H_G)                                 0.00       0.05 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                 0.02 &     0.07 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                 0.03 &     0.10 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)              0.04 &     0.13 f
+  I0/FE_OFC39_wire_rst_n/ZN (INVD1BWP30P140)              0.05 &     0.18 r
+  I0/u_path_Q_u_interp/y0_reg_11_/CDN (DFCNQD1BWP30P140)
+                                                          0.00 &     0.18 r
+  data arrival time                                                  0.18
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.09       0.09
+  I0/u_path_Q_u_interp/y0_reg_11_/CP (DFCNQD1BWP30P140)              0.09 r
+  clock reconvergence pessimism                           0.00       0.09
+  clock uncertainty                                       0.05       0.14
+  library removal time                                    0.04       0.18
+  data required time                                                 0.18
+  ------------------------------------------------------------------------------
+  data required time                                                 0.18
+  data arrival time                                                 -0.18
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                     -0.00
+
+
+  Startpoint: I6/I1/C (internal path startpoint clocked by clk)
+  Endpoint: I0/u_path_Q_u_interp/y1_reg_7_
+               (removal check against rising-edge clock clk)
+  Path Group: **async_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.00       0.00
+  input external delay                                    0.05       0.05 r
+  I6/I1/C (PDDW04DGZ_H_G)                                 0.00       0.05 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                 0.02 &     0.07 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                 0.03 &     0.10 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)              0.04 &     0.13 f
+  I0/FE_OFC39_wire_rst_n/ZN (INVD1BWP30P140)              0.05 &     0.18 r
+  I0/u_path_Q_u_interp/y1_reg_7_/CDN (DFCNQD1BWP30P140)
+                                                          0.00 &     0.18 r
+  data arrival time                                                  0.18
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.09       0.09
+  I0/u_path_Q_u_interp/y1_reg_7_/CP (DFCNQD1BWP30P140)               0.09 r
+  clock reconvergence pessimism                           0.00       0.09
+  clock uncertainty                                       0.05       0.14
+  library removal time                                    0.04       0.18
+  data required time                                                 0.18
+  ------------------------------------------------------------------------------
+  data required time                                                 0.18
+  data arrival time                                                 -0.18
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                     -0.00
+
+
+  Startpoint: I6/I1/C (internal path startpoint clocked by clk)
+  Endpoint: I0/u_path_Q_u_interp/y0_reg_0_
+               (removal check against rising-edge clock clk)
+  Path Group: **async_default**
+  Path Type: min
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.00       0.00
+  input external delay                                    0.05       0.05 r
+  I6/I1/C (PDDW04DGZ_H_G)                                 0.00       0.05 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                 0.02 &     0.07 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                 0.03 &     0.10 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)              0.04 &     0.13 f
+  I0/FE_OFC39_wire_rst_n/ZN (INVD1BWP30P140)              0.05 &     0.18 r
+  I0/u_path_Q_u_interp/y0_reg_0_/CDN (DFCNQD1BWP30P140)
+                                                          0.00 &     0.18 r
+  data arrival time                                                  0.18
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.09       0.09
+  I0/u_path_Q_u_interp/y0_reg_0_/CP (DFCNQD1BWP30P140)               0.09 r
+  clock reconvergence pessimism                           0.00       0.09
+  clock uncertainty                                       0.05       0.14
+  library removal time                                    0.04       0.18
+  data required time                                                 0.18
+  ------------------------------------------------------------------------------
+  data required time                                                 0.18
+  data arrival time                                                 -0.18
+  ------------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                     -0.00
+
+
+
+    Pin: I0/u_path_I_u_interp/U4729/Z
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_I_u_interp/U6889/ZN
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_I_u_interp/U7066/Z
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_I_u_interp/U9789/Z
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_I_u_interp/clk_gate_sample_cnt_reg_latch/Q
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_Q_u_interp/U4719/Z
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_Q_u_interp/U6894/ZN
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_Q_u_interp/U7072/Z
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+    Pin: I0/u_path_Q_u_interp/U9815/Z
+
+    Capacitance                  0.00
+  - min_capacitance              0.00
+  ------------------------------
+    Slack                        0.00  (VIOLATED: increase significant digits)
+
+1

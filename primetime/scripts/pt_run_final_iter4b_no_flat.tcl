@@ -252,6 +252,7 @@ report_timing \
     -max_paths 30 \
     -path_type full_clock \
     -nosplit \
+    -slack_lesser_than 1000.0 \
     -significant_digits 6 \
     > $OUT/${MODE}_${CORNER}_TIMING.rpt
 
@@ -262,6 +263,7 @@ report_timing \
     -max_paths 30 \
     -path_type full_clock \
     -nosplit \
+    -slack_lesser_than 1000.0 \
     -significant_digits 6 \
     > $OUT/${MODE}_${CORNER}_DATA.rpt
 
@@ -272,6 +274,7 @@ report_timing \
     -max_paths 20 \
     -path_type full_clock \
     -nosplit \
+    -slack_lesser_than 1000.0 \
     -significant_digits 6 \
     > $OUT/${MODE}_${CORNER}_CLOCK_GATING.rpt
 
@@ -282,6 +285,7 @@ report_timing \
     -max_paths 20 \
     -path_type full_clock \
     -nosplit \
+    -slack_lesser_than 1000.0 \
     -significant_digits 6 \
     > $OUT/${MODE}_${CORNER}_ASYNC.rpt
 

@@ -10,7 +10,6 @@
 # Generated implementation outputs
 synthesis/dataout/
 innovus/dataout/
-out/
 debug_perL/
 
 # Conformal temporary databases
@@ -116,3 +115,9 @@ primetime/archive_eco_change_flat15_20260819.tcl
 primetime/archive_eco_change_flat15_20260819.tcl
 primetime/scripts/pt_run.tcl
 primetime/run_pt.tcsh
+# Keep only the canonical golden reference from out/
+
+# Canonical simulation golden reference
+!out/
+out/*
+!out/output_golden.txt

@@ -1,0 +1,11 @@
+Post-compile area
+Combinational area:              36127.097678
+Buf/Inv area:                      987.210015
+Noncombinational area:            2573.927873
+Total cell area:                 38701.025551
+
+Post-scan area
+Combinational area:              36132.641678
+Buf/Inv area:                      992.754015
+Noncombinational area:            2600.387877
+Total cell area:                 38733.029556

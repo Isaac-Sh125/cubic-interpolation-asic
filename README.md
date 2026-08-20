@@ -221,6 +221,45 @@ results/primetime/final_sta_summary.txt
 ```
 
 ---
+## Area and Power Results
+
+### Synthesis Area
+
+Synopsys Design Compiler reports the following standard-cell area:
+
+| Stage | Total Cell Area |
+|---|---:|
+| Post-compile | **38,701.025551** |
+| Post-scan | **38,733.029556** |
+
+The complete synthesis reports and the compact area summary are stored in `results/synthesis/`.
+
+### Final Post-Route Power
+
+Power was re-evaluated on the final Iter4B physical implementation using measured SAIF switching activity from gate-level simulation.
+
+The analysis uses the SlowView corner (SS, 0.81 V, 125 C) and achieves approximately **98.29% SAIF annotation coverage** for the L=5 case.
+
+| Interpolation Factor | Chip Power | Core Power |
+|---|---:|---:|
+| L=2 | 22.9837 mW | 4.3920 mW |
+| L=3 | 28.8508 mW | 5.0040 mW |
+| L=4 | 34.9646 mW | 5.7110 mW |
+| L=5 | **40.3975 mW** | **6.2380 mW** |
+
+For the primary L=5 case:
+
+| Component | Power |
+|---|---:|
+| Internal | **26.6504 mW** |
+| Switching | **11.6612 mW** |
+| Leakage | **2.0859 mW** |
+| Total chip | **40.3975 mW** |
+
+The complete per-L and per-block final power reports are stored in `results/power/final_iter4b/`.
+
+---
+
 ## Repository Structure
 
 ```text

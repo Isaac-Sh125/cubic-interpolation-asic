@@ -1,0 +1,233 @@
+****************************************
+Report : timing
+	-path_type full_clock
+	-delay_type min
+	-nosplit
+	-slack_lesser_than 1000.000000
+	-max_paths 20
+	-group **clock_gating_default**
+	-sort_by slack
+Design : top
+Version: X-2025.06-SP2-1
+Date   : Thu Aug 20 10:21:21 2026
+****************************************
+
+
+  Startpoint: I0/u_path_Q_u_sipo_clk_gate_shift_reg_reg_latch (negative level-sensitive latch clocked by clk)
+  Endpoint: I0/u_path_Q_u_sipo_clk_gate_shift_reg_reg_main_gate (rising clock gating-check end-point clocked by clk)
+  Last common pin: I5/I1/C
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                                                            Incr       Path
+  -----------------------------------------------------------------------------------------------------------------------
+  clock clk (fall edge)                                                                        0.520000   0.520000
+  clock source latency                                                                         0.000000   0.520000
+  I5/I1/C (PDDW04DGZ_H_G)                                                                      0.000000   0.520000 f
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                                     0.057228 & 0.577228 f
+  I0/CTS_ccl_a_buf_00015/Z (CKBD2BWP30P140)                                                    0.036519 & 0.613747 f
+  I0/u_path_Q_u_sipo_clk_gate_shift_reg_reg_latch/EN (LNQD1BWP30P140)                          0.000459 & 0.614206 f
+  I0/u_path_Q_u_sipo_clk_gate_shift_reg_reg_latch/Q (LNQD1BWP30P140)                           0.056983 & 0.671189 r
+  I0/FE_PHC487_u_path_Q_u_sipo_clk_gate_shift_reg_reg_net58472/Z (BUFFD0BWP30P140)             0.021389 & 0.692578 r
+  I0/U_PTECO3_CG_BUF2/Z (BUFFD0BWP30P140)                                                      0.023767 & 0.716345 r
+  I0/u_path_Q_u_sipo_clk_gate_shift_reg_reg_main_gate/A1 (AN2D4BWP30P140)                      0.000057 & 0.716402 r
+  data arrival time                                                                                       0.716402
+
+  clock clk (fall edge)                                                                        0.520000   0.520000
+  clock source latency                                                                         0.000000   0.520000
+  I5/I1/C (PDDW04DGZ_H_G)                                                                      0.000000   0.520000 f
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                                     0.057228 & 0.577228 f
+  I0/CTS_cfo_buf_00038/Z (CKBD6BWP30P140)                                                      0.029156 & 0.606384 f
+  I0/u_path_Q_u_sipo_clk_gate_shift_reg_reg_main_gate/A2 (AN2D4BWP30P140)                      0.001601 & 0.607985 f
+  clock reconvergence pessimism                                                                0.000000   0.607985
+  clock uncertainty                                                                            0.050000   0.657985
+  clock gating hold time                                                                       0.000000   0.657985
+  data required time                                                                                      0.657985
+  -----------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                      0.657985
+  data arrival time                                                                                       -0.716402
+  -----------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                             0.058417
+
+
+  Startpoint: I0/u_control_clk_gate_L_val_reg_latch (negative level-sensitive latch clocked by clk)
+  Endpoint: I0/u_control_clk_gate_L_val_reg_main_gate (rising clock gating-check end-point clocked by clk)
+  Last common pin: I5/I1/C
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                                                     Incr       Path
+  ----------------------------------------------------------------------------------------------------------------
+  clock clk (fall edge)                                                                 0.520000   0.520000
+  clock source latency                                                                  0.000000   0.520000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.520000 f
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.057228 & 0.577228 f
+  I0/CTS_ccl_a_buf_00015/Z (CKBD2BWP30P140)                                             0.036519 & 0.613747 f
+  I0/u_control_clk_gate_L_val_reg_latch/EN (LNQD1BWP30P140)                             0.000343 & 0.614091 f
+  I0/u_control_clk_gate_L_val_reg_latch/Q (LNQD1BWP30P140)                              0.058398 & 0.672488 r
+  I0/FE_PHC534_u_control_clk_gate_L_val_reg_net58487/Z (DEL050MD1BWP30P140)             0.054626 & 0.727115 r
+  I0/u_control_clk_gate_L_val_reg_main_gate/A1 (AN2D0BWP30P140)                         0.000059 & 0.727173 r
+  data arrival time                                                                                0.727173
+
+  clock clk (fall edge)                                                                 0.520000   0.520000
+  clock source latency                                                                  0.000000   0.520000
+  I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.520000 f
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.057228 & 0.577228 f
+  I0/CTS_ccl_a_buf_00015/Z (CKBD2BWP30P140)                                             0.038274 & 0.615502 f
+  I0/u_control_clk_gate_L_val_reg_main_gate/A2 (AN2D0BWP30P140)                         0.000327 & 0.615829 f
+  clock reconvergence pessimism                                                         0.000000   0.615829
+  clock uncertainty                                                                     0.050000   0.665829
+  clock gating hold time                                                                0.000000   0.665829
+  data required time                                                                               0.665829
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                               0.665829
+  data arrival time                                                                                -0.727173
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                      0.061345
+
+
+  Startpoint: I0/u_control_clk_gate_cfg_reg_reg_latch (negative level-sensitive latch clocked by clk)
+  Endpoint: I0/u_control_clk_gate_cfg_reg_reg_main_gate (rising clock gating-check end-point clocked by clk)
+  Last common pin: I5/I1/C
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                                                       Incr       Path
+  ------------------------------------------------------------------------------------------------------------------
+  clock clk (fall edge)                                                                   0.520000   0.520000
+  clock source latency                                                                    0.000000   0.520000
+  I5/I1/C (PDDW04DGZ_H_G)                                                                 0.000000   0.520000 f
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                                0.057228 & 0.577228 f
+  I0/CTS_ccl_a_buf_00015/Z (CKBD2BWP30P140)                                               0.036519 & 0.613747 f
+  I0/u_control_clk_gate_cfg_reg_reg_latch/EN (LNQD1BWP30P140)                             0.000356 & 0.614104 f
+  I0/u_control_clk_gate_cfg_reg_reg_latch/Q (LNQD1BWP30P140)                              0.058756 & 0.672860 r
+  I0/FE_PHC533_u_control_clk_gate_cfg_reg_reg_net58487/Z (DEL050MD1BWP30P140)             0.054506 & 0.727366 r
+  I0/u_control_clk_gate_cfg_reg_reg_main_gate/A1 (AN2D0BWP30P140)                         0.000040 & 0.727406 r
+  data arrival time                                                                                  0.727406
+
+  clock clk (fall edge)                                                                   0.520000   0.520000
+  clock source latency                                                                    0.000000   0.520000
+  I5/I1/C (PDDW04DGZ_H_G)                                                                 0.000000   0.520000 f
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                                0.057228 & 0.577228 f
+  I0/CTS_ccl_a_buf_00015/Z (CKBD2BWP30P140)                                               0.038274 & 0.615502 f
+  I0/u_control_clk_gate_cfg_reg_reg_main_gate/A2 (AN2D0BWP30P140)                         0.000369 & 0.615871 f
+  clock reconvergence pessimism                                                           0.000000   0.615871
+  clock uncertainty                                                                       0.050000   0.665871
+  clock gating hold time                                                                  0.000000   0.665871
+  data required time                                                                                 0.665871
+  ------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                 0.665871
+  data arrival time                                                                                  -0.727406
+  ------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                        0.061535
+
+
+  Startpoint: I0/u_path_Q_u_fir/clk_gate_y_out_reg_latch (negative level-sensitive latch clocked by clk)
+  Endpoint: I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate (rising clock gating-check end-point clocked by clk)
+  Last common pin: I5/I1/C
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                                                      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------
+  clock clk (fall edge)                                                                  0.520000   0.520000
+  clock source latency                                                                   0.000000   0.520000
+  I5/I1/C (PDDW04DGZ_H_G)                                                                0.000000   0.520000 f
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                               0.057228 & 0.577228 f
+  I0/CTS_cfo_buf_00038/Z (CKBD6BWP30P140)                                                0.028075 & 0.605303 f
+  I0/u_path_Q_u_fir/clk_gate_y_out_reg_latch/EN (LNQD1BWP30P140)                         0.004007 & 0.609310 f
+  I0/u_path_Q_u_fir/clk_gate_y_out_reg_latch/Q (LNQD1BWP30P140)                          0.052225 & 0.661535 r
+  I0/u_path_Q_u_fir/FE_PHC584_clk_gate_y_out_reg_net58442/Z (CKBD1BWP30P140)             0.018216 & 0.679751 r
+  I0/u_path_Q_u_fir/U_PTECO3_CG_BUF3/Z (BUFFD0BWP30P140)                                 0.025174 & 0.704925 r
+  I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/A1 (AN2D8BWP30P140)                     0.000038 & 0.704963 r
+  data arrival time                                                                                 0.704963
+
+  clock clk (fall edge)                                                                  0.520000   0.520000
+  clock source latency                                                                   0.000000   0.520000
+  I5/I1/C (PDDW04DGZ_H_G)                                                                0.000000   0.520000 f
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                               0.057228 & 0.577228 f
+  I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/A2 (AN2D8BWP30P140)                     0.006952 & 0.584180 f
+  clock reconvergence pessimism                                                          0.000000   0.584180
+  clock uncertainty                                                                      0.050000   0.634180
+  clock gating hold time                                                                 0.000000   0.634180
+  data required time                                                                                0.634180
+  -----------------------------------------------------------------------------------------------------------------
+  data required time                                                                                0.634180
+  data arrival time                                                                                 -0.704963
+  -----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                       0.070783
+
+
+  Startpoint: I0/u_path_I_u_fir/clk_gate_y_out_reg_latch (negative level-sensitive latch clocked by clk)
+  Endpoint: I0/u_path_I_u_fir/clk_gate_y_out_reg_main_gate (rising clock gating-check end-point clocked by clk)
+  Last common pin: I5/I1/C
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                                                      Incr       Path
+  -----------------------------------------------------------------------------------------------------------------
+  clock clk (fall edge)                                                                  0.520000   0.520000
+  clock source latency                                                                   0.000000   0.520000
+  I5/I1/C (PDDW04DGZ_H_G)                                                                0.000000   0.520000 f
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                               0.057228 & 0.577228 f
+  I0/CTS_cfo_buf_00038/Z (CKBD6BWP30P140)                                                0.028075 & 0.605303 f
+  I0/u_path_I_u_fir/clk_gate_y_out_reg_latch/EN (LNQD1BWP30P140)                         0.004968 & 0.610271 f
+  I0/u_path_I_u_fir/clk_gate_y_out_reg_latch/Q (LNQD1BWP30P140)                          0.053973 & 0.664244 r
+  I0/u_path_I_u_fir/FE_PHC563_clk_gate_y_out_reg_net58442/Z (CKBD1BWP30P140)             0.017365 & 0.681609 r
+  I0/u_path_I_u_fir/U_PTECO3_CG_BUF1/Z (BUFFD0BWP30P140)                                 0.025591 & 0.707200 r
+  I0/u_path_I_u_fir/clk_gate_y_out_reg_main_gate/A1 (AN2D8BWP30P140)                     0.000045 & 0.707245 r
+  data arrival time                                                                                 0.707245
+
+  clock clk (fall edge)                                                                  0.520000   0.520000
+  clock source latency                                                                   0.000000   0.520000
+  I5/I1/C (PDDW04DGZ_H_G)                                                                0.000000   0.520000 f
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                               0.057228 & 0.577228 f
+  I0/u_path_I_u_fir/clk_gate_y_out_reg_main_gate/A2 (AN2D8BWP30P140)                     0.008423 & 0.585651 f
+  clock reconvergence pessimism                                                          0.000000   0.585651
+  clock uncertainty                                                                      0.050000   0.635651
+  clock gating hold time                                                                 0.000000   0.635651
+  data required time                                                                                0.635651
+  -----------------------------------------------------------------------------------------------------------------
+  data required time                                                                                0.635651
+  data arrival time                                                                                 -0.707245
+  -----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                       0.071594
+
+
+  Startpoint: I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_latch (negative level-sensitive latch clocked by clk)
+  Endpoint: I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate (rising clock gating-check end-point clocked by clk)
+  Last common pin: I5/I1/C
+  Path Group: **clock_gating_default**
+  Path Type: min
+
+  Point                                                                                              Incr       Path
+  -------------------------------------------------------------------------------------------------------------------------
+  clock clk (fall edge)                                                                          0.520000   0.520000
+  clock source latency                                                                           0.000000   0.520000
+  I5/I1/C (PDDW04DGZ_H_G)                                                                        0.000000   0.520000 f
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                                       0.057228 & 0.577228 f
+  I0/CTS_cfo_buf_00038/Z (CKBD6BWP30P140)                                                        0.028075 & 0.605303 f
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_latch/EN (LNQD1BWP30P140)                         0.000226 & 0.605530 f
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_latch/Q (LNQD1BWP30P140)                          0.052483 & 0.658012 r
+  I0/u_path_Q_u_interp/FE_PHC588_clk_gate_sample_cnt_reg_net58457/Z (CKBD1BWP30P140)             0.017964 & 0.675977 r
+  I0/u_path_Q_u_interp/U_PTECO3_CG_BUF4/Z (BUFFD0BWP30P140)                                      0.026583 & 0.702560 r
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/A1 (AN2D8BWP30P140)                     0.000087 & 0.702646 r
+  data arrival time                                                                                         0.702646
+
+  clock clk (fall edge)                                                                          0.520000   0.520000
+  clock source latency                                                                           0.000000   0.520000
+  I5/I1/C (PDDW04DGZ_H_G)                                                                        0.000000   0.520000 f
+  I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                                       0.057228 & 0.577228 f
+  I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/A2 (AN2D8BWP30P140)                     0.001228 & 0.578457 f
+  clock reconvergence pessimism                                                                  0.000000   0.578457
+  clock uncertainty                                                                              0.050000   0.628457
+  clock gating hold time                                                                         0.000000   0.628457
+  data required time                                                                                        0.628457
+  -------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                        0.628457
+  data arrival time                                                                                         -0.702646
+  -------------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                               0.074190
+
+
+1
