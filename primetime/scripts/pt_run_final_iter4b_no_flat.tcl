@@ -1,13 +1,13 @@
 # ======================================================================
-# Final PrimeTime STA - Iter4B physical candidate
+# Final PrimeTime STA - completed Iter4B physical implementation
 #
 # Modes:
 #   PT_MODE   = setup | hold
 #   PT_CORNER = slow | typ | fast
 #
 # Policy:
-#   - Fresh Iter4B physical netlist + SPEF
-#   - No historical flat +/-15% hold derate
+#   - Final Iter4B physical netlist + SPEF
+#   - No blanket timing derate
 #   - Original Innovus SDC values preserved
 #   - Mechanical PT compatibility transform only
 # ======================================================================

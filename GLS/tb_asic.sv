@@ -101,7 +101,7 @@ module tb_asic;
 				serial_in_I = cfg_word[i];
 			end
 			
-			// --- THE FIX ---
+			// Wait until configuration is accepted before streaming payload data.
 			// We MUST wait for the exact moment the Control Unit activates run_en.
 			// The NEXT negedge after this is the exact moment we must drive data.
 			wait(dut.u_control_run_en_reg.Q == 1'b1);

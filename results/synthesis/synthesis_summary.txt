@@ -1,0 +1,51 @@
+CUBIC Interpolation DSP ASIC
+Logic Synthesis Summary
+=======================
+
+Tool:
+  Synopsys Design Compiler X-2025.06-SP4
+
+Technology:
+  TSMC 28 nm HPC+
+  tcbn28hpcplusbwp30p140
+  SSG 0.81 V, 125 C
+
+Primary timing constraint:
+  Clock period      : 1.04 ns
+  Clock uncertainty : 0.05 ns
+  Clock transition  : 0.05 ns
+
+Multicycle constraints:
+  Interpolator : setup 14 / hold 13
+  FIR          : setup 3  / hold 2
+
+Post-compile:
+  Cell count       : 38,840
+  Total cell area  : 38,701.025551
+  Setup slack      : +0.05 ns
+  Hold slack       : +0.00 ns
+
+Post-scan:
+  Cell count       : 38,841
+  Total cell area  : 38,733.029556
+  Setup slack      : +0.05 ns
+  Hold slack       : +0.00 ns
+
+Clock gating:
+  Generated clock-gating structures : 7
+
+Scan:
+  Number of chains : 3
+  Scan cells       : 42
+  Cells per chain  : 14
+
+Pre-layout Design Compiler power estimate:
+  Internal power : 146.9005 uW
+  Switching power: 39.6698 uW
+  Dynamic power  : 186.5703 uW
+  Leakage power  : 1.9015 mW
+  Approx. total  : 2.0881 mW
+
+Note:
+  The synthesis power result is a pre-layout estimate.
+  Final post-route SAIF-based power results are reported separately.

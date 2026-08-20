@@ -1,10 +1,10 @@
-# backend_prep.tcl
-# From the physical 29-buffer Hold ECO trial DB, generate PrimeTime handoff only:
+# Final physical-design to PrimeTime handoff.
+# Generates:
 #   1. flat post-layout timing netlist
 #   2. SlowRC SPEF
 #   3. FastRC SPEF
 #
-# No GDS/LVS generation here. The saved canonical design is never overwritten.
+# The completed physical-design checkpoint is restored read-only by this flow.
 
 setDesignMode -process 28
 setMultiCpuUsage -local 8

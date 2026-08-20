@@ -6,9 +6,7 @@
 set TECH_LIB_PATH "/data/tsmc/28HPCPMMWAVE/dig_libs/TSMCHOME/digital/Front_End/timing_power_noise/NLDM"
 set search_path [list . "$TECH_LIB_PATH/tcbn28hpcplusbwp30p140_180a"]
 
-# NOTE: You must replace "your_target_library.db" with the actual 
-# standard cell .db file name located in the NLDM directory.
-# (e.g., tcbn28hpcplusbwp30p140_ssg0p81v125c.db)
+# TSMC 28 nm slow-corner standard-cell target library.
 set target_library "tcbn28hpcplusbwp30p140ssg0p81v125c.db"
 
 # Define DesignWare Synthetic Libraries
@@ -62,7 +60,7 @@ group_path -name FEEDTHR -from [remove_from_collection [all_inputs] $ports_clock
 # ==========================================================================
 # Pre-Compile Settings 
 # ==========================================================================
-# Save initial DB for future debug
+# Preserve the initial elaborated design database
 write -format ddc -hierarchy -output ../dataout/initial_${TopModule}.ddc ${TopModule}
 
 # Compile ultra settings
@@ -74,13 +72,13 @@ set compile_seqmap_propagate_high_effort false
 set case_analysis_with_logic_constants true
 set template_separator_style "_"
 
-# Disable register merging, LEC will pass easier
+# Preserve register structure for stable RTL-to-gate correspondence
 set_register_merging [ get_designs ${TopModule} ] false
 
 # Clock Gating
 set_clock_gating_style -sequential_cell latch -minimum_bitwidth 3
 
-# Fix VO-4 (Verilog assign statements) warning
+# Normalize multiple-port nets and constants for clean Verilog output
 set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
 
 # 5. Compile Design

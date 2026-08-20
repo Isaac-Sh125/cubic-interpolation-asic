@@ -79,10 +79,9 @@ module Control_Unit #(
 		end
 	end
 
-	// --- THE FIX ---
-	// Delay the pulse by 1 clock cycle!
-	// This ensures the SIPO has completely finished shifting the LSB
-	// before the Interpolator is allowed to latch the 16-bit word.
+	// Registered reconstructed-sample pulse.
+	// The terminal-count event is delayed by one clock so that the SIPO
+	// captures the final serial bit before the Interpolator latches the word.
 	reg tick_60M_reg;
 	always @(posedge clk or negedge rst_n) begin
 		if (!rst_n) 

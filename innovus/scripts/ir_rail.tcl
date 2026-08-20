@@ -1,7 +1,7 @@
 # ==========================================================================
 # ir_rail.tcl   TSMC 28nm (28HPCPMMWAVE)  --  static IR / rail analysis (VDDC/VSSC)
 # --------------------------------------------------------------------------
-# Ported from khamaysi 65nm ir_rail.tcl. KEY 28nm DIFFERENCE: there are NO
+# TSMC 28 nm rail-analysis flow. KEY 28 nm DIFFERENCE: there are NO
 # prebuilt Voltus PGV (.cl) libraries for 28HPCPMMWAVE (65nm had voltage_storm
 # tcbn65lp*.cl). So this script GENERATES a techonly PGV from LEF+QRC first
 # (standard cells modelled as resistive rails + current sinks), then runs

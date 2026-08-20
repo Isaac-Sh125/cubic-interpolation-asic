@@ -5,8 +5,8 @@ module MinAJ2_Datapath (
 	input  wire sipo_enable,
 	input  wire tick_60M,     
 	input  wire [3:0] sub_count, 
-	input  wire is_start,     // Ignored, handled locally now
-	input  wire is_end,       // Ignored, handled locally now
+	input  wire is_start,     // Reserved interface input; edge handling is local to Interpolator
+	input  wire is_end,       // Reserved interface input; edge handling is local to Interpolator
 	input  wire [2:0] L_val,
 	input  wire mode_15bit,
 	input  wire serial_in,
@@ -46,7 +46,7 @@ module MinAJ2_Datapath (
 	);
 
 	// =====================================================
-	// 5) FIR FILTER (BYPASSED FOR NOW)
+	// 5) FIR FILTER
 	// =====================================================
 	 FIR_LPF_TRANSPOSED u_fir (
 		.clk     (clk),

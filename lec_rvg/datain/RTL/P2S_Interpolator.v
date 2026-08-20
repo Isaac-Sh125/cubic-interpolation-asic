@@ -5,7 +5,7 @@ module P2S_Interpolator (
 	input  wire rst_n,
 	input  wire [3:0] sub_count, 
 	input  wire [2:0] L_val,     
-	input  wire interp_valid, // NEW: Gates the output to prevent startup garbage
+	input  wire interp_valid, // Enables scheduling only after the interpolation window is valid
 
 	input  wire signed [15:0] y0, y1, y2, y3, y4,
 

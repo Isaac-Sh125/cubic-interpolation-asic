@@ -1,0 +1,114 @@
+CUBIC Interpolation DSP ASIC
+Final Post-Route Power Analysis Summary
+=======================================
+
+Method:
+  SAIF-annotated static power analysis
+
+Physical database:
+  final_hold_eco_iter4b_trial
+
+Analysis view:
+  SlowView
+  SS core, 0.81 V, 125 C
+  SlowRC / cworst parasitics
+
+Activity source:
+  Gate-level simulation SAIF
+
+SAIF hierarchy mapping:
+  Simulation scope : design_tb/dut
+  Physical block   : I0
+
+Annotation coverage:
+  47,764 / 48,596
+  98.287926%
+
+
+Whole-Chip and Core Power
+-------------------------
+
+L       Chip Power      Core I0 Power
+L2      22.9837 mW      4.3920 mW
+L3      28.8508 mW      5.0040 mW
+L4      34.9646 mW      5.7110 mW
+L5      40.3975 mW      6.2380 mW
+
+
+L5 Whole-Chip Power Breakdown
+-----------------------------
+
+Internal power  : 26.65038128 mW   65.9704%
+Switching power : 11.66117741 mW   28.8661%
+Leakage power   :  2.08593870 mW    5.1635%
+Total power     : 40.39749739 mW
+
+
+L5 Power by Supply Rail
+-----------------------
+
+POC:
+  Voltage   : 1.62 V
+  Total     : 23.68 mW
+  Percentage: 58.61%
+
+VDDP:
+  Voltage   : 1.62 V
+  Total     : 9.787 mW
+  Percentage: 24.23%
+
+VDDC:
+  Voltage   : 0.81 V
+  Total     : 6.932 mW
+  Percentage: 17.16%
+
+
+L5 Hierarchical Power
+---------------------
+
+Core I0:
+  Internal : 2.355 mW
+  Switching: 1.831 mW
+  Leakage  : 2.052 mW
+  Total    : 6.238 mW
+  Chip share: 15.44%
+
+I-channel Interpolator:
+  Internal : 0.1942 mW
+  Switching: 0.1947 mW
+  Leakage  : 0.8701 mW
+  Total    : 1.259 mW
+
+Q-channel Interpolator:
+  Internal : 0.1984 mW
+  Switching: 0.1936 mW
+  Leakage  : 0.8741 mW
+  Total    : 1.266 mW
+
+I-channel FIR:
+  Internal : 0.8220 mW
+  Switching: 0.5824 mW
+  Leakage  : 0.1434 mW
+  Total    : 1.548 mW
+
+Q-channel FIR:
+  Internal : 0.8210 mW
+  Switching: 0.5872 mW
+  Leakage  : 0.1435 mW
+  Total    : 1.552 mW
+
+
+Interpretation
+--------------
+
+Power increases as the interpolation factor L increases.
+
+The higher interpolation factors generate more valid output-sample events per
+input interval, increasing switching activity in the active DSP datapath and
+especially in the valid-driven FIR processing.
+
+The final reported project power result for the highest-rate L5 configuration
+is:
+
+  40.3975 mW whole-chip
+  6.2380 mW DSP core

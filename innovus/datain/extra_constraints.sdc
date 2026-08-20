@@ -1,6 +1,6 @@
 # ============================================================================
 # extra_constraints.sdc  -  PAD-WRAPPED (P&R) level only, for the 28nm port.
-# Ported from khamaysi's 65nm final_tape_out/innovus/datain/extra_constraints.sdc
+# Additional configuration-state timing constraints for the TSMC 28 nm implementation
 #
 # The frame CONFIGURATION registers L_val and mode_15bit are set ONCE from the
 # serial header (Control_Unit.v, cfg_valid) and then held constant for the whole

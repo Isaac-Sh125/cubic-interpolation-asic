@@ -129,9 +129,9 @@ module Interpolator #(
 		u1 = 0; u2 = 0; u3 = 0; u4 = 0; 
 		case (L_val)
 			3'd2: begin u1 = 16'h1000; end
-			3'd3: begin u1 = 16'h0AAB; u2 = 16'h1555; end // Corrected LSBs
+			3'd3: begin u1 = 16'h0AAB; u2 = 16'h1555; end // Q3.13 phase points
 			3'd4: begin u1 = 16'h0800; u2 = 16'h1000; u3 = 16'h1800; end
-			3'd5: begin u1 = 16'h0666; u2 = 16'h0CCD; u3 = 16'h1333; u4 = 16'h199A; end // Corrected LSBs
+			3'd5: begin u1 = 16'h0666; u2 = 16'h0CCD; u3 = 16'h1333; u4 = 16'h199A; end // Q3.13 phase points
 			default: ;
 		endcase
 	end

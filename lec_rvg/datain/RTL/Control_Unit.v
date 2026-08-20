@@ -79,7 +79,7 @@ module Control_Unit #(
 		end
 	end
 
-	// --- THE FIX ---
+	// Registered reconstructed-sample pulse.
 	// Delay the pulse by 1 clock cycle!
 	// This ensures the SIPO has completely finished shifting the LSB
 	// before the Interpolator is allowed to latch the 16-bit word.

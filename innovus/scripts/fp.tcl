@@ -3,7 +3,7 @@
 set PAD_DEPTH 110.0   ;# die edge -> inner pad edge (IO boundary)
 set GAP        50.0   ;# IO-boundary -> core  (die-seal to core-seal)
 set CORE_INSET [expr {$PAD_DEPTH + $GAP}]   ;# 160
-set DIE       880.0   ;# core = 560 (~54% util), pad ring fits (min ~520/side)
+set DIE       880.0   ;# produces a 560 um core with the configured 160 um inset
 setFPlanMode -snapDieGrid manufacturing -snapCoreGrid manufacturing -snapPlaceBlockageGrid manufacturing
 floorPlan -site core -b \
     0.0 0.0 $DIE $DIE \

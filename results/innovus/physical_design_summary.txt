@@ -1,0 +1,89 @@
+CUBIC Interpolation DSP ASIC
+Final Physical Design Summary
+=============================
+
+Tool:
+  Cadence Innovus 22.15-s091_1
+
+Technology:
+  TSMC 28 nm HPC+
+  9-layer metal stack
+
+Floorplan:
+  Die                 : 880 x 880 um
+  Core                : 560 x 560 um
+  Pad depth           : 110 um
+  IO-to-core gap      : 50 um
+  Core inset          : 160 um
+
+Power Distribution:
+  Core rails          : VDDC / VSSC
+  Pad rails           : VDDP / VSSP / POC
+  Core ring           : M9 horizontal / M8 vertical
+  Ring width          : 10 um
+  Ring spacing        : 10 um
+  Ring offset         : 10 um
+  Vertical stripes    : M8
+  Horizontal stripes  : M9
+  Stripe width        : 4 um
+  Stripe spacing      : 4 um
+  Stripe pair pitch   : 70 um
+
+MMMC:
+  Setup view          : SlowView
+  Hold view           : FastView
+  Slow RC             : cworst, 125 C
+  Fast RC             : cbest, -40 C
+
+Clock Tree:
+  Clock source             : I5/I1/C
+  Clock period             : 1.04 ns
+  Clock sinks              : 1138
+  Skew-group sources       : 1
+  Constrained sinks        : 1132
+  Unconstrained sinks      : 6
+  Clock gates              : 6
+  Clock buffers            : 17
+  Clock inverters          : 0
+  Buffering depth          : 2 - 3
+  SlowDC setup skew        : 0.016 ns (16 ps)
+  SlowDC setup-late target : 0.023 ns (23 ps)
+  FastDC hold skew         : 0.013 ns (13 ps)
+  Worst slow leaf slew     : 0.049 ns
+  Slow slew target         : 0.050 ns
+  Clock-tree DRVs          : 0
+
+Post-Route Closure:
+  Data-hold insertions        : 31
+  Clock-gating hold buffers   : 4
+  Scan-enable buffer          : 1
+  Total targeted insertions   : 36
+
+Final Innovus Timing:
+  Setup WNS           : +0.122 ns
+  Setup TNS           : 0.000 ns
+  Setup violations    : 0
+
+  Hold WNS            : +0.001 ns
+  Hold TNS            : 0.000 ns
+  Hold violations     : 0
+
+Final Electrical Constraints:
+  max_cap violations     : 0
+  max_tran violations    : 0
+  max_fanout violations  : 0
+  max_length violations  : 0
+
+Final Density:
+  Standard-cell density  : 12.419%
+  Density with fillers   : 96.411%
+
+Physical Verification:
+  Innovus DRC          : 0 violations
+  Connectivity         : PASS
+  Connectivity warnings: 0
+
+PrimeTime Handoff:
+  Flat timing netlist  : top_post_layout.v
+  Slow parasitics      : top_slow.SPEF
+  Fast parasitics      : top_fast.SPEF

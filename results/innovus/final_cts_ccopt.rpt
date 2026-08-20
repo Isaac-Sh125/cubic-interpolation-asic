@@ -1,0 +1,842 @@
+======================================================================
+ CUBIC Interpolation DSP ASIC - Final CCOpt Clock Tree Report
+======================================================================
+
+Design      : top
+Clock trees : clk
+Skew groups : clk/TypCM
+
+======================================================================
+ SKEW GROUP REPORT
+======================================================================
+
+Multithreaded Timing Analysis is initialized with 8 threads
+
+Ignoring AAE DB Resetting ...
+Updating timing graph...
+  
+  Leaving CCOpt scope - BuildTimeGraph...
+AAE_INFO: opIsDesignInPostRouteState() is 1
+AAE_INFO: resetNetProps viewIdx 0 
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: top
+# Design Mode: 28nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+#Extract in post route mode
+#Finish check_net_pin_list step Enter extract_rc_in_nr_cmd
+#Fast data preparation for tQuantus.
+#Start routing data preparation on Thu Aug 20 12:44:35 2026
+#
+# M1           H   Track-Pitch = 0.10000    Line-2-Via Pitch = 0.10000
+# M2           V   Track-Pitch = 0.13500    Line-2-Via Pitch = 0.10000
+# M3           H   Track-Pitch = 0.10000    Line-2-Via Pitch = 0.10000
+# M4           V   Track-Pitch = 0.10000    Line-2-Via Pitch = 0.10000
+# M5           H   Track-Pitch = 0.10000    Line-2-Via Pitch = 0.10000
+# M6           V   Track-Pitch = 0.10000    Line-2-Via Pitch = 0.10000
+# M7           H   Track-Pitch = 0.20000    Line-2-Via Pitch = 0.20000
+# M8           V   Track-Pitch = 0.20000    Line-2-Via Pitch = 0.20000
+# M9           H   Track-Pitch = 1.00000    Line-2-Via Pitch = 1.00000
+# AP           V   Track-Pitch = 4.50000    Line-2-Via Pitch = 4.50000
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer M3's pitch = 0.10000.
+#Using automatically generated G-grids.
+#Done routing data preparation.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2502.03 (MB), peak = 2511.05 (MB)
+#Start routing data preparation on Thu Aug 20 12:44:35 2026
+#
+#Bottom routing layer index=1(M1), bottom routing layer for shielding=1(M1), bottom shield layer=1(M1)
+#shield_bottom_stripe_layer=1(M1), shield_top_stripe_layer=10(AP)
+#pin_access_rlayer=2(M2)
+#shield_top_dpt_rlayer=-1 top_rlayer=10 top_trim_metal_rlayer=-1 rlayer_lowest=1 bottom_rlayer=1
+#enable_trim_layer_shield=F enable_dpt_layer_shield=F has_line_end_grid=F
+#enable_dpt_layer_shield=F
+#has_line_end_grid=F
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer M3's pitch = 0.10000.
+#Using automatically generated G-grids.
+#Done routing data preparation.
+#cpu time = 00:00:02, elapsed time = 00:00:01, memory = 2545.04 (MB), peak = 2545.29 (MB)
+#
+#Start tQuantus RC extraction...
+#Start building rc corner(s)...
+#Number of RC Corner = 2
+#Corner SlowRC /tech/tsmc/28HPCPMMWAVE/QRC/1.8a/9m/cworst/qrcTechFile 125.000000 (real) 
+#Corner FastRC /tech/tsmc/28HPCPMMWAVE/QRC/1.8a/9m/cbest/qrcTechFile -40.000000 (real) 
+#(i=10, n=10 2000)
+#M1 -> M1 (1)
+#M2 -> M2 (2)
+#M3 -> M3 (3)
+#M4 -> M4 (4)
+#M5 -> M5 (5)
+#M6 -> M6 (6)
+#M7 -> M7 (7)
+#M8 -> M8 (8)
+#M9 -> M9 (9)
+#AP -> AP (10)
+#SADV-On
+# Corner(s) : 
+#SlowRC [125.00] 
+#FastRC [-40.00]
+# Corner id: 0
+# Layout Scale: 0.900000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 125.000000
+# Ref. Temp   : 25.000000
+# Corner id: 1
+# Layout Scale: 0.900000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : -40.000000
+# Ref. Temp   : 25.000000
+#SADV-Off
+#
+#layer[8] tech width 200 != ict width 800.0
+#
+#layer[8] tech spc 200 != ict spc 800.0
+#
+#layer[9] tech width 1000 != ict width 4000.0
+#
+#layer[9] tech spc 1000 != ict spc 2000.0
+#total pattern=220 [104, 8756]
+#Reading previously stored rc_model file ( /project/verif/users/yitzhak2/ws/ex_vlsi_1/final_script/innovus/dataout/design_saves/final_hold_eco_iter4b_trial.dat/libs/misc/rc_model.bin ) ...
+#found CAPMODEL /tech/tsmc/28HPCPMMWAVE/QRC/1.8a/9m/cworst/qrcTechFile
+#found CAPMODEL /tech/tsmc/28HPCPMMWAVE/QRC/1.8a/9m/cbest/qrcTechFile
+#found RESMODEL /tech/tsmc/28HPCPMMWAVE/QRC/1.8a/9m/cworst/qrcTechFile 125.000000 
+#found RESMODEL /tech/tsmc/28HPCPMMWAVE/QRC/1.8a/9m/cbest/qrcTechFile -40.000000 
+#number model r/c [2,2] [104,8756] read
+#0 rcmodel(s) requires rebuild
+#Build RC corners: cpu time = 00:00:01, elapsed time = 00:00:01, memory = 2577.12 (MB), peak = 2593.25 (MB)
+#Finish check_net_pin_list step Enter extract
+#Start init net ripin tree building
+#Finish init net ripin tree building
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.80 (MB)
+#Total memory = 2577.93 (MB)
+#Peak memory = 2593.25 (MB)
+#Using multithreading with 8 threads.
+#begin processing metal fill model file
+#end processing metal fill model file
+#Length limit = 200 pitches
+#opt mode = 2
+#Finish check_net_pin_list step Fix net pin list
+#Start generate extraction boxes.
+#
+#Extract using 30 x 30 Hboxes
+#21x21 initial hboxes
+#Use area based hbox pruning.
+#0/0 hboxes pruned.
+#Complete generating extraction boxes.
+#Extract 225 hboxes with 8 threads on machine with  Xeon 2.60GHz 43008KB Cache 112CPU...
+#Process 0 special clock nets for rc extraction
+#Total 48538 nets were built. 1970 nodes added to break long wires. 0 net(s) have incomplete routes.
+#Run Statistics for Extraction:
+#   Cpu time = 00:00:34, elapsed time = 00:00:04 .
+#   Increased memory =   475.05 (MB), total memory =  3052.99 (MB), peak memory =  3053.34 (MB)
+#Register nets and terms for rcdb /tmp/622087.1.normal/innovus_temp_3463655_micron3.eng.tau.ac.il_yitzhak2_QlPjAg/nr3463655_4SsUj5.rcdb.d
+#Finish registering nets and terms for rcdb.
+#Simplify RC tree: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2883.55 (MB), peak = 3053.36 (MB)
+#RC Statistics: 215764 Res, 114325 Ground Cap, 17888 XCap (Edge to Edge)
+#RC V/H edge ratio: 0.34, Avg V/H Edge Length: 2332.80 (89302), Avg L-Edge Length: 4272.89 (96368)
+#Nets and terms are pre-registered for rcdb /tmp/622087.1.normal/innovus_temp_3463655_micron3.eng.tau.ac.il_yitzhak2_QlPjAg/nr3463655_4SsUj5.rcdb.d.
+#Start writing RC data.
+#Finish writing RC data
+#Finish writing rcdb with 265606 nodes, 217068 edges, and 41952 xcaps
+#cpu time = 00:00:01, elapsed time = 00:00:00, memory = 2879.27 (MB), peak = 3053.36 (MB)
+Restoring parasitic data from file '/tmp/622087.1.normal/innovus_temp_3463655_micron3.eng.tau.ac.il_yitzhak2_QlPjAg/nr3463655_4SsUj5.rcdb.d' ...
+Reading RCDB with compressed RC data.
+Reading RCDB with compressed RC data.
+Begin read_parasitics... (cpu: 0:00:00.0 real: 0:00:00.0 mem: 3205.699M)
+Following multi-corner parasitics specified:
+	/tmp/622087.1.normal/innovus_temp_3463655_micron3.eng.tau.ac.il_yitzhak2_QlPjAg/nr3463655_4SsUj5.rcdb.d (rcdb)
+Reading RCDB with compressed RC data.
+		Cell top has rcdb /tmp/622087.1.normal/innovus_temp_3463655_micron3.eng.tau.ac.il_yitzhak2_QlPjAg/nr3463655_4SsUj5.rcdb.d specified
+Cell top, hinst 
+Reading RCDB with compressed RC data.
+Done read_parasitics... (cpu: 0:00:00.8 real: 0:00:00.0 mem: 3205.699M)
+#
+#Restore RCDB.
+#
+#Complete tQuantus RC extraction.
+#Cpu time = 00:00:40
+#Elapsed time = 00:00:07
+#Increased memory = 336.29 (MB)
+#Total memory = 2881.70 (MB)
+#Peak memory = 3053.36 (MB)
+#
+#1970 inserted nodes are removed
+#Restored 0 tie nets, 0 tie snets, 0 partial nets
+#Start Inst Signature in MT(0)
+#Start Net Signature in MT(32338514)
+#Calculate SNet Signature in MT (73782291)
+#Run time and memory report for RC extraction:
+#RC extraction running on  Xeon 2.60GHz 43008KB Cache 112CPU.
+#Run Statistics for snet signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 , scale factor =  2.65/8, scale score = 0.33.
+#    Increased memory =     0.00 (MB), total memory =  2543.68 (MB), peak memory =  3053.36 (MB)
+#Run Statistics for Net Final Signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  2543.93 (MB), peak memory =  3053.36 (MB)
+#Run Statistics for Net launch:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 , scale factor =  7.69/8, scale score = 0.96.
+#    Increased memory =     0.06 (MB), total memory =  2543.93 (MB), peak memory =  3053.36 (MB)
+#Run Statistics for Net init_dbsNet_slist:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.25 (MB), total memory =  2543.87 (MB), peak memory =  3053.36 (MB)
+#Run Statistics for net signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 , scale factor =  6.16/8, scale score = 0.77.
+#    Increased memory =     0.06 (MB), total memory =  2543.68 (MB), peak memory =  3053.36 (MB)
+#Run Statistics for inst signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 , scale factor =  4.96/8, scale score = 0.62.
+#    Increased memory =    -2.62 (MB), total memory =  2543.61 (MB), peak memory =  3053.36 (MB)
+Start delay calculation (fullDC) (8 T). (MEM=3049.54)
+Reading RCDB with compressed RC data.
+AAE_INFO: 8 threads acquired from CTE.
+**WARN: (IMPESI-3095):	Net: 'serial_in_I' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'clk' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'sanity_in_inv' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'serial_in_Q' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'scan_in1' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'scan_en' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'sanity_in_ff' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'rst_n' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'scan_in2' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'scan_in3' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'sanity_in_ff' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'clk' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'rst_n' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'sanity_in_inv' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'scan_in3' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'scan_in1' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'scan_en' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'scan_in2' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'serial_in_I' has no receivers. SI analysis is not performed.
+**WARN: (IMPESI-3095):	Net: 'serial_in_Q' has no receivers. SI analysis is not performed.
+Total number of fetched objects 49089
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 48664,  100.0 percent of the nets selected for SI analysis
+End delay calculation. (MEM=4666.52 CPU=0:00:10.8 REAL=0:00:02.0)
+End delay calculation (fullDC). (MEM=4666.52 CPU=0:00:12.6 REAL=0:00:02.0)
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 4578.5M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.4, REAL = 0:00:00.0, MEM = 4578.5M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (8 T). (MEM=4282.68)
+Glitch Analysis: View SlowView -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View SlowView -- Total Number of Nets Analyzed = 49089. 
+Total number of fetched objects 49089
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 48664,  0.1 percent of the nets selected for SI analysis
+End delay calculation. (MEM=4760.12 CPU=0:00:00.6 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=4760.12 CPU=0:00:00.7 REAL=0:00:00.0)
+  Leaving CCOpt scope - BuildTimeGraph done. (took cpu=0:01:12 real=0:00:17.5)
+Updating timing graph done.
+Updating latch analysis...
+  Leaving CCOpt scope - Updating latch analysis...
+  Leaving CCOpt scope - Updating latch analysis done. (took cpu=0:00:01.2 real=0:00:00.2)
+Updating latch analysis done.
+Updating ideal nets and annotations...
+Clock tree spec update: Ideal nets, transition and delay annotations were updated to match active timing constraints.
+Updating ideal nets and annotations done. (took cpu=0:00:00.0 real=0:00:00.0)
+Clock tree timing engine global stage delay update for SlowDC:setup.early...
+Clock tree timing engine global stage delay update for SlowDC:setup.early done. (took cpu=0:00:00.2 real=0:00:00.1)
+Clock tree timing engine global stage delay update for SlowDC:setup.late...
+Clock tree timing engine global stage delay update for SlowDC:setup.late done. (took cpu=0:00:00.0 real=0:00:00.0)
+Clock tree timing engine global stage delay update for FastDC:hold.early...
+Clock tree timing engine global stage delay update for FastDC:hold.early done. (took cpu=0:00:00.0 real=0:00:00.0)
+Clock tree timing engine global stage delay update for FastDC:hold.late...
+Clock tree timing engine global stage delay update for FastDC:hold.late done. (took cpu=0:00:00.0 real=0:00:00.0)
+
+Skew Group Structure:
+=====================
+
+-----------------------------------------------------------------
+Skew Group    Sources    Constrained Sinks    Unconstrained Sinks
+-----------------------------------------------------------------
+clk/TypCM        1             1132                    6
+-----------------------------------------------------------------
+
+Skew Group Summary:
+===================
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Timing Corner         Skew Group    ID Target    Min ID    Max ID    Avg ID    Std.Dev. ID    Skew Target Type    Skew Target    Skew     Skew window occupancy
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+SlowDC:setup.early    clk/TypCM         -        0.123     0.140     0.133        0.003       ignored                  -         0.016              -
+SlowDC:setup.late     clk/TypCM     none         0.123     0.140     0.133        0.003       auto computed        0.023         0.016    100% {0.123, 0.140}
+FastDC:hold.early     clk/TypCM         -        0.081     0.093     0.088        0.003       ignored                  -         0.013              -
+FastDC:hold.late      clk/TypCM         -        0.081     0.093     0.088        0.003       ignored                  -         0.013              -
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* - indicates that target was not met.
+
+Skew Group Min/Max path pins:
+=============================
+
+------------------------------------------------------------------------
+Timing Corner         Skew Group    Min ID    PathID    Max ID    PathID
+------------------------------------------------------------------------
+SlowDC:setup.early    clk/TypCM     0.123       1       0.140       2
+-    min I0/u_control_tick_60M_reg_reg/CP
+-    max I0/u_path_Q_u_fir/acc_stage_reg_9__32_/CP
+SlowDC:setup.late     clk/TypCM     0.123       3       0.140       4
+-    min I0/u_control_tick_60M_reg_reg/CP
+-    max I0/u_path_Q_u_fir/acc_stage_reg_9__32_/CP
+FastDC:hold.early     clk/TypCM     0.081       5       0.093       6
+-    min I0/u_control_tick_60M_reg_reg/CP
+-    max I0/u_path_Q_u_fir/acc_stage_reg_1__32_/CP
+FastDC:hold.late      clk/TypCM     0.081       7       0.093       8
+-    min I0/u_control_tick_60M_reg_reg/CP
+-    max I0/u_path_Q_u_fir/acc_stage_reg_1__32_/CP
+------------------------------------------------------------------------
+
+Timing for timing corner SlowDC:setup.early, min clock_path:
+============================================================
+
+PathID    : 1
+Path type : skew group clk/TypCM (path 1 of 1)
+Start     : I5/I1/C
+End       : I0/u_control_tick_60M_reg_reg/CP
+Delay     : 0.123
+
+---------------------------------------------------------------------------------------------------------
+Name  Lib cell           Event  Incr   Arrival  Slew   Cap    Location           Distance  Fanout  Status
+                                (ns)   (ns)     (ns)   (pF)                      (um)              
+-- Clockpath trace --------------------------------------------------------------------------------------
+I5/I1/C
+-     PDDW04DGZ_H_G      rise   -       0.000   0.000  0.034  (223.170,770.130)  -            1    
+I0/CTS_csf_buf_00017/I
+-     CKBD12BWP30P140    rise   0.021   0.021   0.039  -      (399.285,521.300)  424.945   -       
+I0/CTS_csf_buf_00017/Z
+-     CKBD12BWP30P140    rise   0.027   0.047   0.017  0.028  (400.500,521.200)    1.315      5    
+I0/CTS_ccl_a_buf_00015/I
+-     CKBD2BWP30P140     rise   0.004   0.051   0.021  -      (429.390,510.500)   39.590   -       
+I0/CTS_ccl_a_buf_00015/Z
+-     CKBD2BWP30P140     rise   0.034   0.086   0.032  0.011  (429.660,510.300)    0.470      7    
+I0/CTS_ccl_a_buf_00002/I
+-     CKBD6BWP30P140     rise   0.001   0.086   0.032  -      (444.240,496.100)   28.780   -       
+I0/CTS_ccl_a_buf_00002/Z
+-     CKBD6BWP30P140     rise   0.036   0.123   0.038  0.041  (444.915,496.000)    0.775     25    
+I0/u_control_tick_60M_reg_reg/CP
+-     SDFCNQD0BWP30P140  rise   0.001   0.123   0.038  -      (433.710,513.300)   28.505   -       
+---------------------------------------------------------------------------------------------------------
+
+Timing for timing corner SlowDC:setup.early, max clock_path:
+============================================================
+
+PathID    : 2
+Path type : skew group clk/TypCM (path 1 of 1)
+Start     : I5/I1/C
+End       : I0/u_path_Q_u_fir/acc_stage_reg_8__34_/CP
+Delay     : 0.140
+
+--------------------------------------------------------------------------------------------------------
+Name  Lib cell          Event  Incr   Arrival  Slew   Cap    Location           Distance  Fanout  Status
+                               (ns)   (ns)     (ns)   (pF)                      (um)              
+-- Clockpath trace -------------------------------------------------------------------------------------
+I5/I1/C
+-     PDDW04DGZ_H_G     rise   -       0.000   0.000  0.034  (223.170,770.130)  -            1    
+I0/CTS_csf_buf_00017/I
+-     CKBD12BWP30P140   rise   0.021   0.021   0.039  -      (399.285,521.300)  424.945   -       
+I0/CTS_csf_buf_00017/Z
+-     CKBD12BWP30P140   rise   0.027   0.047   0.017  0.028  (400.500,521.200)    1.315      5    
+I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/A2
+-     AN2D8BWP30P140    rise   0.007   0.055   0.023  -      (475.155,497.000)   98.855   -       
+I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/Z
+-     AN2D8BWP30P140    rise   0.036   0.091   0.022  0.022  (475.830,497.200)    0.875      4    
+I0/u_path_Q_u_fir/CTS_ccl_a_buf_00008/I
+-     BUFFD8BWP30P140   rise   0.004   0.094   0.023  -      (541.035,485.300)   77.105   -       
+I0/u_path_Q_u_fir/CTS_ccl_a_buf_00008/Z
+-     BUFFD8BWP30P140   rise   0.040   0.134   0.045  0.066  (541.980,485.200)    1.045     87    
+I0/u_path_Q_u_fir/acc_stage_reg_8__34_/CP
+-     DFCNQD1BWP30P140  rise   0.005   0.140   0.046  -      (570.330,482.700)   30.850   -       
+--------------------------------------------------------------------------------------------------------
+
+Timing for timing corner SlowDC:setup.late, min clock_path:
+===========================================================
+
+PathID    : 3
+Path type : skew group clk/TypCM (path 1 of 1)
+Start     : I5/I1/C
+End       : I0/u_control_tick_60M_reg_reg/CP
+Delay     : 0.123
+
+---------------------------------------------------------------------------------------------------------
+Name  Lib cell           Event  Incr   Arrival  Slew   Cap    Location           Distance  Fanout  Status
+                                (ns)   (ns)     (ns)   (pF)                      (um)              
+-- Clockpath trace --------------------------------------------------------------------------------------
+I5/I1/C
+-     PDDW04DGZ_H_G      rise   -       0.000   0.000  0.034  (223.170,770.130)  -            1    
+I0/CTS_csf_buf_00017/I
+-     CKBD12BWP30P140    rise   0.021   0.021   0.039  -      (399.285,521.300)  424.945   -       
+I0/CTS_csf_buf_00017/Z
+-     CKBD12BWP30P140    rise   0.027   0.047   0.017  0.028  (400.500,521.200)    1.315      5    
+I0/CTS_ccl_a_buf_00015/I
+-     CKBD2BWP30P140     rise   0.004   0.051   0.021  -      (429.390,510.500)   39.590   -       
+I0/CTS_ccl_a_buf_00015/Z
+-     CKBD2BWP30P140     rise   0.034   0.086   0.032  0.011  (429.660,510.300)    0.470      7    
+I0/CTS_ccl_a_buf_00002/I
+-     CKBD6BWP30P140     rise   0.001   0.086   0.032  -      (444.240,496.100)   28.780   -       
+I0/CTS_ccl_a_buf_00002/Z
+-     CKBD6BWP30P140     rise   0.036   0.123   0.038  0.041  (444.915,496.000)    0.775     25    
+I0/u_control_tick_60M_reg_reg/CP
+-     SDFCNQD0BWP30P140  rise   0.001   0.123   0.038  -      (433.710,513.300)   28.505   -       
+---------------------------------------------------------------------------------------------------------
+
+Timing for timing corner SlowDC:setup.late, max clock_path:
+===========================================================
+
+PathID    : 4
+Path type : skew group clk/TypCM (path 1 of 1)
+Start     : I5/I1/C
+End       : I0/u_path_Q_u_fir/acc_stage_reg_8__34_/CP
+Delay     : 0.140
+
+--------------------------------------------------------------------------------------------------------
+Name  Lib cell          Event  Incr   Arrival  Slew   Cap    Location           Distance  Fanout  Status
+                               (ns)   (ns)     (ns)   (pF)                      (um)              
+-- Clockpath trace -------------------------------------------------------------------------------------
+I5/I1/C
+-     PDDW04DGZ_H_G     rise   -       0.000   0.000  0.034  (223.170,770.130)  -            1    
+I0/CTS_csf_buf_00017/I
+-     CKBD12BWP30P140   rise   0.021   0.021   0.039  -      (399.285,521.300)  424.945   -       
+I0/CTS_csf_buf_00017/Z
+-     CKBD12BWP30P140   rise   0.027   0.047   0.017  0.028  (400.500,521.200)    1.315      5    
+I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/A2
+-     AN2D8BWP30P140    rise   0.007   0.055   0.023  -      (475.155,497.000)   98.855   -       
+I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/Z
+-     AN2D8BWP30P140    rise   0.036   0.091   0.022  0.022  (475.830,497.200)    0.875      4    
+I0/u_path_Q_u_fir/CTS_ccl_a_buf_00008/I
+-     BUFFD8BWP30P140   rise   0.004   0.094   0.023  -      (541.035,485.300)   77.105   -       
+I0/u_path_Q_u_fir/CTS_ccl_a_buf_00008/Z
+-     BUFFD8BWP30P140   rise   0.040   0.134   0.045  0.066  (541.980,485.200)    1.045     87    
+I0/u_path_Q_u_fir/acc_stage_reg_8__34_/CP
+-     DFCNQD1BWP30P140  rise   0.005   0.140   0.046  -      (570.330,482.700)   30.850   -       
+--------------------------------------------------------------------------------------------------------
+
+Timing for timing corner FastDC:hold.early, min clock_path:
+===========================================================
+
+PathID    : 5
+Path type : skew group clk/TypCM (path 1 of 1)
+Start     : I5/I1/C
+End       : I0/u_control_tick_60M_reg_reg/CP
+Delay     : 0.081
+
+---------------------------------------------------------------------------------------------------------
+Name  Lib cell           Event  Incr   Arrival  Slew   Cap    Location           Distance  Fanout  Status
+                                (ns)   (ns)     (ns)   (pF)                      (um)              
+-- Clockpath trace --------------------------------------------------------------------------------------
+I5/I1/C
+-     PDDW04DGZ_H_G      rise   -       0.000   0.000  0.032  (223.170,770.130)  -            1    
+I0/CTS_csf_buf_00017/I
+-     CKBD12BWP30P140    rise   0.020   0.020   0.038  -      (399.285,521.300)  424.945   -       
+I0/CTS_csf_buf_00017/Z
+-     CKBD12BWP30P140    rise   0.017   0.037   0.010  0.025  (400.500,521.200)    1.315      5    
+I0/CTS_ccl_a_buf_00015/I
+-     CKBD2BWP30P140     rise   0.003   0.040   0.014  -      (429.390,510.500)   39.590   -       
+I0/CTS_ccl_a_buf_00015/Z
+-     CKBD2BWP30P140     rise   0.020   0.060   0.018  0.011  (429.660,510.300)    0.470      7    
+I0/CTS_ccl_a_buf_00002/I
+-     CKBD6BWP30P140     rise   0.000   0.061   0.018  -      (444.240,496.100)   28.780   -       
+I0/CTS_ccl_a_buf_00002/Z
+-     CKBD6BWP30P140     rise   0.020   0.080   0.020  0.037  (444.915,496.000)    0.775     25    
+I0/u_control_tick_60M_reg_reg/CP
+-     SDFCNQD0BWP30P140  rise   0.000   0.081   0.020  -      (433.710,513.300)   28.505   -       
+---------------------------------------------------------------------------------------------------------
+
+Timing for timing corner FastDC:hold.early, max clock_path:
+===========================================================
+
+PathID    : 6
+Path type : skew group clk/TypCM (path 1 of 1)
+Start     : I5/I1/C
+End       : I0/u_path_Q_u_fir/acc_stage_reg_0__35_/CP
+Delay     : 0.093
+
+--------------------------------------------------------------------------------------------------------
+Name  Lib cell          Event  Incr   Arrival  Slew   Cap    Location           Distance  Fanout  Status
+                               (ns)   (ns)     (ns)   (pF)                      (um)              
+-- Clockpath trace -------------------------------------------------------------------------------------
+I5/I1/C
+-     PDDW04DGZ_H_G     rise   -       0.000   0.000  0.032  (223.170,770.130)  -            1    
+I0/CTS_csf_buf_00017/I
+-     CKBD12BWP30P140   rise   0.020   0.020   0.038  -      (399.285,521.300)  424.945   -       
+I0/CTS_csf_buf_00017/Z
+-     CKBD12BWP30P140   rise   0.017   0.037   0.010  0.025  (400.500,521.200)    1.315      5    
+I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/A2
+-     AN2D8BWP30P140    rise   0.006   0.043   0.016  -      (475.155,497.000)   98.855   -       
+I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/Z
+-     AN2D8BWP30P140    rise   0.020   0.063   0.012  0.020  (475.830,497.200)    0.875      4    
+I0/u_path_Q_u_fir/CTS_ccl_a_buf_00008/I
+-     BUFFD8BWP30P140   rise   0.003   0.066   0.014  -      (541.035,485.300)   77.105   -       
+I0/u_path_Q_u_fir/CTS_ccl_a_buf_00008/Z
+-     BUFFD8BWP30P140   rise   0.023   0.089   0.026  0.064  (541.980,485.200)    1.045     87    
+I0/u_path_Q_u_fir/acc_stage_reg_0__35_/CP
+-     DFCNQD1BWP30P140  rise   0.004   0.093   0.027  -      (571.950,492.500)   37.270   -       
+--------------------------------------------------------------------------------------------------------
+
+Timing for timing corner FastDC:hold.late, min clock_path:
+==========================================================
+
+PathID    : 7
+Path type : skew group clk/TypCM (path 1 of 1)
+Start     : I5/I1/C
+End       : I0/u_control_tick_60M_reg_reg/CP
+Delay     : 0.081
+
+---------------------------------------------------------------------------------------------------------
+Name  Lib cell           Event  Incr   Arrival  Slew   Cap    Location           Distance  Fanout  Status
+                                (ns)   (ns)     (ns)   (pF)                      (um)              
+-- Clockpath trace --------------------------------------------------------------------------------------
+I5/I1/C
+-     PDDW04DGZ_H_G      rise   -       0.000   0.000  0.032  (223.170,770.130)  -            1    
+I0/CTS_csf_buf_00017/I
+-     CKBD12BWP30P140    rise   0.020   0.020   0.038  -      (399.285,521.300)  424.945   -       
+I0/CTS_csf_buf_00017/Z
+-     CKBD12BWP30P140    rise   0.017   0.037   0.010  0.025  (400.500,521.200)    1.315      5    
+I0/CTS_ccl_a_buf_00015/I
+-     CKBD2BWP30P140     rise   0.003   0.040   0.014  -      (429.390,510.500)   39.590   -       
+I0/CTS_ccl_a_buf_00015/Z
+-     CKBD2BWP30P140     rise   0.020   0.060   0.018  0.011  (429.660,510.300)    0.470      7    
+I0/CTS_ccl_a_buf_00002/I
+-     CKBD6BWP30P140     rise   0.000   0.061   0.018  -      (444.240,496.100)   28.780   -       
+I0/CTS_ccl_a_buf_00002/Z
+-     CKBD6BWP30P140     rise   0.020   0.080   0.020  0.037  (444.915,496.000)    0.775     25    
+I0/u_control_tick_60M_reg_reg/CP
+-     SDFCNQD0BWP30P140  rise   0.000   0.081   0.020  -      (433.710,513.300)   28.505   -       
+---------------------------------------------------------------------------------------------------------
+
+Timing for timing corner FastDC:hold.late, max clock_path:
+==========================================================
+
+PathID    : 8
+Path type : skew group clk/TypCM (path 1 of 1)
+Start     : I5/I1/C
+End       : I0/u_path_Q_u_fir/acc_stage_reg_0__35_/CP
+Delay     : 0.093
+
+--------------------------------------------------------------------------------------------------------
+Name  Lib cell          Event  Incr   Arrival  Slew   Cap    Location           Distance  Fanout  Status
+                               (ns)   (ns)     (ns)   (pF)                      (um)              
+-- Clockpath trace -------------------------------------------------------------------------------------
+I5/I1/C
+-     PDDW04DGZ_H_G     rise   -       0.000   0.000  0.032  (223.170,770.130)  -            1    
+I0/CTS_csf_buf_00017/I
+-     CKBD12BWP30P140   rise   0.020   0.020   0.038  -      (399.285,521.300)  424.945   -       
+I0/CTS_csf_buf_00017/Z
+-     CKBD12BWP30P140   rise   0.017   0.037   0.010  0.025  (400.500,521.200)    1.315      5    
+I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/A2
+-     AN2D8BWP30P140    rise   0.006   0.043   0.016  -      (475.155,497.000)   98.855   -       
+I0/u_path_Q_u_fir/clk_gate_y_out_reg_main_gate/Z
+-     AN2D8BWP30P140    rise   0.020   0.063   0.012  0.020  (475.830,497.200)    0.875      4    
+I0/u_path_Q_u_fir/CTS_ccl_a_buf_00008/I
+-     BUFFD8BWP30P140   rise   0.003   0.066   0.014  -      (541.035,485.300)   77.105   -       
+I0/u_path_Q_u_fir/CTS_ccl_a_buf_00008/Z
+-     BUFFD8BWP30P140   rise   0.023   0.089   0.026  0.064  (541.980,485.200)    1.045     87    
+I0/u_path_Q_u_fir/acc_stage_reg_0__35_/CP
+-     DFCNQD1BWP30P140  rise   0.004   0.093   0.027  -      (571.950,492.500)   37.270   -       
+--------------------------------------------------------------------------------------------------------
+
+
+
+======================================================================
+ CLOCK TREE REPORT
+======================================================================
+
+Updating ideal nets and annotations...
+Clock tree spec update: Ideal nets, transition and delay annotations were updated to match active timing constraints.
+Updating ideal nets and annotations done. (took cpu=0:00:00.0 real=0:00:00.0)
+Clock tree timing engine global stage delay update for SlowDC:setup.early...
+Clock tree timing engine global stage delay update for SlowDC:setup.early done. (took cpu=0:00:00.2 real=0:00:00.0)
+Clock tree timing engine global stage delay update for SlowDC:setup.late...
+Clock tree timing engine global stage delay update for SlowDC:setup.late done. (took cpu=0:00:00.0 real=0:00:00.0)
+Clock tree timing engine global stage delay update for FastDC:hold.early...
+Clock tree timing engine global stage delay update for FastDC:hold.early done. (took cpu=0:00:00.0 real=0:00:00.0)
+Clock tree timing engine global stage delay update for FastDC:hold.late...
+Clock tree timing engine global stage delay update for FastDC:hold.late done. (took cpu=0:00:00.0 real=0:00:00.0)
+
+Clock DAG stats:
+================
+
+--------------------------------------------------------
+Cell type                 Count    Area      Capacitance
+--------------------------------------------------------
+Buffers                    17      29.232       0.028
+Inverters                   0       0.000       0.000
+Integrated Clock Gates      0       0.000       0.000
+Discrete Clock Gates        6       7.812       0.007
+Clock Logic                 0       0.000       0.000
+All                        23      37.044       0.035
+--------------------------------------------------------
+
+Clock DAG miscellaneous counts:
+===============================
+
+------------------------------
+Type                     Count
+------------------------------
+Roots                      1
+Preserved Ports            0
+Multiple Clock Inputs      0
+------------------------------
+
+
+Clock DAG sink counts:
+======================
+
+-------------------------
+Sink type           Count
+-------------------------
+Regular             1132
+Enable Latch           6
+Load Capacitance       0
+Antenna Diode          0
+Node Sink              0
+Total               1138
+-------------------------
+
+
+Clock DAG wire lengths:
+=======================
+
+--------------------
+Type     Wire Length
+--------------------
+Top          0.000
+Trunk     1179.070
+Leaf      3193.005
+Total     4372.075
+--------------------
+
+
+Clock DAG hp wire lengths:
+==========================
+
+-----------------------
+Type     hp Wire Length
+-----------------------
+Top            0.000
+Trunk        741.635
+Leaf        1321.620
+Total       2063.255
+-----------------------
+
+
+Clock DAG capacitances:
+=======================
+
+--------------------------------
+Type     Gate     Wire     Total
+--------------------------------
+Top      0.000    0.000    0.000
+Trunk    0.038    0.133    0.170
+Leaf     0.452    0.509    0.961
+Total    0.489    0.642    1.131
+--------------------------------
+
+
+Clock DAG sink capacitances:
+============================
+
+-----------------------------------------------
+Total    Average    Std. Dev.    Min      Max
+-----------------------------------------------
+0.455     0.000       0.000      0.000    0.000
+-----------------------------------------------
+
+
+Clock DAG net violations:
+=========================
+
+None
+
+
+Clock DAG primary half-corner transition distribution:
+======================================================
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Net Type    Target    Count    Average    Std. Dev.    Min      Max      Distribution                                                              Over Target
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Trunk       0.050       7       0.022       0.010      0.000    0.032    {6 <= 0.030ns, 1 <= 0.040ns, 0 <= 0.045ns, 0 <= 0.048ns, 0 <= 0.050ns}         -
+Leaf        0.050      17       0.042       0.005      0.034    0.049    {0 <= 0.030ns, 7 <= 0.040ns, 4 <= 0.045ns, 2 <= 0.048ns, 4 <= 0.050ns}         -
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Clock DAG library cell distribution:
+====================================
+
+------------------------------------------------
+Name               Type      Inst     Inst Area 
+                             Count    (um^2)
+------------------------------------------------
+CKBD12BWP30P140    buffer      9        19.278
+BUFFD8BWP30P140    buffer      4         6.048
+CKBD6BWP30P140     buffer      3         3.402
+CKBD2BWP30P140     buffer      1         0.504
+AN2D8BWP30P140     dcg         3         5.670
+AN2D4BWP30P140     dcg         1         1.134
+AN2D0BWP30P140     dcg         2         1.008
+------------------------------------------------
+
+
+
+Please note that the following tables reflect only the defined clock trees, so the flop counts might not include all flops in your design.
+
+Clock Tree Summary:
+===================
+
+----------------------------------------------------------------------------------------------------------------------
+Clock Tree  Clock  Bufs  Invs  Other  Max       Max     Max      Max          Standard   Wire   Gate   Clock Tree Root
+Name        Gates              Clock  Non-leaf  Leaf    Length   Source-sink  cell area  cap    cap    
+                               Cells  Fanout    Fanout  (um)     Resistance   (um^2)     (pF)   (pF)   
+                                                                 (Ohms)                                
+----------------------------------------------------------------------------------------------------------------------
+clk           6     17    0      0       7       100    425.035    14125.5     37.044    0.642  0.489  I5/I1/C
+----------------------------------------------------------------------------------------------------------------------
+
+Clock Sink Summary:
+===================
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+Clock Tree  Explicit      Implicit      Explicit     Implicit     Explicit   Implicit   Posedge  Negedge  Memory  Enable  Non enable  Other
+Name        exclude pins  exclude pins  ignore pins  ignore pins  stop pins  stop pins  Flops    Flops    Clock   Latch   Latch       Sinks
+                                                                                                          Pins    Sinks   Sinks       
+-------------------------------------------------------------------------------------------------------------------------------------------
+clk              0             0             0            0           0          0       1131       0       0       6         1         0
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Summary across all clock trees:
+===============================
+
+------------------------------------------------------------------------------------------------------------
+Clock  Bufs  Invs  Other  Max       Average   Max     Average  Max      Max          Standard   Wire   Gate
+Gates              Clock  Non-leaf  Non-leaf  Leaf    Leaf     Length   Source-sink  cell area  cap    cap
+                   Cells  Fanout    Fanout    Fanout  Fanout   (um)     Resistance   (um^2)     (pF)   (pF)
+                                                                        (Ohms)                         
+------------------------------------------------------------------------------------------------------------
+  6     17    0      0       7      4.14286    100    66.5882  425.035   1412.548     37.044    0.642  0.489
+------------------------------------------------------------------------------------------------------------
+
+Clock Sink Summary across all clock trees:
+==========================================
+
+-------------------------------------------------------------------------------------------------------------------------------
+Explicit      Implicit      Explicit     Implicit     Explicit   Implicit   Posedge  Negedge  Memory  Enable  Non enable  Other
+exclude pins  exclude pins  ignore pins  ignore pins  stop pins  stop pins  Flops    Flops    Clock   Latch   Latch       Sinks
+                                                                                              Pins    Sinks   Sinks       
+-------------------------------------------------------------------------------------------------------------------------------
+     0             0             0            0           0          0       1131       0       0       6         1         0
+-------------------------------------------------------------------------------------------------------------------------------
+
+Physical metrics across all clock trees:
+========================================
+
+------------------------------------------------------------------------
+Metric                               Minimum  Average  Maximum   Std.dev
+------------------------------------------------------------------------
+Source-sink routed net length (um)    4.375    86.485   425.035   82.376
+Source-sink manhattan distance (um)   3.845    83.471   424.945   83.069
+Source-sink resistance (Ohm)         89.553   388.012  1412.548  256.897
+------------------------------------------------------------------------
+
+Transition distribution for half-corner SlowDC:setup.late:
+==========================================================
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Net Type    Target    Count    Average    Std. Dev.    Min      Max      Distribution                                                              Over Target
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Trunk       0.050       7       0.022       0.010      0.000    0.032    {6 <= 0.030ns, 1 <= 0.040ns, 0 <= 0.045ns, 0 <= 0.048ns, 0 <= 0.050ns}         -
+Leaf        0.050      17       0.042       0.005      0.034    0.049    {0 <= 0.030ns, 7 <= 0.040ns, 4 <= 0.045ns, 2 <= 0.048ns, 4 <= 0.050ns}         -
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Count of violations across all clock trees:
+===========================================
+
+---------------------------------------------------------------------------------------
+Clock Tree  # Max capacitance  # Max resistance  # Max length  # Max fanout  # Slew
+Name        violations         violations        violations    violations    violations
+---------------------------------------------------------------------------------------
+clk                 0                 0               0             0            0
+---------------------------------------------------------------------------------------
+Total               0                 0               0             0            0
+---------------------------------------------------------------------------------------
+
+Note the above table per clock tree is based on CCOpt clock tree view. The violations are counted across half corners.
+
+Found a total of 0 clock tree pins with max capacitance violations.
+Found a total of 0 clock tree nets with max resistance violations.
+Found a total of 0 clock tree nets with max length violations.
+Found a total of 0 clock tree nets with max fanout violations.
+Found a total of 0 clock tree pins with a slew violation.
+
+Missing Timing Arcs:
+
+----------------------------------------------------------
+Cell             Input    Output    Delay     Power
+                 Pin      Pin       Corner    Domain
+----------------------------------------------------------
+PDDW04DGZ_H_G      -      C         FastDC    auto-default
+PDDW04DGZ_H_G      -      C         SlowDC    auto-default
+----------------------------------------------------------
+Missing timing arcs may make the optimization and
+reporting of delays and transitions inaccurate and should
+be added to the relevant Liberty files (.lib) if possible.
+----------------------------------------------------------
+
+Report for clock tree: clk:
+===========================
+
+Clock Tree Gating Structure (Logical):
+
+# Full cycle clock gates   : 6
+Minimum clock gating depth : 1
+Maximum clock gating depth : 1
+Clock gate area (um^2)     : 7.812
+
+Clock Tree Buffering Structure (Logical):
+
+# Buffers             : 17
+# Inverters           :  0
+  Total               : 17
+Minimum depth         :  2
+Maximum depth         :  3
+Buffering area (um^2) : 29.232
+
+Clock Tree Level Structure (Logical):
+
+-----------------------------------------------------------------
+Level  Full   Posedge  Negedge  Memory  Enable  Non enable  Other
+       Cycle  Flops    Flops    Clock   Latch   Latch       Sinks
+                                Pins    Sinks   Sinks       
+-----------------------------------------------------------------
+root     6       42       0       0       6         1         0
+  1      0     1089       0       0       0         0         0
+-----------------------------------------------------------------
+Total    6     1131       0       0       6         1         0
+-----------------------------------------------------------------
+
+Target and measured clock slews (in ns):
+
+-----------------------------------------------------------------------------------------------------------------------------------
+Timing Corner       Worst Rising  Worst Falling  Worst Rising  Worst Falling  Leaf Slew       Leaf Slew  Trunk Slew      Trunk Slew
+                    Leaf Slew     Leaf Slew      Trunk Slew    Trunk Slew     Target Type     Target     Target Type     Target
+-----------------------------------------------------------------------------------------------------------------------------------
+FastDC:hold.early      0.029          0.028         0.038          0.038      ignored             -      ignored             -
+FastDC:hold.late       0.029          0.028         0.038          0.038      ignored             -      ignored             -
+SlowDC:setup.early     0.049          0.049         0.039          0.039      ignored             -      ignored             -
+SlowDC:setup.late      0.049          0.049         0.039          0.039      auto extracted   0.050     auto extracted   0.050
+-----------------------------------------------------------------------------------------------------------------------------------
+
+* - indicates that target was not met.
+
+auto extracted - target was extracted from SDC.
+auto computed - target was computed when balancing trees.
+
+

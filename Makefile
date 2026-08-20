@@ -63,7 +63,7 @@ flow: sim syn gls lec gls_pads pnr
 	@echo "==== Final ECO scripts are under innovus/scripts; then run make backend_prep_final && make pt ===="
 
 # ==========================================================================
-#  1   R T L   S I M   +   golden compare        [final_pilot flow_rtl, simplified]
+#  1   R T L   S I M   +   golden compare
 # ==========================================================================
 sim:
 	@test -f build.cud            || { echo "ERROR: build.cud missing"; exit 1; }
@@ -80,7 +80,7 @@ syn:
 	$(SUBMIT) tcsh synthesis/run_syn.tcsh
 
 # ==========================================================================
-#  3   G A T E   S I M  (netlist)  +  golden compare        [final_pilot flow_syn]
+#  3   G A T E   S I M  (netlist)  +  golden compare
 # ==========================================================================
 gls:
 	@test -f build_gls.cud                          || { echo "ERROR: build_gls.cud missing"; exit 1; }
@@ -90,14 +90,14 @@ gls:
 	$(SUBMIT) tcsh GLS/run_gls.tcsh $(L)
 	$(call cmp,GLS/work)
 
-# ------  Conformal RTL == netlist  (logic equivalence)      [final_pilot flow 3]
+# ------  Conformal RTL == netlist  (logic equivalence)
 lec:
 	@test -f lec_rvg/scripts/hier.do    || { echo "ERROR: lec_rvg/scripts/hier.do missing"; exit 1; }
 	@test -f lec_rvg/work/compile.vsdc  || { echo "ERROR: lec_rvg/work/compile.vsdc missing (from synthesis)"; exit 1; }
 	$(SUBMIT) tcsh lec_rvg/run_lec.tcsh
 
 # ==========================================================================
-#  4   P A D D E D - C H I P   G A T E   S I M   + golden   [final_pilot flow_gentop]
+#  4   P A D D E D - C H I P   G A T E   S I M   + golden
 # ==========================================================================
 gls_pads:
 	@test -f gentop/build_top.cud || { echo "ERROR: gentop/build_top.cud missing"; exit 1; }
@@ -114,7 +114,7 @@ gentop:
 	@echo "gentop: raw top.v/top.io in innovus/datain/gentop_out/ - apply _G pad wrappers (gen_pads.pl) before P&R."
 
 # ==========================================================================
-#  5   P L A C E   &   R O U T E     Innovus -> routed GDS
+#  5   P L A C E   &   R O U T E     Innovus physical implementation
 # ==========================================================================
 pnr:
 	$(SUBMIT) tcsh innovus/run_innovus.tcsh
@@ -123,7 +123,6 @@ pnr:
 pnr_stage:
 	$(SUBMIT) tcsh innovus/run_stage.tcsh $(STAGE) $(PREV)
 
-# export the PrimeTime/LVS netlists + SPEF + GDS from the routed design
 # Run the validated post-route ECO chain
 final_eco:
 	tcsh innovus/run_final_eco.tcsh
@@ -150,7 +149,7 @@ saif:
 	  echo "       gate sim (innovus/build_pnr.cud) with SAIF dump into innovus/datain/saif/"; exit 1; fi
 
 # ==========================================================================
-#  6   P R I M E T I M E     signoff STA (setup AND hold, all three corners)
+#  6   P R I M E T I M E     final STA (setup AND hold, all three corners)
 # ==========================================================================
 pt:
 	tcsh primetime/run_pt_final_iter4b.tcsh

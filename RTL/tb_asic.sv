@@ -83,9 +83,8 @@ module tb_asic;
 				serial_in_I = cfg_word[i];
 			end
 			
-			// --- THE FIX ---
-			// We MUST wait for the exact moment the Control Unit activates run_en.
-			// The NEXT negedge after this is the exact moment we must drive data.
+			// Wait until configuration is accepted before streaming payload data.
+			// Serial sample transmission begins from the following clock phase.
 			wait(dut.u_control.run_en == 1'b1);
 			serial_in_I = 1'b0; 
 		end

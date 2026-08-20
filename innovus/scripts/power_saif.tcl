@@ -1,7 +1,7 @@
 # ==========================================================================
 # power_saif.tcl   TSMC 28nm  --  MEASURED power from a per-L gate-sim SAIF
 # --------------------------------------------------------------------------
-# The "right way" (mirrors khamaysi final_pilot power_saif.tcl): instead of a
+# Uses measured gate-simulation SAIF activity instead of a
 # flat 0.2 vectorless activity - which is blind to clock gating and lights up
 # every block at once - read a real SAIF captured from a gate-level sim of the
 # core running each interpolation factor L. One SAIF per L (2/3/4/5), produced

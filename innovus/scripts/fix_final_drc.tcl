@@ -1,7 +1,7 @@
 # ============================================================================
 # fix_final_drc.tcl
 #
-# Deterministic post-route repairs validated on the historical final database.
+# Deterministic post-route repairs validated on the final routed database.
 #
 # Repairs:
 #   1. U9458 VDDC VIA1 array
@@ -54,7 +54,7 @@ proc final_drc_fix_pg {name area expectedInsts expectedCuts splitSpec} {
         return
     }
 
-    # Expected geometry in the historical final database.
+    # Expected geometry in the reference routed database.
     if {$n != 1 || $cuts != 30} {
         final_drc_fail \
             "$name has unexpected VIA1 geometry: insts=$n cuts=$cuts"
@@ -156,7 +156,7 @@ if {[llength $oldBWires] == 1} {
 
     set oldBWire [lindex $oldBWires 0]
 
-    puts "Removing historical B branch:"
+    puts "Removing existing B branch:"
     puts "  NET    = [dbGet $oldBWire.net.name]"
     puts "  LAYER  = [dbGet $oldBWire.layer.name]"
     puts "  BOX    = [dbGet $oldBWire.box]"
@@ -174,7 +174,7 @@ if {[llength $oldBWires] == 1} {
 
     deselectAll
 
-    # Confirm that the historical branch disappeared.
+    # Confirm that the branch was removed.
     set oldAfter {}
 
     foreach w [dbQuery \
@@ -215,7 +215,7 @@ if {[llength $oldBWires] == 1} {
 
 } else {
 
-    puts "Historical U163/B M2 branch is already absent - skipping reroute."
+    puts "U163/B M2 branch is already absent - skipping reroute."
 }
 
 

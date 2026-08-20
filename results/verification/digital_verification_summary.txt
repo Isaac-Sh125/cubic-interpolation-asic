@@ -1,0 +1,36 @@
+CUBIC Interpolation DSP ASIC
+Digital Verification Summary
+============================
+
+Primary regression configuration:
+  Interpolation factor: L=5
+
+Reference output:
+  out/output_golden.txt
+
+Complete output length:
+  49,978 I/Q output samples
+
+Byte-for-byte regression:
+  RTL simulation vs golden       : PASS
+  Gate-level simulation vs golden: PASS
+  Pad-level GLS vs golden        : PASS
+
+SHA-256 of all four compared output files:
+  6c669c2771e14a7b7e9a83124db0354d2bdda95fd6f41fd549d216fbc017c693
+
+Compared files:
+  out/output_golden.txt
+  out/rtl_output_POST_LPF_L_5.txt
+  GLS/work/GLS_with_chanis_rtl_output_POST_LPF_L_5.txt
+  gentop/work/rtl_output_POST_LPF_L_5.txt
+
+Logical equivalence checking:
+  Module pairs processed : 12 / 12
+  Equivalent             : 12
+  Non-equivalent         : 0
+  Abort                  : 0
+  Hierarchical result    : Equivalent
+
+Detailed LEC evidence:
+  results/lec/LEC_SUMMARY.txt

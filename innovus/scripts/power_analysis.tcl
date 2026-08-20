@@ -1,7 +1,7 @@
 # ==========================================================================
 # power_analysis.tcl   TSMC 28nm (28HPCPMMWAVE)  --  static signoff power
 # --------------------------------------------------------------------------
-# Ported from khamaysi 65nm power_flow.tcl. Assumes a POST-ROUTE design is
+# TSMC 28 nm post-route power-analysis flow. Assumes a POST-ROUTE design is
 # ALREADY loaded (this script does NOT restore). Source it in a live session:
 #     source ../scripts/power_analysis.tcl
 #

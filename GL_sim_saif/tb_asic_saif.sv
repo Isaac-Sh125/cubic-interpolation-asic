@@ -4,7 +4,7 @@
 // Adapted from Pchip/GL_sim/tb_asic.sv (yitzhak2 golden GLS testbench).
 // Same DUT, same stimulus files, same clocking; the ONLY additions are:
 //   * L selected at RUNTIME via +L=<2|3|4|5>  (one build, four runs -
-//     mirrors khamaysi final_pilot run_saifpnr.sh which selects L at runtime)
+//     supports runtime selection of the interpolation factor L)
 //   * SAIF toggle capture over the DUT during the active data window, gated by
 //     +SAIF +SAIFFILE=<path>   ->  read by report_power (clock-gating aware)
 //   * VCD dump only if +VCD is given (avoids the 6.8 GB dump during SAIF runs)

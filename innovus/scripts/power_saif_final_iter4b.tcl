@@ -1,17 +1,15 @@
 # ==========================================================================
-# power_saif.tcl   TSMC 28nm  --  MEASURED power from a per-L gate-sim SAIF
+# Final TSMC 28 nm post-route power analysis using per-L gate-simulation SAIF.
 # --------------------------------------------------------------------------
-# The "right way" (mirrors khamaysi final_pilot power_saif.tcl): instead of a
-# flat 0.2 vectorless activity - which is blind to clock gating and lights up
-# every block at once - read a real SAIF captured from a gate-level sim of the
-# core running each interpolation factor L. One SAIF per L (2/3/4/5), produced
-# by GL_sim_saif/run_saif.sh from the SAME netlist + stimulus as the golden GLS.
+# One activity file is used for each supported interpolation factor L=2..5.
+# Gate-level activity captures the valid-driven and clock-gated behavior of the
+# implemented DSP rather than applying a uniform vectorless activity assumption.
 #
-# Source AFTER a post-route restore (live session), e.g. after power_analysis.tcl:
-#     source ../scripts/power_saif.tcl
-# SAIF -> design mapping: the sim DUT is design_tb/dut (=ASIC_Top core); in the
-# routed design that core is instance I0, so we use  -scope design_tb/dut -block I0.
-# ALWAYS check the annotation coverage printed per L (low % = wrong scope).
+# SAIF hierarchy mapping:
+#   simulation DUT : design_tb/dut
+#   physical core  : I0
+#
+# Annotation coverage is reported for every analyzed operating mode.
 # ==========================================================================
 
 puts "===== FINAL ITER4B SAIF POWER: RESTORE ====="
