@@ -50,6 +50,35 @@ Their common SHA-256 digest is:
     6c669c2771e14a7b7e9a83124db0354d2bdda95fd6f41fd549d216fbc017c693
 
 
+### System-Level MATLAB / Keysight VSA Verification
+
+Keysight VSA was used to evaluate representative 64-QAM EVM for the MATLAB
+reference processing chain and the final RTL processing chain.
+
+The displayed VSA EVM is a live analyzer measurement, so the preserved values
+are treated as representative captured readings rather than fixed constants.
+
+| L | MATLAB post-FIR EVM | RTL post-FIR EVM | RTL Requirement |
+|---:|---:|---:|---|
+| 2 | ~215 m%rms | ~218 m%rms | PASS |
+| 3 | ~197 m%rms | ~177 m%rms | PASS |
+| 4 | ~227 m%rms | ~176 m%rms | PASS |
+| 5 | ~228 m%rms | ~267 m%rms | PASS |
+
+Across the preserved screenshots, representative RTL EVM is approximately
+176-267 m%rms. All captured RTL modes satisfy the project requirement:
+
+    EVM < 350 m%rms
+
+The MATLAB reference uses a 64-tap FIR, while the final RTL uses a 10-tap
+symmetric L-dependent FIR. These measurements therefore compare complete
+signal-processing-chain quality rather than bit-exact post-filter equivalence.
+
+Detailed evidence is available in:
+
+    results/verification/keysight_vsa_summary.txt
+
+
 ## 3. Logical Equivalence
 
 Hierarchical RTL-to-gate equivalence checking reports:
@@ -351,6 +380,7 @@ The principal final project results are:
 | RTL regression | PASS, 49,978 samples byte-identical |
 | Gate-level regression | PASS, 49,978 samples byte-identical |
 | Pad-level regression | PASS, 49,978 samples byte-identical |
+| Keysight VSA RTL EVM, L=2..5 | PASS, representative captured range ~176-267 m%rms; requirement <350 m%rms |
 | LEC | 12 / 12 equivalent |
 | Post-scan cells | 38,841 |
 | Post-scan cell area | 38,733.029556 |
@@ -401,6 +431,8 @@ post-layout static timing analysis.
 The final implementation demonstrates:
 
 - byte-identical RTL, gate-level and pad-level L=5 regression outputs;
+- representative Keysight VSA RTL EVM below the 350 m%rms requirement for all
+  preserved L=2..5 operating-mode measurements;
 - validated hierarchical RTL-to-gate equivalence;
 - zero final Innovus DRC and connectivity violations;
 - zero final Innovus electrical design-rule violations;
@@ -410,5 +442,5 @@ The final implementation demonstrates:
 - project-level L=5 VDDC/VSSC core-domain IR analysis with approximately
   3.00 mV worst VDDC drop and zero voltage-threshold violations.
 
-The detailed reports retained in the repository provide traceable evidence for
-each reported result.
+The detailed reports in the repository provide traceable evidence for each
+reported result.

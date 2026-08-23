@@ -341,6 +341,14 @@ The primary verification-related source files are:
 | `out/output_golden.txt` | Canonical digital output reference |
 | `results/lec/LEC_SUMMARY.txt` | Validated formal equivalence summary |
 | `results/verification/digital_verification_summary.txt` | Curated digital regression summary |
+| `verification/matlab/cubic_hardware.m` | Configurable MATLAB fixed-point verification model |
+| `verification/keysight/float_iq_to_vsa.m` | Floating-point I/Q to Keysight VSA MAT converter |
+| `verification/keysight/hex_iq_to_vsa.m` | RTL hexadecimal I/Q to Keysight VSA MAT converter |
+| `results/verification/keysight_vsa_summary.txt` | Keysight VSA signal-quality summary |
+| `results/verification/matlab/` | MATLAB pre/post-FIR VSA screenshots |
+| `results/verification/rtl/` | RTL post-FIR VSA screenshots |
+| `results/verification/matlab_results/` | Preserved MATLAB numeric result files |
+| `results/verification/rtl_output_post_LPF/` | Preserved RTL post-FIR numeric outputs |
 
 
 ## 15. Verification Coverage in the Current Repository
@@ -353,7 +361,11 @@ The current repository documents and preserves evidence for:
 - exact gate-level-to-golden comparison;
 - hierarchical RTL-to-gate logical equivalence;
 - pad-integrated functional simulation;
-- exact pad-level-to-golden comparison.
+- exact pad-level-to-golden comparison;
+- MATLAB floating-point and fixed-point signal-processing references;
+- MATLAB pre-FIR and post-FIR Keysight VSA measurements for L=2..5;
+- RTL post-FIR Keysight VSA measurements for L=2..5;
+- preserved numeric MATLAB and RTL result files for all four interpolation factors.
 
 The complete L=5 regression provides a 49,978-sample end-to-end digital
 comparison across the canonical reference, RTL, synthesized gate-level and
@@ -381,3 +393,149 @@ Formal equivalence checking additionally reports:
 
 The combined simulation and formal results establish the functional consistency
 of the digital implementation through synthesis and pad-level integration.
+
+
+## 17. MATLAB and Keysight VSA Signal-Quality Verification
+
+In addition to the exact digital regressions, system-level communication-signal
+quality was evaluated using the project MATLAB model and Keysight PathWave
+Vector Signal Analysis (VSA).
+
+### 17.1 MATLAB Verification Model
+
+The preserved MATLAB verification model uses a common 60 MS/s 64-QAM input
+stimulus and evaluates interpolation factors L=2, 3, 4 and 5.
+
+The original per-L input copies were verified byte-for-byte identical before
+being consolidated into:
+
+    results/verification/matlab_results/iqdata_60M_use.txt
+
+Their common SHA-256 digest is:
+
+    e99d42d73d85492f9651673bacf4e1d8c8b079dd0d3d88082ef9e003d083f07a
+
+The fixed-point MATLAB interpolation datapath uses signed 16-bit signal
+representation with 14 fractional bits. Interior interpolation uses Catmull-Rom
+cubic interpolation and the sequence edges use the corresponding quadratic
+edge treatment.
+
+The MATLAB reference filtering stage uses a 64-tap FIR with normalized cutoff
+1/L.
+
+The configurable project-facing source is:
+
+    verification/matlab/cubic_hardware.m
+
+The preserved numeric results for each L contain:
+
+- floating-point cubic reference output;
+- fixed-point PRE-LPF output;
+- fixed-point POST-LPF output.
+
+### 17.2 MATLAB and RTL FIR Difference
+
+The final RTL does not implement the coefficient-identical 64-tap MATLAB FIR.
+
+Instead, the RTL uses a 10-tap symmetric hardware FIR with a dedicated
+coefficient bank for each interpolation factor.
+
+Keysight VSA is therefore used to evaluate the complete MATLAB and RTL
+processing chains at the system-signal-quality level. The post-filter signals
+are not presented as bit-exact MATLAB-to-RTL equivalents.
+
+### 17.3 Keysight VSA Method
+
+MATLAB I/Q text outputs are converted to Keysight-compatible MAT
+files using:
+
+    verification/keysight/float_iq_to_vsa.m
+
+RTL hexadecimal outputs are converted using:
+
+    verification/keysight/hex_iq_to_vsa.m
+
+The RTL converter interprets the final FIR output as signed 16-bit fixed-point
+data with 14 fractional bits.
+
+The output sampling rates used by VSA are:
+
+| L | Output Sample Rate |
+|---:|---:|
+| 2 | 120 MS/s |
+| 3 | 180 MS/s |
+| 4 | 240 MS/s |
+| 5 | 300 MS/s |
+
+### 17.4 Representative EVM Measurements
+
+Keysight VSA reports EVM continuously. The displayed reading can vary slightly
+with the active measurement interval and analyzer state.
+
+For this reason, the preserved screenshots are treated as representative
+point-in-time measurements rather than immutable exact constants.
+
+Representative captured values are:
+
+| L | MATLAB pre-FIR | MATLAB post-FIR | RTL post-FIR |
+|---:|---:|---:|---:|
+| 2 | ~223 m%rms | ~215 m%rms | ~218 m%rms |
+| 3 | ~193 m%rms | ~197 m%rms | ~177 m%rms |
+| 4 | ~201 m%rms | ~227 m%rms | ~176 m%rms |
+| 5 | ~222 m%rms | ~228 m%rms | ~267 m%rms |
+
+The corresponding screenshot readings at the captured instants were
+approximately:
+
+    L=2 : MATLAB pre 223.44, MATLAB post 215.39, RTL 217.53 m%rms
+    L=3 : MATLAB pre 192.98, MATLAB post 196.82, RTL 177.20 m%rms
+    L=4 : MATLAB pre 201.39, MATLAB post 227.29, RTL 176.42 m%rms
+    L=5 : MATLAB pre 221.91, MATLAB post 228.30, RTL 267.23 m%rms
+
+The project requirement is:
+
+    EVM < 350 m%rms
+
+All four preserved RTL operating-mode measurements satisfy this requirement.
+The representative RTL readings span approximately 176-267 m%rms.
+
+The FIR stage is intended primarily to suppress interpolation-generated
+spectral images. The VSA measurements show that the EVM change across the
+MATLAB FIR is mode-dependent, so the project does not claim that FIR filtering
+monotonically reduces EVM.
+
+### 17.5 Preserved VSA Evidence
+
+MATLAB PRE-LPF screenshots:
+
+    results/verification/matlab/pre_filter/
+
+MATLAB POST-LPF screenshots:
+
+    results/verification/matlab/post_filter/
+
+RTL POST-LPF screenshots:
+
+    results/verification/rtl/
+
+The detailed VSA summary is:
+
+    results/verification/keysight_vsa_summary.txt
+
+### 17.6 Preserved RTL Outputs
+
+The preserved post-FIR RTL result files contain:
+
+| L | Captured Output Samples |
+|---:|---:|
+| 2 | 19,990 |
+| 3 | 29,986 |
+| 4 | 39,982 |
+| 5 | 49,978 |
+
+These files are stored under:
+
+    results/verification/rtl_output_post_LPF/
+
+The L=5 output is the same complete 49,978-sample sequence used by the
+Golden/RTL/GLS/pad-level byte-for-byte regression described earlier.

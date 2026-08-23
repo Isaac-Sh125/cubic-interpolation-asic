@@ -25,7 +25,7 @@ Detailed documentation is organized as follows:
 |---|---|
 | [System Architecture](docs/SYSTEM_ARCHITECTURE.md) | System-level DSP architecture, operating modes and rates |
 | [RTL Architecture](docs/RTL_ARCHITECTURE.md) | Detailed synthesizable RTL and fixed-point implementation |
-| [Digital Verification](docs/VERIFICATION.md) | RTL, GLS, pad-level regression and LEC |
+| [Digital Verification](docs/VERIFICATION.md) | RTL, GLS, pad-level regression, LEC and MATLAB/Keysight VSA verification |
 | [Logic Synthesis](docs/SYNTHESIS.md) | Design Compiler flow, constraints, area, clock gating and scan |
 | [Physical Design](docs/PHYSICAL_DESIGN.md) | Floorplan, PG, placement, CTS, routing and final ECO closure |
 | [Static Timing Analysis](docs/STATIC_TIMING_ANALYSIS.md) | Final PrimeTime setup/hold matrix |
@@ -133,6 +133,38 @@ Abort                   : 0
 ```
 
 The LEC setup and runner are provided under `lec_rvg/`.
+
+### MATLAB and Keysight VSA Signal-Quality Verification
+
+System-level 64-QAM signal quality was also evaluated using the MATLAB
+fixed-point model and Keysight PathWave Vector Signal Analysis (VSA).
+
+The same underlying 60 MS/s I/Q stimulus was used for the preserved
+L=2, 3, 4 and 5 evaluations.
+
+The MATLAB algorithmic reference uses a 64-tap FIR, while the final RTL uses a
+10-tap symmetric L-dependent hardware FIR. The MATLAB and RTL post-filter
+signals are therefore compared at the system-signal-quality level and are not
+claimed to be bit-exact equivalent.
+
+Keysight VSA reports EVM continuously, so the displayed value can vary slightly
+with the active measurement interval and analyzer state. Representative
+captured RTL readings are approximately:
+
+| L | Representative RTL EVM |
+|---:|---:|
+| 2 | ~218 m%rms |
+| 3 | ~177 m%rms |
+| 4 | ~176 m%rms |
+| 5 | ~267 m%rms |
+
+Across the preserved measurements, the RTL EVM is approximately
+**176-267 m%rms**, below the project requirement of **350 m%rms** for every
+supported interpolation factor.
+
+The preserved screenshots and detailed interpretation are available under
+`results/verification/`, and the conversion utilities are under
+`verification/keysight/`.
 
 ---
 
@@ -409,6 +441,7 @@ Technology: **TSMC 28 nm**
 | Gate-level simulation | PASS |
 | Pad-level simulation | PASS |
 | Logic equivalence | PASS |
+| Keysight VSA EVM, L=2..5 | PASS - representative captured RTL EVM ~176-267 m%rms, requirement <350 m%rms |
 | Synthesis | COMPLETE |
 | Placement and routing | COMPLETE |
 | Post-route connectivity | PASS |
