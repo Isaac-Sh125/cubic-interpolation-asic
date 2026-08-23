@@ -112,7 +112,6 @@ primetime/scripts/pt_setup_special_*.tcl
 primetime/scripts/reset_fall_*.tcl
 primetime/archive_eco_change_flat15_20260819.tcl
 # Historical PrimeTime flow kept locally for reference
-primetime/archive_eco_change_flat15_20260819.tcl
 primetime/scripts/pt_run.tcl
 primetime/run_pt.tcsh
 # Keep only the canonical golden reference from out/

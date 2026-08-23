@@ -1,6 +1,6 @@
 // ==============================================================================
-// TSMC 28nm Simulation Pad Model Definitions (Empty Functional Shells)
-// File: innovus/datain/pads.v
+// LEGACY ONLY: unused by the canonical padded GLS build
+// Canonical build_top.cud uses the real TSMC 28 nm I/O model instead.
 // ==============================================================================
 
 // Input Pad Functional Model Shell

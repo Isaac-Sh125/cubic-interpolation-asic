@@ -1,7 +1,8 @@
 #!/bin/tcsh
-# Padded gate sim (top.v + pad shells) - real module-loaded vcs (headless/Euclide).
-# NOTE: pad.v are empty behavioral shells (no signal pass-through) - this is a
-# build/elaborate check; the golden diff may not match (documented).
+# Functional zero-delay gate simulation of the padded top-level design.
+# The build uses the real TSMC 28 nm I/O Verilog model together with the
+# synthesized core netlist. pad_sim_stubs.v supplies only the mechanical
+# PCORNER_G cell, which has no functional signal behavior.
 setenv LANG C ; setenv LC_ALL C ; setenv TMPDIR /tmp
 source /tools/modules/5.5.0/init/tcsh
 module load VCS VERDI

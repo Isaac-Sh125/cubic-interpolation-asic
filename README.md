@@ -106,15 +106,18 @@ matches the project golden output byte-for-byte.
 ### Gate-Level Simulation
 
 The synthesized TSMC 28 nm gate-level netlist was simulated using the same
-stimulus and compared against the golden reference.
+stimulus and compared against the golden reference. This is a functional
+post-synthesis gate-level simulation; no SDF back-annotation is applied.
 
 The gate-level output matches the RTL/golden output.
 
 ### Pad-Level Gate Simulation
 
 The pad-integrated chip-level netlist was also simulated using the same L=5
-stimulus. Its complete 49,978-sample output is byte-identical to the canonical
-golden reference.
+stimulus. The padded simulation runs in zero-delay mode using the real TSMC
+28 nm I/O Verilog model; only the mechanical `PCORNER_G` cell is represented
+by a simulation stub. Its complete 49,978-sample output is byte-identical to
+the canonical golden reference.
 
 ### Logic Equivalence Checking
 

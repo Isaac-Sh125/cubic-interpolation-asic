@@ -662,7 +662,14 @@ full reports preserve the detailed analysis evidence.
 
 ## 37. Reproducing Power Analysis
 
-The final power flow can be launched from the project root using:
+If the staged SAIF files need to be regenerated, run:
+
+    make saif_gen
+
+This generates the L=2 through L=5 synthesized gate-level activity files and
+stages them under `innovus/datain/saif/`.
+
+The final power flow can then be launched from the project root using:
 
     make power
 

@@ -207,7 +207,7 @@ This target verifies that the synthesized netlist is available and invokes:
     GLS/run_gls.tcsh
 
 The synthesized gate-level design is simulated using VCS with the same primary
-functional stimulus.
+functional stimulus. This is a functional GLS without SDF back-annotation.
 
 For L=5, the resulting output is compared against:
 
@@ -251,7 +251,10 @@ This invokes:
 
     gentop/run_pads.tcsh
 
-and simulates the pad-integrated gate-level hierarchy.
+and simulates the pad-integrated gate-level hierarchy in zero-delay mode.
+
+The canonical padded GLS uses the real TSMC 28 nm I/O Verilog model. The only
+additional simulation stub is the mechanical `PCORNER_G` cell.
 
 For the primary L=5 regression, the generated output is compared with the same
 canonical golden reference.
@@ -429,6 +432,18 @@ factor:
     innovus/datain/saif/core_L4.saif
     innovus/datain/saif/core_L5.saif
 
+To regenerate all four activity files and stage them for Innovus, run:
+
+    make saif_gen
+
+This invokes `GL_sim_saif/run_saif.tcsh`, which performs one synthesized
+gate-level activity simulation for each supported interpolation factor L=2..5.
+The generated files are written under `GL_sim_saif/saif/` and copied into
+`innovus/datain/saif/`.
+
+The retained generated and staged files were verified byte-for-byte identical
+for all four interpolation factors.
+
 The activity was captured from gate-level simulation and is mapped from:
 
     design_tb/dut
@@ -590,6 +605,7 @@ For a complete reproduction from the front-end through the final analyses, use:
     make pnr
     make final_eco
     make backend_prep_final
+    make saif_gen
     make power
     make ir
     make pt
@@ -684,7 +700,7 @@ The help output separates:
 - final physical implementation stages;
 - final power and core-domain IR analysis;
 - PrimeTime analysis;
-- SAIF availability support;
+- SAIF generation, staging and availability support;
 - cleanup commands.
 
 

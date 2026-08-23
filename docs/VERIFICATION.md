@@ -142,6 +142,9 @@ The gate-level simulation runner is:
 The simulation uses Synopsys VCS together with the synthesized netlist and the
 technology simulation models.
 
+The canonical synthesized GLS is a functional gate-level simulation. No SDF
+back-annotation is applied in this stage.
+
 The purpose of this stage is to verify that the synthesized gate-level
 representation preserves the observable functionality of the RTL under the same
 input stimulus.
@@ -253,8 +256,9 @@ The execution runner is:
     gentop/run_pads.tcsh
 
 The simulation compiles the pad-integrated top-level representation together
-with the required pad simulation models and executes the same functional I/Q
-stimulus flow.
+with the real TSMC 28 nm I/O Verilog model and executes the same functional I/Q
+stimulus flow. `pad_sim_stubs.v` supplies only the mechanical `PCORNER_G` cell,
+which has no functional signal behavior.
 
 The pad-level functional simulation is executed in zero-delay mode, focusing on
 logical connectivity and preservation of the functional signal path through the

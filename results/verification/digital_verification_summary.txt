@@ -16,6 +16,11 @@ Byte-for-byte regression:
   Gate-level simulation vs golden: PASS
   Pad-level GLS vs golden        : PASS
 
+Simulation scope:
+  Synthesized GLS : functional gate-level simulation, no SDF back-annotation
+  Padded GLS      : functional zero-delay simulation using the real TSMC 28 nm
+                    I/O Verilog model; PCORNER_G is a mechanical simulation stub
+
 SHA-256 of all four compared output files:
   6c669c2771e14a7b7e9a83124db0354d2bdda95fd6f41fd549d216fbc017c693
 

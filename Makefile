@@ -102,7 +102,6 @@ lec:
 gls_pads:
 	@test -f gentop/build_top.cud || { echo "ERROR: gentop/build_top.cud missing"; exit 1; }
 	@test -f gentop/top.v         || { echo "ERROR: gentop/top.v (padded netlist) missing"; exit 1; }
-	@test -f gentop/pad.v         || { echo "ERROR: gentop/pad.v (pad shells) missing"; exit 1; }
 	@test -f gentop/run_pads.tcsh || { echo "ERROR: gentop/run_pads.tcsh missing"; exit 1; }
 	$(SUBMIT) tcsh gentop/run_pads.tcsh $(L)
 	$(call cmp,gentop/work)
@@ -138,15 +137,17 @@ backend_prep_final:
 power:
 	cd innovus/work && /tools/common/wrappers/innovus -no_gui -files ../scripts/power_saif_final_iter4b.tcl -log ../logfile/power_saif_final_iter4b
 
-# the per-L SAIF (measured activity) power_saif.tcl consumes.  Already staged in
-# innovus/datain/saif/ from a post-layout gate sim (see innovus/build_pnr.cud);
-# this target just verifies the one for the requested L is present.
+# Regenerate all four gate-level SAIF activity files and stage them for Innovus.
+saif_gen:
+	$(SUBMIT) tcsh GL_sim_saif/run_saif.tcsh
+
+# Check that the staged SAIF for the requested L is present.
 saif:
 	@if [ -f innovus/datain/saif/core_L$(L).saif ]; then \
 	  echo "SAIF present: innovus/datain/saif/core_L$(L).saif  (consumed by 'make power')"; \
 	else \
-	  echo "ERROR: innovus/datain/saif/core_L$(L).saif missing - regenerate a post-layout"; \
-	  echo "       gate sim (innovus/build_pnr.cud) with SAIF dump into innovus/datain/saif/"; exit 1; fi
+	  echo "ERROR: innovus/datain/saif/core_L$(L).saif missing"; \
+	  echo "       run 'make saif_gen' to regenerate and stage L=2..5 gate-level activity"; exit 1; fi
 
 # Final L=5 SAIF-based VDDC/VSSC core-domain IR / rail analysis
 ir:
@@ -194,7 +195,8 @@ flow_help:
 	@echo "        make pt          final setup/hold x slow/typ/fast PrimeTime matrix"
 	@echo ""
 	@echo "   Activity support:"
-	@echo "        make saif        check SAIF availability"
+	@echo "        make saif_gen    regenerate + stage gate-level SAIF for L=2..5"
+	@echo "        make saif        check staged SAIF availability for L=$(L)"
 	@echo ""
 	@echo "   make flow             run main flow through P&R"
 	@echo "   make clean            clean generated work directories"
@@ -203,4 +205,4 @@ flow_help:
 	@echo "   L=$(L)                interpolation factor, supported 2..5"
 	@echo ""
 
-.PHONY: flow sim syn gls lec gls_pads gentop pnr pnr_stage final_eco backend_prep backend_prep_final power saif ir pt clean clean_all help flow_help
+.PHONY: flow sim syn gls lec gls_pads gentop pnr pnr_stage final_eco backend_prep backend_prep_final power saif_gen saif ir pt clean clean_all help flow_help
