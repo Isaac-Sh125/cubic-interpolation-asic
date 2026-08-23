@@ -156,8 +156,7 @@ which corresponds to:
 
 annotation coverage.
 
-The same high annotation coverage is observed in the retained per-L power
-reports.
+The same high annotation coverage is observed in the final per-L power reports.
 
 This confirms that the gate-level SAIF hierarchy is mapped successfully onto
 the physical DSP implementation.
@@ -247,7 +246,7 @@ interpolated data.
 The interpolator power varies less strongly with interpolation factor than the
 FIR power.
 
-The retained I-channel interpolator results are:
+The final I-channel interpolator results are:
 
 | L | Interpolator-I Power |
 |---:|---:|
@@ -618,7 +617,7 @@ uniform assumed switching factor.
 
 ## 35. Power Analysis Artifacts
 
-The final retained reports are stored under:
+The final reports are stored under:
 
     results/power/final_iter4b/
 
@@ -673,8 +672,7 @@ The final power flow can then be launched from the project root using:
 
     make power
 
-The target executes the final Iter4B SAIF-based power analysis on the completed
-physical database.
+The target executes the final SAIF-based power analysis on the completed physical database.
 
 The script verifies the presence of the per-L SAIF activity files and generates
 independent reports for the four supported interpolation factors.
@@ -739,10 +737,9 @@ substantially to the final whole-chip power result.
 
 ## 40. Final Core-Domain IR-Drop Analysis
 
-A final static rail analysis is performed on the completed Iter4B routed
-implementation.
+A final static rail analysis is performed on the final routed implementation.
 
-The retained analysis uses:
+The final analysis uses:
 
     database       : final_hold_eco_iter4b_trial
     activity       : L=5 gate-level SAIF
@@ -754,10 +751,9 @@ The retained analysis uses:
     rail model     : run-local 28 nm tech-only PGV
 
 L=5 is used because it is the highest-rate and highest-power supported operating
-mode in the retained SAIF characterization.
+mode in the final SAIF characterization.
 
-The rail PGV is stored inside the IR-analysis output directory rather than using
-the older shared PGV database.
+For reproducibility, the rail PGV is generated and stored inside the IR-analysis output directory for the final analysis.
 
 
 ## 41. Final IR-Drop Result
@@ -812,18 +808,15 @@ This agreement provides an additional consistency check that the analyzed rail
 load represents the DSP core power at the expected magnitude.
 
 The fully padded top-level tech-only-PGV representation still reports physically
-disconnected pad-ring/filler/pad/corner sections. The retained integrity reports
-contain 2,248 such top-level instances on each analyzed rail, but:
+disconnected pad-ring/filler/pad/corner sections. The final integrity reports contain 2,248 such top-level instances on each analyzed rail, but:
 
     physically disconnected instances inside I0 = 0
 
 Voltus also reports disconnected current-source/node sections associated with
-the same top-level representation. These counts are retained in the raw reports
-rather than hidden.
+the same top-level representation. The corresponding counts are available in the raw reports.
 
 For this reason the project result is stated as a successful **core-domain static
-IR analysis under the documented tech-only-PGV model**. It is not claimed as
-unrestricted full-chip commercial rail signoff.
+IR analysis under the documented tech-only-PGV model**. The result is scoped to the documented core-domain analysis and should not be interpreted as a full-chip rail-signoff result.
 
 
 ## 43. IR Analysis Artifacts
@@ -840,7 +833,7 @@ The tool-generated final summary is:
 
     results/innovus/final_ir_tool_summary.txt
 
-Retained raw evidence includes:
+Raw analysis evidence includes:
 
     results/innovus/final_ir_vddc.rpt
     results/innovus/final_ir_vssc.rpt
@@ -855,7 +848,7 @@ From the project root, run:
 
     make ir
 
-The target restores the final Iter4B routed database, annotates the L=5
+The target restores the final routed database, annotates the L=5
 gate-level SAIF activity, generates static VDDC/VSSC current data, generates or
 reuses the run-local 28 nm tech-only PGV model, places ideal voltage sources at
 the identified core-supply pads, and runs static Voltus rail analysis on the

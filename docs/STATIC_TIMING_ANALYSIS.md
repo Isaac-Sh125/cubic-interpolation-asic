@@ -597,7 +597,7 @@ whose worst positive margin is only:
 
     0.000004 ns
 
-The retained report precision prevents this result from being rounded to an
+The report precision prevents this result from being rounded to an
 ambiguous `0.00 ns` value.
 
 

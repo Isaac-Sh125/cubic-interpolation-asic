@@ -31,7 +31,7 @@ Detailed documentation is organized as follows:
 | [Static Timing Analysis](docs/STATIC_TIMING_ANALYSIS.md) | Final PrimeTime setup/hold matrix |
 | [Power Analysis](docs/POWER_ANALYSIS.md) | SAIF-based post-route power and L5 core-domain IR/rail analysis |
 | [Final Results](docs/RESULTS.md) | Consolidated final numerical results |
-| [Reproducing the Flow](docs/REPRODUCING.md) | Validated Makefile execution sequence |
+| [Reproducing the Flow](docs/REPRODUCING.md) | Makefile execution sequence and reproduction instructions |
 
 ---
 
@@ -84,7 +84,7 @@ The main RTL modules are:
 | `SIPO` | Serial-to-parallel sample collection |
 | `Interpolator` | Four-sample cubic interpolation datapath |
 | `FIR_LPF_TRANSPOSED` | 10-tap symmetric transposed FIR filter |
-| `P2S_Interpolator` | Parallel-to-serial output scheduling |
+| `P2S_Interpolator` | Time scheduling of parallel interpolation results |
 
 The cubic interpolator operates on four neighboring samples and generates
 intermediate samples according to the selected interpolation factor.
@@ -308,7 +308,7 @@ Final post-route power was evaluated on the completed physical implementation
 using per-L SAIF switching activity captured from gate-level simulation.
 
 The analysis uses the SlowView corner (SS, 0.81 V, 125 C, SlowRC/cworst).
-The retained reports show **98.287926% SAIF annotation coverage**.
+The final reports show **98.287926% SAIF annotation coverage**.
 
 | Interpolation Factor | Chip Power | Core Power |
 |---|---:|---:|
@@ -334,7 +334,7 @@ Detailed methodology and interpretation are available in
 
 ### Final L=5 Core-Domain IR Drop
 
-Static rail analysis was also performed on the final Iter4B implementation using
+Static rail analysis was also performed on the final routed implementation using
 the L=5 gate-level SAIF activity and the SlowView SS 0.81 V, 125 C / cworst
 analysis condition.
 
@@ -354,10 +354,9 @@ presented as an exhaustive worst-PVT rail sweep.
 
 The tech-only PGV representation reports disconnected pad-ring/filler/pad/corner
 sections outside the DSP hierarchy. No physically disconnected instance is
-reported inside `I0`. Accordingly, this result is reported as a project-level
-**core-domain IR analysis**, not unrestricted full-chip commercial rail signoff.
+reported inside `I0`. Accordingly, this result is scoped to a **core-domain IR analysis** under the documented tech-only PGV model and should not be interpreted as a full-chip rail-signoff result.
 
-Curated IR evidence is retained under `results/innovus/`.
+Curated IR evidence is available under `results/innovus/`.
 
 ---
 

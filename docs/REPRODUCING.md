@@ -64,11 +64,11 @@ site wrappers.
 
 All commands in this document are executed from the repository root:
 
-    /project/verif/users/yitzhak2/ws/ex_vlsi_1/final_script
+    /path/to/cubic-interpolation-asic
 
 For example:
 
-    cd /project/verif/users/yitzhak2/ws/ex_vlsi_1/final_script
+    cd /path/to/cubic-interpolation-asic
 
 
 ## 4. Interpolation-Factor Selection
@@ -441,8 +441,7 @@ gate-level activity simulation for each supported interpolation factor L=2..5.
 The generated files are written under `GL_sim_saif/saif/` and copied into
 `innovus/datain/saif/`.
 
-The retained generated and staged files were verified byte-for-byte identical
-for all four interpolation factors.
+The generated and staged SAIF files were verified byte-for-byte identical for all four interpolation factors.
 
 The activity was captured from gate-level simulation and is mapped from:
 
@@ -482,7 +481,7 @@ on the final routed physical database.
 The script automatically discovers the staged per-L SAIF files and generates
 independent power reports for the available interpolation factors.
 
-The retained final project analysis includes:
+The final project analysis includes:
 
     L=2
     L=3
@@ -496,7 +495,7 @@ Reports are preserved under:
 
 ## 21. Power-Analysis Outputs
 
-The retained reports include:
+The final reports include:
 
     chip_L2.rpt ... chip_L5.rpt
     core_L2.rpt ... core_L5.rpt
@@ -527,7 +526,7 @@ This executes:
 
     innovus/scripts/ir_rail_final_iter4b_l5.tcl
 
-on the final Iter4B routed database.
+on the final routed database.
 
 The analysis uses the staged:
 
@@ -536,11 +535,11 @@ The analysis uses the staged:
 activity file and analyzes the VDDC/VSSC core domain at the SlowView SS
 0.81 V, 125 C / cworst condition.
 
-The principal retained result is:
+The principal result summary is:
 
     results/innovus/final_ir_drop_summary.txt
 
-with detailed VDDC/VSSC and PG-integrity reports also retained under:
+with detailed VDDC/VSSC and PG-integrity reports available under:
 
     results/innovus/
 
@@ -549,7 +548,7 @@ The final project result is approximately 3.00 mV worst VDDC drop and
 
 The analysis is explicitly scoped to the DSP core domain. The tech-only PGV
 representation contains disconnected pad-ring sections outside `I0`; these are
-documented in the retained integrity reports.
+documented in the final integrity reports.
 
 
 ## 23. Final PrimeTime STA
@@ -647,11 +646,10 @@ The configurable parameters are:
 For example, this mechanism can be used when working with a specific Innovus
 implementation stage rather than executing the full P&R sequence.
 
-The final documented project result, however, is based on the complete
-validated final implementation flow.
+The final documented project result is based on the completed implementation flow and the corresponding final reports.
 
 
-## 28. Generated vs Retained Artifacts
+## 28. Generated and Repository Artifacts
 
 The EDA flows produce a large number of temporary work files, databases and
 logs.
@@ -680,7 +678,7 @@ A more extensive cleanup is available through:
     make clean_all
 
 The cleanup targets preserve principal source inputs, staged project data and
-selected retained artifacts according to the Makefile definitions.
+selected repository artifacts according to the Makefile definitions.
 
 Do not run cleanup commands if temporary tool outputs are still needed for an
 active debugging or analysis session.
@@ -736,13 +734,13 @@ Detailed flow explanations are available in:
     docs/POWER_ANALYSIS.md
     docs/RESULTS.md
 
-These documents should be used together with the retained tool reports when
+These documents should be used together with the tool reports stored in the repository when
 reviewing or reproducing the implementation.
 
 
 ## 33. Reproduction Summary
 
-The repository exposes the complete validated implementation sequence through
+The repository documents the complete implementation sequence through
 Makefile targets and stage-specific `tcsh` wrappers.
 
 The principal order is:
@@ -773,5 +771,5 @@ The principal order is:
      v
     PrimeTime STA
 
-The retained result summaries and full reports provide the evidence needed to
-verify the final outputs of each major stage.
+The final result summaries and full reports provide traceable evidence for
+the outputs of each major stage.

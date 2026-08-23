@@ -819,7 +819,15 @@ The corresponding report is:
     results/innovus/final_connectivity.rpt
 
 
-## 38. Final Physical Result
+## 38. Documented I/O Pad-Orientation Warning
+
+During I/O-floorplan checking, Innovus reported 25 `IMPFP-7250` warnings
+associated with LEF symmetry/orientation constraints on east/west I/O pads.
+These I/O-cell orientation warnings are distinct from the routed-geometry DRC
+and connectivity checks. The final routed implementation reports 0 DRC
+violations and `PASS` connectivity.
+
+## 39. Final Physical Result
 
 The final Innovus implementation result can be summarized as:
 
@@ -841,10 +849,9 @@ The final Innovus implementation result can be summarized as:
 | L5 core-domain VDDC IR drop | **~3.00 mV** |
 
 
-## 39. Final Physical Database
+## 40. Final Physical Database
 
-The completed implementation used for backend timing, power and rail analysis
-is the final Iter4B physical database.
+The completed implementation used for backend timing, power and rail analysis is the final routed physical database.
 
 Its implementation checkpoint is restored by the final backend and power
 scripts before extraction or analysis.
@@ -853,7 +860,7 @@ This protects the completed routed design while allowing the analysis stages to
 generate fresh output artifacts.
 
 
-## 40. Parasitic Extraction
+## 41. Parasitic Extraction
 
 Final parasitic extraction is performed for both physical RC extremes.
 
@@ -874,7 +881,7 @@ The extracted parasitic information is written in SPEF format for external
 static timing analysis.
 
 
-## 41. SlowRC Extraction
+## 42. SlowRC Extraction
 
 The slow parasitic model uses the TSMC:
 
@@ -891,7 +898,7 @@ The resulting handoff file is:
 This parasitic view is used for maximum-delay / setup-oriented analysis.
 
 
-## 42. FastRC Extraction
+## 43. FastRC Extraction
 
 The fast parasitic model uses the TSMC:
 
@@ -908,12 +915,11 @@ The resulting handoff file is:
 This parasitic view is used for minimum-delay / hold-oriented analysis.
 
 
-## 43. Final Core-Domain IR-Drop Analysis
+## 44. Final Core-Domain IR-Drop Analysis
 
-Before final PrimeTime signoff, the completed Iter4B routed database is also
-used for a static VDDC/VSSC rail analysis.
+Before the final PrimeTime analysis, the final routed database is also used for a static VDDC/VSSC rail analysis.
 
-The retained run uses:
+The final rail analysis uses:
 
     L=5 gate-level SAIF activity
     SlowView / SS 0.81 V / 125 C
@@ -933,9 +939,7 @@ The PG-integrity reports contain disconnected top-level pad-ring/filler/pad/
 corner sections under the tech-only PGV representation, but no physically
 disconnected instance is reported inside the DSP hierarchy `I0`.
 
-The result is therefore retained as a project-level core-domain IR analysis
-under the documented model, rather than an unrestricted full-chip commercial
-rail-signoff claim.
+The result is scoped to a core-domain IR analysis under the documented tech-only PGV model and should not be interpreted as a full-chip rail-signoff result.
 
 The final script is:
 
@@ -946,7 +950,7 @@ and the curated result is:
     results/innovus/final_ir_drop_summary.txt
 
 
-## 44. PrimeTime Netlist Handoff
+## 45. PrimeTime Netlist Handoff
 
 The final physical database is exported as a flat timing netlist using:
 
@@ -965,7 +969,7 @@ This representation contains the physically implemented cell and routing-related
 ECO structure required by final static timing analysis.
 
 
-## 45. PrimeTime Handoff Package
+## 46. PrimeTime Handoff Package
 
 The final PrimeTime handoff contains three primary files:
 
@@ -979,7 +983,7 @@ The handoff-generation script verifies that each output exists and is non-empty
 before reporting completion.
 
 
-## 46. Physical-Design Source Map
+## 47. Physical-Design Source Map
 
 The principal physical-design scripts are:
 
@@ -1003,7 +1007,7 @@ The principal physical-design scripts are:
 | `innovus/scripts/backend_prep_hold_eco_iter4b.tcl` | Final PrimeTime handoff |
 
 
-## 47. Physical-Design Reports
+## 48. Physical-Design Reports
 
 Curated final implementation reports are stored under:
 
@@ -1023,7 +1027,7 @@ Detailed final Innovus timing and electrical reports are stored under:
     results/innovus/final_stage_full/
 
 
-## 48. Reproducible Final ECO Flow
+## 49. Reproducible Final ECO Flow
 
 The four final closure stages are wrapped by:
 
@@ -1039,7 +1043,7 @@ The final backend handoff is then generated using:
 This produces the extracted timing package consumed by PrimeTime.
 
 
-## 49. Physical-Design Summary
+## 50. Physical-Design Summary
 
 The CUBIC ASIC physical implementation completes the transition from the
 synthesized padded design to a routed TSMC 28 nm implementation with final

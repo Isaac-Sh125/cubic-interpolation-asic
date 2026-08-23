@@ -463,7 +463,7 @@ were valid and accessible for scan insertion. Most of the remaining sequential
 elements are located behind clock-gated branches without a dedicated test-mode
 clock-gating bypass.
 
-The retained implementation therefore contains three 14-cell scan chains as a
+The final synthesized implementation therefore contains three 14-cell scan chains as a
 **partial scan insertion**. A future full-DFT implementation should make the
 clock-gating structure test-aware so that the remaining sequential elements can
 be reached during scan operation.

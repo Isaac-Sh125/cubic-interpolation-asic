@@ -318,7 +318,7 @@ architecture.
 
 ## 17. Final L5 Core-Domain IR Drop
 
-The final Iter4B L=5 static rail analysis reports:
+The final L=5 static rail analysis reports:
 
 | Metric | Result |
 |---|---:|
@@ -337,7 +337,7 @@ The tech-only PGV model retains disconnected pad-ring/filler/pad/corner
 sections outside the core hierarchy, so the result is scoped to the project-level
 VDDC/VSSC core-domain analysis.
 
-The detailed interpretation is retained in:
+The detailed interpretation is available in:
 
     results/innovus/final_ir_drop_summary.txt
 
