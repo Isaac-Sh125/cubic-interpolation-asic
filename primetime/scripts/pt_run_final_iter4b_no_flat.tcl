@@ -114,6 +114,8 @@ source $_sdc_pt
 if {[file exists $BASE/innovus/datain/extra_constraints.sdc]} {
     source $BASE/innovus/datain/extra_constraints.sdc
 }
+# Final PT interface assumption: rst_n minimum input delay = 0.06 ns
+set_input_delay -clock clk -min 0.06 [get_pins I6/I1/C]
 
 check_timing -verbose > $OUT/check_${MODE}_${CORNER}.rpt
 

@@ -182,6 +182,14 @@ corresponding to approximately:
 The clock is defined at the physical clock-pad path and includes the same
 functional timing requirements used during physical implementation.
 
+For final PrimeTime signoff, the external asynchronous reset path `I6/I1/C` is
+modeled with a minimum input delay of:
+
+    0.06 ns
+
+This final external-interface assumption is applied by the PrimeTime analysis
+script after the translated physical SDC has been loaded.
+
 
 ## 8. Clock Propagation
 
@@ -222,8 +230,12 @@ The additional physical configuration constraints are also loaded from:
 
     innovus/datain/extra_constraints.sdc
 
-This maintains the configuration-state timing relationships used in the
-physical implementation.
+After these implementation constraints are loaded, the final PrimeTime flow
+applies the 0.06 ns minimum external reset input-delay assumption at
+`I6/I1/C`.
+
+This maintains the physical timing relationships while applying the final
+external reset-interface model used for signoff STA.
 
 
 ## 11. Functional Mode
@@ -403,10 +415,11 @@ The final minimum-delay results are:
 
 | Corner | Overall WNS | Data WNS | Clock-Gating WNS | Async WNS |
 |---|---:|---:|---:|---:|
-| Slow | +0.022842 ns | +0.022842 ns | +0.058417 ns | +0.032381 ns |
-| Typical | +0.010245 ns | +0.010245 ns | +0.031253 ns | +0.016578 ns |
-| Fast | -0.000167 ns | +0.000004 ns | +0.010128 ns | -0.000167 ns |
+| Slow | +0.022842 ns | +0.022842 ns | +0.058417 ns | +0.042381 ns |
+| Typical | +0.010245 ns | +0.010245 ns | +0.031253 ns | +0.026578 ns |
+| Fast | +0.000004 ns | +0.000004 ns | +0.010128 ns | +0.009833 ns |
 
+All three hold analyses contain zero negative paths.
 
 ## 22. Slow-Corner Hold
 
@@ -415,10 +428,9 @@ At the slow timing condition:
     Overall WNS      = +0.022842 ns
     Data WNS         = +0.022842 ns
     Clock-gating WNS = +0.058417 ns
-    Async WNS        = +0.032381 ns
+    Async WNS        = +0.042381 ns
 
 No negative hold path is reported.
-
 
 ## 23. Typical-Corner Hold
 
@@ -427,10 +439,9 @@ At the typical timing condition:
     Overall WNS      = +0.010245 ns
     Data WNS         = +0.010245 ns
     Clock-gating WNS = +0.031253 ns
-    Async WNS        = +0.016578 ns
+    Async WNS        = +0.026578 ns
 
 No negative hold path is reported.
-
 
 ## 24. Fast-Corner Functional Hold
 
@@ -472,68 +483,54 @@ clock-gating checks.
 
 The asynchronous group reports:
 
-    Async WNS = -0.000167 ns
+    Async WNS = +0.009833 ns
 
 with:
 
-    Async negative paths = 3
+    Async negative paths = 0
 
-These three paths are asynchronous removal checks rather than synchronous
-functional data hold paths.
+The asynchronous recovery/removal timing checks therefore pass at the final
+fast timing condition.
 
+## 27. Final Asynchronous Removal Closure
 
-## 27. Three Negative Asynchronous Removal Checks
+The final PrimeTime fast-corner asynchronous analysis contains no negative
+removal paths.
 
-The three negative fast-corner asynchronous checks terminate at:
+The limiting asynchronous minimum-delay margin is:
 
-| Endpoint | Slack |
-|---|---:|
-| `I0/u_path_Q_u_interp/y0_reg_11_` | -0.000167 ns |
-| `I0/u_path_Q_u_interp/y1_reg_7_` | -0.000165 ns |
-| `I0/u_path_Q_u_interp/y0_reg_0_` | -0.000165 ns |
+    +0.009833 ns
+    +9.833 ps
 
-The startpoint shown in the detailed PrimeTime reports is:
-
-    I6/I1/C
-
-and each path is reported as a:
-
-    removal check against rising-edge clock clk
-
+The final analysis uses the 0.06 ns minimum external reset input-delay
+assumption at `I6/I1/C`.
 
 ## 28. Interpretation of Fast Hold Overall WNS
 
-Because the overall timing statistic selects the worst active timing path across
-all timing groups, the three asynchronous removal checks determine the reported
-fast-corner overall hold value.
+The fast-corner timing classes report:
 
-Therefore:
+    Fast overall hold WNS   = +0.000004 ns
+    Fast synchronous data   = +0.000004 ns
+    Fast clock-gating WNS   = +0.010128 ns
+    Fast asynchronous WNS   = +0.009833 ns
 
-    Fast overall hold WNS = -0.000167 ns
+The limiting final fast-corner hold path is therefore a synchronous data path.
 
-while independently:
-
-    Fast synchronous data WNS = +0.000004 ns
-    Fast clock-gating WNS     = +0.010128 ns
-
-The overall negative value must therefore not be interpreted as a synchronous
-functional data-path hold failure.
-
+All fast-corner timing classes remain non-negative.
 
 ## 29. Hold-Path Classification
 
-The fast-corner negative-path counts are:
+The final fast-corner negative-path counts are:
 
 | Timing Class | Negative Paths |
 |---|---:|
 | Synchronous data | 0 |
 | Clock gating | 0 |
-| Asynchronous | 3 |
-| Overall | 3 |
+| Asynchronous | 0 |
+| Overall | 0 |
 
-The complete negative-path count is therefore confined to the asynchronous
-timing class.
-
+The complete final hold analysis is therefore clean across the reported timing
+classes.
 
 ## 30. Synchronous Timing Result
 
@@ -634,11 +631,10 @@ The complete final timing status is:
 | Setup async | PASS | PASS | PASS |
 | Hold data | PASS | PASS | PASS |
 | Hold clock gating | PASS | PASS | PASS |
-| Hold async | PASS | PASS | 3 negative removal checks |
+| Hold async | PASS | PASS | PASS |
 
-This classification distinguishes synchronous implementation timing from the
-specialized asynchronous checks.
-
+All analyzed timing classes are non-negative in the complete six-run
+PrimeTime matrix.
 
 ## 36. PrimeTime Artifacts
 
@@ -677,9 +673,8 @@ and generates a complete summary after all six analyses.
 
 ## 38. Final Static Timing Summary
 
-The final PrimeTime analysis demonstrates positive synchronous timing margins
-for the complete functional implementation across the analyzed slow, typical
-and fast library conditions.
+The final PrimeTime analysis demonstrates timing closure across the complete
+slow, typical and fast setup/hold matrix.
 
 All synchronous setup paths pass.
 
@@ -687,19 +682,18 @@ All synchronous functional data hold paths pass.
 
 All clock-gating setup and hold checks pass.
 
-The limiting synchronous margins are:
+All analyzed asynchronous recovery/removal checks pass.
+
+The limiting overall margins are:
 
     Setup WNS = +0.092604 ns
     Hold WNS  = +0.000004 ns
 
-The fast-corner overall minimum-delay statistic is:
+The final PrimeTime matrix contains zero negative paths in all six analyzed
+corner/mode runs.
 
-    -0.000167 ns
-
-because of three asynchronous removal checks.
-
-Those three checks account for the complete fast-corner negative-path count;
-the fast-corner synchronous data group contains zero negative paths.
+The final external asynchronous-reset interface model uses a minimum input
+delay of 0.06 ns at `I6/I1/C`.
 
 The full timing matrix and detailed path reports are preserved in the
 repository for independent review.

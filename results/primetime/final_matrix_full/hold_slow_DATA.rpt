@@ -9,7 +9,7 @@ Report : timing
 	-sort_by slack
 Design : top
 Version: X-2025.06-SP2-1
-Date   : Thu Aug 20 10:21:21 2026
+Date   : Sun Aug 23 17:10:06 2026
 ****************************************
 
 
@@ -630,7 +630,7 @@ Date   : Thu Aug 20 10:21:21 2026
   I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
   I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.053024 & 0.053024 r
   I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.039205 & 0.092228 r
-  I0/u_path_I_u_interp/CTS_ccl_a_buf_00009/Z (CKBD12BWP30P140)                          0.037084 & 0.129313 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00009/Z (CKBD12BWP30P140)                          0.037084 & 0.129312 r
   I0/u_path_I_u_interp/sample_cnt_reg_7_/CP (DFCNQD1BWP30P140)                          0.010872 & 0.140185 r
   I0/u_path_I_u_interp/sample_cnt_reg_7_/Q (DFCNQD1BWP30P140)                           0.070977 & 0.211162 f
   I0/u_path_I_u_interp/U11223/ZN (CKND0BWP30P140)                                       0.014611 & 0.225773 r
@@ -862,7 +862,7 @@ Date   : Thu Aug 20 10:21:21 2026
   I5/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.000000 r
   I0/CTS_csf_buf_00017/Z (CKBD12BWP30P140)                                              0.053024 & 0.053024 r
   I0/u_path_Q_u_interp/clk_gate_sample_cnt_reg_main_gate/Z (AN2D8BWP30P140)             0.039205 & 0.092228 r
-  I0/u_path_I_u_interp/CTS_ccl_a_buf_00009/Z (CKBD12BWP30P140)                          0.037084 & 0.129312 r
+  I0/u_path_I_u_interp/CTS_ccl_a_buf_00009/Z (CKBD12BWP30P140)                          0.037084 & 0.129313 r
   I0/u_path_I_u_interp/p2_reg_8_/CP (DFCNQD1BWP30P140)                                  0.003855 & 0.133168 r
   I0/u_path_I_u_interp/p2_reg_8_/Q (DFCNQD1BWP30P140)                                   0.091280 & 0.224448 f
   I0/u_path_I_u_interp/FE_PHC532_p2_8/Z (CKBD1BWP30P140)                                0.025160 & 0.249608 f

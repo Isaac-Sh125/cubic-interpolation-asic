@@ -9,7 +9,7 @@ Report : timing
 	-sort_by slack
 Design : top
 Version: X-2025.06-SP2-1
-Date   : Thu Aug 20 10:21:21 2026
+Date   : Sun Aug 23 17:10:06 2026
 ****************************************
 
 
@@ -22,14 +22,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208343 f
-  I0/FE_OFC39_wire_rst_n/ZN (INVD1BWP30P140)                                            0.096526 & 0.304868 r
-  I0/u_path_Q_u_interp/y0_reg_0_/CDN (DFCNQD1BWP30P140)                                 0.000203 & 0.305071 r
-  data arrival time                                                                                0.305071
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218343 f
+  I0/FE_OFC39_wire_rst_n/ZN (INVD1BWP30P140)                                            0.096526 & 0.314868 r
+  I0/u_path_Q_u_interp/y0_reg_0_/CDN (DFCNQD1BWP30P140)                                 0.000203 & 0.315071 r
+  data arrival time                                                                                0.315071
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -44,9 +44,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.272690
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.272690
-  data arrival time                                                                                -0.305071
+  data arrival time                                                                                -0.315071
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.032381
+  slack (MET)                                                                                      0.042381
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -58,14 +58,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208343 f
-  I0/FE_OFC39_wire_rst_n/ZN (INVD1BWP30P140)                                            0.096526 & 0.304868 r
-  I0/u_path_Q_u_interp/y1_reg_7_/CDN (DFCNQD1BWP30P140)                                 0.000203 & 0.305071 r
-  data arrival time                                                                                0.305071
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218343 f
+  I0/FE_OFC39_wire_rst_n/ZN (INVD1BWP30P140)                                            0.096526 & 0.314868 r
+  I0/u_path_Q_u_interp/y1_reg_7_/CDN (DFCNQD1BWP30P140)                                 0.000203 & 0.315071 r
+  data arrival time                                                                                0.315071
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -80,9 +80,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.272686
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.272686
-  data arrival time                                                                                -0.305071
+  data arrival time                                                                                -0.315071
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.032385
+  slack (MET)                                                                                      0.042385
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -94,14 +94,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208343 f
-  I0/FE_OFC39_wire_rst_n/ZN (INVD1BWP30P140)                                            0.096526 & 0.304868 r
-  I0/u_path_Q_u_interp/y0_reg_11_/CDN (DFCNQD1BWP30P140)                                0.000203 & 0.305071 r
-  data arrival time                                                                                0.305071
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218343 f
+  I0/FE_OFC39_wire_rst_n/ZN (INVD1BWP30P140)                                            0.096526 & 0.314868 r
+  I0/u_path_Q_u_interp/y0_reg_11_/CDN (DFCNQD1BWP30P140)                                0.000203 & 0.315071 r
+  data arrival time                                                                                0.315071
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -116,9 +116,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.272672
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.272672
-  data arrival time                                                                                -0.305071
+  data arrival time                                                                                -0.315071
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.032399
+  slack (MET)                                                                                      0.042399
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -130,14 +130,14 @@ Date   : Thu Aug 20 10:21:21 2026
   -----------------------------------------------------------------------------------
   clock clk (rise edge)                                    0.000000   0.000000
   clock network delay (propagated)                         0.000000   0.000000
-  input external delay                                     0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                  0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                  0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                  0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)               0.079887 & 0.208343 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)               0.162652 & 0.370994 r
-  I0/sanity_out_ff_reg/CDN (SDFCNQD0BWP30P140)             0.001696 & 0.372691 r
-  data arrival time                                                   0.372691
+  input external delay                                     0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                  0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                  0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                  0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)               0.079887 & 0.218343 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)               0.162652 & 0.380994 r
+  I0/sanity_out_ff_reg/CDN (SDFCNQD0BWP30P140)             0.001696 & 0.382691 r
+  data arrival time                                                   0.382691
 
   clock clk (rise edge)                                    0.000000   0.000000
   clock source latency                                     0.000000   0.000000
@@ -152,9 +152,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                  0.302524
   -----------------------------------------------------------------------------------
   data required time                                                  0.302524
-  data arrival time                                                   -0.372691
+  data arrival time                                                   -0.382691
   -----------------------------------------------------------------------------------
-  slack (MET)                                                         0.070167
+  slack (MET)                                                         0.080167
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -166,14 +166,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208342 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/p1_reg_7_/CDN (DFCNQD1BWP30P140)                                 0.020162 & 0.391156 r
-  data arrival time                                                                                0.391156
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218342 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/p1_reg_7_/CDN (DFCNQD1BWP30P140)                                 0.020162 & 0.401156 r
+  data arrival time                                                                                0.401156
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -188,9 +188,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.310745
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.310745
-  data arrival time                                                                                -0.391156
+  data arrival time                                                                                -0.401156
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.080411
+  slack (MET)                                                                                      0.090411
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -202,14 +202,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208342 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/p1_reg_3_/CDN (DFCNQD1BWP30P140)                                 0.021120 & 0.392115 r
-  data arrival time                                                                                0.392115
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218342 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/p1_reg_3_/CDN (DFCNQD1BWP30P140)                                 0.021120 & 0.402115 r
+  data arrival time                                                                                0.402115
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -224,9 +224,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.310862
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.310862
-  data arrival time                                                                                -0.392115
+  data arrival time                                                                                -0.402115
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.081253
+  slack (MET)                                                                                      0.091253
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -238,14 +238,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208342 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/p1_reg_1_/CDN (DFCNQD1BWP30P140)                                 0.022564 & 0.393559 r
-  data arrival time                                                                                0.393559
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218342 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/p1_reg_1_/CDN (DFCNQD1BWP30P140)                                 0.022564 & 0.403559 r
+  data arrival time                                                                                0.403559
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -260,9 +260,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.310948
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.310948
-  data arrival time                                                                                -0.393559
+  data arrival time                                                                                -0.403559
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.082611
+  slack (MET)                                                                                      0.092611
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -274,14 +274,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208343 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/p1_reg_9_/CDN (DFCNQD1BWP30P140)                                 0.022565 & 0.393560 r
-  data arrival time                                                                                0.393560
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218343 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/p1_reg_9_/CDN (DFCNQD1BWP30P140)                                 0.022565 & 0.403560 r
+  data arrival time                                                                                0.403560
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -296,9 +296,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.310932
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.310932
-  data arrival time                                                                                -0.393560
+  data arrival time                                                                                -0.403560
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.082628
+  slack (MET)                                                                                      0.092628
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -310,14 +310,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208342 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/p1_reg_15_/CDN (DFCNQD1BWP30P140)                                0.022718 & 0.393713 r
-  data arrival time                                                                                0.393713
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218342 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/p1_reg_15_/CDN (DFCNQD1BWP30P140)                                0.022718 & 0.403713 r
+  data arrival time                                                                                0.403713
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -332,9 +332,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.311004
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.311004
-  data arrival time                                                                                -0.393713
+  data arrival time                                                                                -0.403713
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.082709
+  slack (MET)                                                                                      0.092709
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -346,14 +346,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208342 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/p1_reg_5_/CDN (DFCNQD1BWP30P140)                                 0.022795 & 0.393790 r
-  data arrival time                                                                                0.393790
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218342 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/p1_reg_5_/CDN (DFCNQD1BWP30P140)                                 0.022795 & 0.403790 r
+  data arrival time                                                                                0.403790
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -368,9 +368,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.311009
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.311009
-  data arrival time                                                                                -0.393790
+  data arrival time                                                                                -0.403790
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.082780
+  slack (MET)                                                                                      0.092780
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -382,14 +382,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208343 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/p1_reg_11_/CDN (DFCNQD1BWP30P140)                                0.024450 & 0.395445 r
-  data arrival time                                                                                0.395445
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218343 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/p1_reg_11_/CDN (DFCNQD1BWP30P140)                                0.024450 & 0.405445 r
+  data arrival time                                                                                0.405445
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -404,9 +404,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.310987
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.310987
-  data arrival time                                                                                -0.395445
+  data arrival time                                                                                -0.405445
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.084458
+  slack (MET)                                                                                      0.094458
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -418,14 +418,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208342 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/p1_reg_0_/CDN (DFCNQD1BWP30P140)                                 0.024632 & 0.395626 r
-  data arrival time                                                                                0.395626
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218342 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/p1_reg_0_/CDN (DFCNQD1BWP30P140)                                 0.024632 & 0.405626 r
+  data arrival time                                                                                0.405626
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -440,9 +440,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.310984
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.310984
-  data arrival time                                                                                -0.395626
+  data arrival time                                                                                -0.405626
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.084642
+  slack (MET)                                                                                      0.094642
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -454,14 +454,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208343 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/p1_reg_2_/CDN (DFCNQD1BWP30P140)                                 0.025393 & 0.396388 r
-  data arrival time                                                                                0.396388
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218343 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/p1_reg_2_/CDN (DFCNQD1BWP30P140)                                 0.025393 & 0.406388 r
+  data arrival time                                                                                0.406388
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -476,9 +476,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.311028
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.311028
-  data arrival time                                                                                -0.396388
+  data arrival time                                                                                -0.406388
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.085360
+  slack (MET)                                                                                      0.095360
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -490,14 +490,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208342 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/p1_reg_6_/CDN (DFCNQD1BWP30P140)                                 0.028437 & 0.399432 r
-  data arrival time                                                                                0.399432
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218342 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/p1_reg_6_/CDN (DFCNQD1BWP30P140)                                 0.028437 & 0.409432 r
+  data arrival time                                                                                0.409432
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -512,9 +512,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.311200
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.311200
-  data arrival time                                                                                -0.399432
+  data arrival time                                                                                -0.409432
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.088231
+  slack (MET)                                                                                      0.098231
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -526,14 +526,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208343 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/p1_reg_12_/CDN (DFCNQD1BWP30P140)                                0.030392 & 0.401386 r
-  data arrival time                                                                                0.401386
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218343 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/p1_reg_12_/CDN (DFCNQD1BWP30P140)                                0.030392 & 0.411386 r
+  data arrival time                                                                                0.411386
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -548,9 +548,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.311298
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.311298
-  data arrival time                                                                                -0.401386
+  data arrival time                                                                                -0.411386
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.090088
+  slack (MET)                                                                                      0.100088
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -562,14 +562,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208342 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/p1_reg_8_/CDN (DFCNQD1BWP30P140)                                 0.030411 & 0.401406 r
-  data arrival time                                                                                0.401406
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218342 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/p1_reg_8_/CDN (DFCNQD1BWP30P140)                                 0.030411 & 0.411406 r
+  data arrival time                                                                                0.411406
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -584,9 +584,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.311287
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.311287
-  data arrival time                                                                                -0.401406
+  data arrival time                                                                                -0.411406
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.090118
+  slack (MET)                                                                                      0.100118
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -598,14 +598,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208342 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/p1_reg_13_/CDN (DFCNQD1BWP30P140)                                0.030823 & 0.401818 r
-  data arrival time                                                                                0.401818
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218342 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/p1_reg_13_/CDN (DFCNQD1BWP30P140)                                0.030823 & 0.411818 r
+  data arrival time                                                                                0.411818
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -620,9 +620,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.311303
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.311303
-  data arrival time                                                                                -0.401818
+  data arrival time                                                                                -0.411818
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.090515
+  slack (MET)                                                                                      0.100515
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -634,14 +634,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208343 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/p1_reg_4_/CDN (DFCNQD1BWP30P140)                                 0.030972 & 0.401966 r
-  data arrival time                                                                                0.401966
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218343 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/p1_reg_4_/CDN (DFCNQD1BWP30P140)                                 0.030972 & 0.411966 r
+  data arrival time                                                                                0.411966
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -656,9 +656,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.311307
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.311307
-  data arrival time                                                                                -0.401966
+  data arrival time                                                                                -0.411966
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.090659
+  slack (MET)                                                                                      0.100659
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -670,14 +670,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208343 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/y1_reg_0_/CDN (DFCNQD1BWP30P140)                                 0.030523 & 0.401517 r
-  data arrival time                                                                                0.401517
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218343 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/y1_reg_0_/CDN (DFCNQD1BWP30P140)                                 0.030523 & 0.411517 r
+  data arrival time                                                                                0.411517
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -692,9 +692,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.309631
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.309631
-  data arrival time                                                                                -0.401517
+  data arrival time                                                                                -0.411517
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.091886
+  slack (MET)                                                                                      0.101886
 
 
   Startpoint: I6/I1/C (internal path startpoint clocked by clk)
@@ -706,14 +706,14 @@ Date   : Thu Aug 20 10:21:21 2026
   ----------------------------------------------------------------------------------------------------------------
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock network delay (propagated)                                                      0.000000   0.000000
-  input external delay                                                                  0.050000   0.050000 r
-  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.050000 r
-  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.077964 r
-  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.128456 r
-  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.208343 f
-  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.370994 r
-  I0/u_path_Q_u_interp/y1_reg_4_/CDN (DFCNQD1BWP30P140)                                 0.030511 & 0.401505 r
-  data arrival time                                                                                0.401505
+  input external delay                                                                  0.060000   0.060000 r
+  I6/I1/C (PDDW04DGZ_H_G)                                                               0.000000   0.060000 r
+  FE_PHC662_wire_rst_n/Z (CKBD1BWP30P140)                                               0.027964 & 0.087964 r
+  FE_PHC604_wire_rst_n/Z (CKBD1BWP30P140)                                               0.050492 & 0.138456 r
+  I0/FE_OFC36_wire_rst_n/ZN (INVD3BWP30P140)                                            0.079887 & 0.218343 f
+  I0/FE_OFC37_wire_rst_n/ZN (INVD2BWP30P140)                                            0.162652 & 0.380994 r
+  I0/u_path_Q_u_interp/y1_reg_4_/CDN (DFCNQD1BWP30P140)                                 0.030511 & 0.411505 r
+  data arrival time                                                                                0.411505
 
   clock clk (rise edge)                                                                 0.000000   0.000000
   clock source latency                                                                  0.000000   0.000000
@@ -728,9 +728,9 @@ Date   : Thu Aug 20 10:21:21 2026
   data required time                                                                               0.309611
   ----------------------------------------------------------------------------------------------------------------
   data required time                                                                               0.309611
-  data arrival time                                                                                -0.401505
+  data arrival time                                                                                -0.411505
   ----------------------------------------------------------------------------------------------------------------
-  slack (MET)                                                                                      0.091894
+  slack (MET)                                                                                      0.101894
 
 Warning: report_timing has satisfied the max_paths criteria. There are 1111 further endpoints which have paths of interest with slack less than 1000.000000 that were not considered when generating this report. (UITE-502)
 

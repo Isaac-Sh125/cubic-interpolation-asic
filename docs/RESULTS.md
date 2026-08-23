@@ -204,29 +204,29 @@ Final PrimeTime hold timing is:
 
 | Corner | Data WNS | Clock-Gating WNS | Async WNS |
 |---|---:|---:|---:|
-| Slow | +0.022842 ns | +0.058417 ns | +0.032381 ns |
-| Typical | +0.010245 ns | +0.031253 ns | +0.016578 ns |
-| Fast | +0.000004 ns | +0.010128 ns | -0.000167 ns |
+| Slow | +0.022842 ns | +0.058417 ns | +0.042381 ns |
+| Typical | +0.010245 ns | +0.031253 ns | +0.026578 ns |
+| Fast | +0.000004 ns | +0.010128 ns | +0.009833 ns |
 
-All synchronous functional data hold paths remain non-negative.
+All reported hold timing classes are non-negative across the analyzed corners.
 
-The limiting synchronous data hold margin is:
+The limiting overall hold margin is:
 
     +0.000004 ns
     +0.004 ps
 
-The fast-corner clock-gating hold checks also remain non-negative.
+at the fast timing condition.
 
-Three fast-corner asynchronous removal checks have negative slack, producing an
-overall fast-corner minimum-delay WNS of:
+The final PrimeTime interface model uses a minimum external reset input-delay
+assumption of:
 
-    -0.000167 ns
+    0.06 ns
 
-These three asynchronous checks account for the complete PrimeTime negative-path
-count in the final matrix.
+at the physical reset pad path `I6/I1/C`.
 
+The final hold matrix contains zero negative paths.
 
-## 12. Synchronous Timing Summary
+## 12. Final Timing Summary
 
 Across the analyzed PrimeTime corners:
 
@@ -234,14 +234,17 @@ Across the analyzed PrimeTime corners:
 |---|---|---|---|
 | Setup data | PASS | PASS | PASS |
 | Setup clock gating | PASS | PASS | PASS |
+| Setup async | PASS | PASS | PASS |
 | Hold data | PASS | PASS | PASS |
 | Hold clock gating | PASS | PASS | PASS |
+| Hold async | PASS | PASS | PASS |
 
-The limiting synchronous margins are:
+All six setup/hold corner analyses report zero negative paths.
+
+The limiting overall margins are:
 
     Setup WNS = +0.092604 ns
     Hold WNS  = +0.000004 ns
-
 
 ## 13. SAIF-Based Post-Route Power
 
@@ -372,8 +375,8 @@ The final implementation demonstrates:
 - validated hierarchical RTL-to-gate equivalence;
 - zero final Innovus DRC and connectivity violations;
 - zero final Innovus electrical design-rule violations;
-- positive synchronous PrimeTime setup margins across all analyzed corners;
-- positive synchronous PrimeTime data-hold margins across all analyzed corners;
+- PrimeTime setup and hold closure with zero negative paths across all
+  analyzed corners and timing classes;
 - SAIF-based mode-dependent power characterization for L=2 through L=5.
 
 The detailed reports retained in the repository provide traceable evidence for

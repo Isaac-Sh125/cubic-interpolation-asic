@@ -261,14 +261,20 @@ with extracted SPEF parasitics and corner-specific timing libraries.
 | Typical | **+0.031253 ns** | 0 |
 | Fast | **+0.010128 ns** | 0 |
 
-All synchronous setup, functional data-hold, and clock-gating timing checks
-are non-negative across the analyzed slow, typical and fast corners.
+### Asynchronous Hold Timing
 
-At the fast corner, three asynchronous reset removal checks are negative. The
-worst asynchronous slack is **-0.000167 ns**. These checks are reported
-separately from synchronous functional data timing; the fast-corner data hold
-group itself remains non-negative at **+0.000004 ns** with zero negative data
-paths.
+| Corner | WNS | Violating Paths |
+|---|---:|---:|
+| Slow | **+0.042381 ns** | 0 |
+| Typical | **+0.026578 ns** | 0 |
+| Fast | **+0.009833 ns** | 0 |
+
+All setup, functional data-hold, clock-gating, and asynchronous timing checks
+are non-negative across the analyzed slow, typical and fast corners. The final
+fast-corner overall hold WNS is **+0.000004 ns**, with zero negative paths.
+
+The final PrimeTime flow uses a **0.06 ns** minimum external reset input-delay
+assumption at `I6/I1/C`.
 
 Detailed timing interpretation is available in
 [Static Timing Analysis](docs/STATIC_TIMING_ANALYSIS.md).
@@ -381,12 +387,11 @@ Technology: **TSMC 28 nm**
 | PrimeTime synchronous setup | PASS |
 | PrimeTime functional data hold | PASS |
 | PrimeTime clock-gating timing | PASS |
+| PrimeTime asynchronous timing | PASS |
 | SAIF power characterization L=2..5 | COMPLETE |
 
-The final PrimeTime matrix contains three negative fast-corner asynchronous
-removal checks, with worst slack of **-0.000167 ns**. These checks are isolated
-from the synchronous data and clock-gating timing groups, which remain
-non-negative.
+The final PrimeTime matrix is clean across all analyzed setup and hold
+conditions, with zero negative paths in all six corner/mode runs.
 
 The repository documents the implementation through final routed physical
 design, extracted PrimeTime static timing analysis and SAIF-based post-route

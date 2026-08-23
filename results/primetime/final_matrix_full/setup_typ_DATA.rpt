@@ -9,7 +9,7 @@ Report : timing
 	-sort_by slack
 Design : top
 Version: X-2025.06-SP2-1
-Date   : Thu Aug 20 10:20:39 2026
+Date   : Sun Aug 23 17:09:25 2026
 ****************************************
 
 
@@ -588,8 +588,8 @@ Date   : Thu Aug 20 10:20:39 2026
   I0/U124/ZN (AOI21D1BWP30P140)                                           0.105834 & 0.442635 f
   I0/U146/ZN (AOI22D0BWP30P140)                                           0.081522 & 0.524157 r
   I0/U147/ZN (OAI211D0BWP30P140)                                          0.129581 & 0.653738 f
-  I0/u_path_Q_u_p2s_stream_out_reg_11_/D (SDFCNQD0BWP30P140)              0.001332 & 0.655071 f
-  data arrival time                                                                  0.655071
+  I0/u_path_Q_u_p2s_stream_out_reg_11_/D (SDFCNQD0BWP30P140)              0.001332 & 0.655070 f
+  data arrival time                                                                  0.655070
 
   clock clk (rise edge)                                                   1.040000   1.040000
   clock source latency                                                    0.000000   1.040000
@@ -604,7 +604,7 @@ Date   : Thu Aug 20 10:20:39 2026
   data required time                                                                 1.049457
   --------------------------------------------------------------------------------------------------
   data required time                                                                 1.049457
-  data arrival time                                                                  -0.655071
+  data arrival time                                                                  -0.655070
   --------------------------------------------------------------------------------------------------
   slack (MET)                                                                        0.394387
 

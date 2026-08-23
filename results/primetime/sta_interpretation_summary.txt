@@ -5,6 +5,9 @@ Final PrimeTime STA Summary
 Clock:
   Period : 1.04 ns
 
+Final external reset interface assumption:
+  Minimum input delay at I6/I1/C : 0.06 ns
+
 Analysis matrix:
   Setup : slow / typical / fast
   Hold  : slow / typical / fast
@@ -48,43 +51,38 @@ Slow:
   Overall WNS      : +0.022842 ns
   Data WNS         : +0.022842 ns
   Clock-gating WNS : +0.058417 ns
-  Async WNS        : +0.032381 ns
+  Async WNS        : +0.042381 ns
   Negative paths   : 0
 
 Typical:
   Overall WNS      : +0.010245 ns
   Data WNS         : +0.010245 ns
   Clock-gating WNS : +0.031253 ns
-  Async WNS        : +0.016578 ns
+  Async WNS        : +0.026578 ns
   Negative paths   : 0
 
 Fast:
-  Overall WNS      : -0.000167 ns
+  Overall WNS      : +0.000004 ns
   Data WNS         : +0.000004 ns
   Clock-gating WNS : +0.010128 ns
-  Async WNS        : -0.000167 ns
-
-  Overall negative paths      : 3
-  Data negative paths         : 0
-  Clock-gating negative paths : 0
-  Async negative paths        : 3
+  Async WNS        : +0.009833 ns
+  Negative paths   : 0
 
 
-Fast-Corner Async Removal Checks
---------------------------------
+FINAL STATUS
+------------
 
-  I0/u_path_Q_u_interp/y0_reg_11_ : -0.000167 ns
-  I0/u_path_Q_u_interp/y1_reg_7_  : -0.000165 ns
-  I0/u_path_Q_u_interp/y0_reg_0_  : -0.000165 ns
+All analyzed setup and hold timing classes are non-negative across the slow,
+typical and fast corners.
 
-These three asynchronous removal checks account for the complete
-negative-path count in the fast-corner hold analysis.
+Total negative paths across the final six-run matrix:
 
-All synchronous functional data hold paths remain non-negative.
+  0
 
-The minimum fast-corner synchronous data hold margin is:
+Limiting setup margin:
+
+  +0.092604 ns
+
+Limiting hold margin:
 
   +0.000004 ns = +0.004 ps
-
-All analyzed setup paths and all clock-gating setup/hold checks are
-non-negative across the three analyzed corners.
