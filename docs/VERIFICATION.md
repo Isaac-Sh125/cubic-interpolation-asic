@@ -339,7 +339,13 @@ The primary verification-related source files are:
 | `lec_rvg/run_lec.tcsh` | Conformal LEC runner |
 | `lec_rvg/scripts/hier.do` | Hierarchical LEC procedure |
 | `out/output_golden.txt` | Canonical digital output reference |
-| `results/lec/LEC_SUMMARY.txt` | Validated formal equivalence summary |
+| `results/lec/LEC_SUMMARY.txt` | RTL-to-final-gate formal equivalence summary |
+| `synthesis_standard_verify/scripts/synthesis_standard.tcl` | Isolated standard-compile synthesis verification flow |
+| `synthesis_standard_verify/dataout/ASIC_Top_netlist.v` | Standard-compile gate netlist used for gate-to-gate LEC |
+| `lec_standard_vs_ultra/scripts/hier_standard_vs_ultra.do` | Standard-vs-ultra hierarchical LEC procedure |
+| `lec_standard_vs_ultra/run_lec_standard_vs_ultra.tcsh` | Standard-vs-ultra Conformal runner |
+| `results/lec/LEC_STANDARD_VS_ULTRA_SUMMARY.txt` | Standard-vs-ultra curated equivalence result |
+| `results/lec/LEC_STANDARD_VS_ULTRA_FULL_LOG.txt` | Preserved final standard-vs-ultra Conformal log |
 | `results/verification/digital_verification_summary.txt` | Curated digital regression summary |
 | `verification/matlab/cubic_hardware.m` | Configurable MATLAB fixed-point verification model |
 | `verification/keysight/float_iq_to_vsa.m` | Floating-point I/Q to Keysight VSA MAT converter |
@@ -539,3 +545,68 @@ These files are stored under:
 
 The L=5 output is the same complete 49,978-sample sequence used by the
 Golden/RTL/GLS/pad-level byte-for-byte regression described earlier.
+
+
+## 18. Standard-Compile vs Compile-Ultra Gate-to-Gate LEC
+
+A separate gate-to-gate equivalence experiment evaluates whether the synthesis
+optimization strategy changes the functional behavior of the design.
+
+The Golden implementation is generated using:
+
+    compile -gate_clock
+
+The Revised implementation is the final synthesis implementation generated
+using:
+
+    compile_ultra -gate_clock
+
+The two synthesis scripts otherwise use the same current RTL, constraints,
+technology setup, clock-gating setup and scan flow. A direct script comparison
+shows that the compilation command is the only functional difference.
+
+The comparison is performed in functional scan mode:
+
+    scan_en  = 0
+    scan_in1 = 0
+    scan_in2 = 0
+    scan_in3 = 0
+
+The scan outputs are excluded from the functional comparison.
+
+Because standard compile and compile_ultra can generate substantially different
+internal structures, this comparison uses:
+
+    set analyze option -auto
+    set compare effort high
+
+The final hierarchical result is:
+
+| Metric | Result |
+|---|---:|
+| Module pairs processed | 5 / 5 |
+| Equivalent | 5 |
+| Non-equivalent | 0 |
+| Abort | 0 |
+| Hierarchical comparison | Equivalent |
+
+For the final ASIC_Top pair, Conformal compares:
+
+| Point Type | Equivalent Points |
+|---|---:|
+| Primary outputs | 36 |
+| DFF points | 83 |
+| Black-box points | 4 |
+| Total | 123 |
+
+All 123 final top-level compared points are equivalent.
+
+The comparison log also reports different pre-mapping key-point counts and
+unreachable points between the two synthesized structures. These are not
+reported as non-equivalent or aborted comparison points; the final mapped
+hierarchical result is equivalent.
+
+Detailed evidence is stored in:
+
+    results/lec/LEC_STANDARD_VS_ULTRA_SUMMARY.txt
+    results/lec/LEC_STANDARD_VS_ULTRA_FULL_LOG.txt

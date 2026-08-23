@@ -95,6 +95,34 @@ The synthesis transformation is therefore formally equivalent for the validated
 hierarchical comparison.
 
 
+### Standard-Compile vs Compile-Ultra Gate-Level Equivalence
+
+A second Conformal comparison evaluates the current standard-compile gate
+implementation against the current compile_ultra gate implementation.
+
+The two synthesis verification scripts differ only in:
+
+    compile -gate_clock
+
+versus:
+
+    compile_ultra -gate_clock
+
+The high-effort hierarchical comparison reports:
+
+| Metric | Result |
+|---|---:|
+| Module pairs processed | 5 / 5 |
+| Equivalent | 5 |
+| Non-equivalent | 0 |
+| Abort | 0 |
+| Hierarchical comparison | Equivalent |
+
+This provides additional evidence that the selected compile_ultra optimization
+strategy preserves the design's functional behavior relative to standard
+compile under the documented functional scan constraints.
+
+
 ## 4. Logic Synthesis
 
 The final mapped implementation uses the TSMC 28 nm HPC+ standard-cell library.
@@ -381,7 +409,8 @@ The principal final project results are:
 | Gate-level regression | PASS, 49,978 samples byte-identical |
 | Pad-level regression | PASS, 49,978 samples byte-identical |
 | Keysight VSA RTL EVM, L=2..5 | PASS, representative captured range ~176-267 m%rms; requirement <350 m%rms |
-| LEC | 12 / 12 equivalent |
+| RTL-to-gate LEC | 12 / 12 equivalent |
+| Standard-vs-ultra gate-level LEC | 5 / 5 equivalent; NEQ=0; ABORT=0 |
 | Post-scan cells | 38,841 |
 | Post-scan cell area | 38,733.029556 |
 | Die | 880 x 880 um |
@@ -434,6 +463,8 @@ The final implementation demonstrates:
 - representative Keysight VSA RTL EVM below the 350 m%rms requirement for all
   preserved L=2..5 operating-mode measurements;
 - validated hierarchical RTL-to-gate equivalence;
+- high-effort standard-compile vs compile_ultra gate-level equivalence with
+  5/5 equivalent module pairs, NEQ=0 and ABORT=0;
 - zero final Innovus DRC and connectivity violations;
 - zero final Innovus electrical design-rule violations;
 - PrimeTime setup and hold closure with zero negative paths across all

@@ -1,0 +1,96 @@
+CUBIC Interpolation DSP ASIC
+Standard-Compile vs Compile-Ultra LEC Summary
+==============================================
+
+Purpose
+-------
+A second logical-equivalence check was performed to verify that the current
+project implementation synthesized using standard Design Compiler compile and
+the current implementation synthesized using compile_ultra preserve the same
+functional behavior.
+
+The comparison is gate-level to gate-level.
+
+Golden:
+  current-project standard compile + clock gating + scan implementation
+
+Revised:
+  current-project compile_ultra + clock gating + scan implementation
+
+Functional scan configuration
+-----------------------------
+The comparison evaluates normal functional operation:
+
+  scan_en    = 0
+  scan_in1   = 0
+  scan_in2   = 0
+  scan_in3   = 0
+
+The scan outputs are excluded from the functional comparison.
+
+Comparison configuration
+------------------------
+Cadence Conformal hierarchical LEC was used with:
+
+  set analyze option -auto
+  set compare effort high
+
+The high-effort setting is used for this standard-vs-ultra gate-level
+comparison because the two synthesis strategies can produce substantially
+different internal structures while preserving the same function.
+
+Final result
+------------
+Processed module pairs : 5 / 5
+Equivalent              : 5
+Non-equivalent          : 0
+Abort                   : 0
+
+Hierarchical result     : Equivalent
+
+The final top-level comparison contained:
+
+  Primary outputs       : 36
+  DFF points            : 83
+  Black-box points      : 4
+  Total compared points : 123
+
+All 123 top-level compared points were equivalent.
+
+Interpretation
+--------------
+The standard-compile and compile_ultra implementations have different internal
+synthesis structures and different modeled key-point counts. Conformal maps the
+corresponding functional points before comparison.
+
+The final hierarchical result demonstrates functional equivalence between the
+two current-project synthesized implementations under the documented functional
+scan constraints.
+
+Some synthesis-generated hierarchical modules are black-boxed at higher levels
+after their corresponding lower-level module pairs are handled by the
+hierarchical comparison. This is part of the hierarchical LEC methodology and
+does not represent a failed comparison.
+
+Evidence
+--------
+LEC procedure:
+
+  lec_standard_vs_ultra/scripts/hier_standard_vs_ultra.do
+
+LEC runner:
+
+  lec_standard_vs_ultra/run_lec_standard_vs_ultra.tcsh
+
+Standard synthesis verification flow:
+
+  synthesis_standard_verify/scripts/synthesis_standard.tcl
+  synthesis_standard_verify/run_syn_standard.tcsh
+
+Final Conformal result:
+
+  Processed 5 out of 5 module pairs
+  EQ: 5
+  NEQ: 0
+  ABORT: 0
+  Hierarchical compare : Equivalent

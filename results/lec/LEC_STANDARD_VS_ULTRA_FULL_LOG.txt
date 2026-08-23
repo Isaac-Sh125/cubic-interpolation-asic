@@ -1,0 +1,712 @@
+                          CONFORMAL (R)
+                   Version 25.20-p100 (12-Nov-2025) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2025. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 283 days old. You can download the latest version from http://downloads.cadence.com.
+
+CPU time     : 0.12    seconds
+Elapse time  : 0       seconds
+Memory usage : 135.49  M bytes
+// Command: read library -Both -Replace -sensitive -Statetable -Liberty \
+//              /data/tsmc/28HPCPMMWAVE/dig_libs/TSMCHOME/digital/Front_End/timing_power_noise/NLDM/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ssg0p81v125c.lib
+// Parsing file /data/tsmc/28HPCPMMWAVE/dig_libs/TSMCHOME/digital/Front_End/timing_power_noise/NLDM/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ssg0p81v125c.lib ...
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:43)
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:23)
+// Note: Read Liberty library successfully
+CPU time     : 0.84    seconds
+Elapse time  : 1       seconds
+Memory usage : 179.68  M bytes
+// Command: read design ../../synthesis_standard_verify/dataout/ASIC_Top_netlist.v \
+//              -Verilog -Golden -sensitive \
+//              -continuousassignment Bidirectional \
+//              -nokeep_unreach
+// Parsing file ../../synthesis_standard_verify/dataout/ASIC_Top_netlist.v ...
+// Golden root module is set to 'ASIC_Top'
+// Warning: (RTL2.13) Undriven pin is detected (occurrence:1580)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:1538)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:58)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:892)
+// Warning: There are 1580 undriven nets in Golden
+// Warning: There are 1580 undriven pins in Golden
+// Note: Read VERILOG design successfully
+CPU time     : 1.53    seconds
+Elapse time  : 2       seconds
+Memory usage : 224.80  M bytes
+// Command: read design ../../synthesis/dataout/ASIC_Top_netlist.v \
+//              -Verilog -Revised -sensitive \
+//              -continuousassignment Bidirectional \
+//              -nokeep_unreach -nosupply
+// Parsing file ../../synthesis/dataout/ASIC_Top_netlist.v ...
+// Revised root module is set to 'ASIC_Top'
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:496)
+// Note: Read VERILOG design successfully
+CPU time     : 2.21    seconds
+Elapse time  : 3       seconds
+Memory usage : 252.80  M bytes
+// Command: add pin constraints 0 scan_en -Both
+// Command: add pin constraints 0 scan_in1 scan_in2 scan_in3 -Both
+// Command: add ignore outputs scan_out1 scan_out2 scan_out3 -Both
+// Command: set flatten model -gated_clock
+// Command: uniquify -all
+Uniquified 1 instance(s) referring to module 'SNPS_CLOCK_GATE_HIGH_FIR_LPF_TRANSPOSED_1' in Golden
+Uniquified 1 instance(s) referring to module 'Interpolator_1' in Golden
+Uniquified 1 instance(s) referring to module 'SNPS_CLOCK_GATE_HIGH_Interpolator_1' in Golden
+Uniquified 1 instance(s) referring to module 'SNPS_CLOCK_GATE_HIGH_SIPO_1' in Golden
+Uniquified 1 instance(s) referring to module 'SNPS_CLOCK_GATE_HIGH_FIR_LPF_TRANSPOSED_0' in Golden
+Uniquified 2 instance(s) referring to module 'CKAN2D2BWP30P140' in Golden
+Uniquified 1 instance(s) referring to module 'Interpolator_0' in Golden
+Uniquified 4 instance(s) referring to module 'TIEHBWP30P140' in Golden
+Uniquified 4 instance(s) referring to module 'TIELBWP30P140' in Golden
+Uniquified 2 instance(s) referring to module 'INR3D0BWP30P140' in Golden
+Uniquified 2 instance(s) referring to module 'ND3D1BWP30P140' in Golden
+Uniquified 2 instance(s) referring to module 'AO21D1BWP30P140' in Golden
+Uniquified 200 instance(s) referring to module 'AOI22D1BWP30P140' in Golden
+Uniquified 64 instance(s) referring to module 'INR2D1BWP30P140' in Golden
+Uniquified 6 instance(s) referring to module 'OR3D1BWP30P140' in Golden
+Uniquified 6 instance(s) referring to module 'ND3D0BWP30P140' in Golden
+Uniquified 2 instance(s) referring to module 'IND3D0BWP30P140' in Golden
+Uniquified 2 instance(s) referring to module 'INR2D0BWP30P140' in Golden
+Uniquified 17 instance(s) referring to module 'OR2D1BWP30P140' in Golden
+Uniquified 196 instance(s) referring to module 'CKBD1BWP30P140' in Golden
+Uniquified 12 instance(s) referring to module 'CKND2D0BWP30P140' in Golden
+Uniquified 2 instance(s) referring to module 'OAI21D0BWP30P140' in Golden
+Uniquified 4 instance(s) referring to module 'NR3D0BWP30P140' in Golden
+Uniquified 2 instance(s) referring to module 'IOA21D0BWP30P140' in Golden
+Uniquified 12 instance(s) referring to module 'IND2D0BWP30P140' in Golden
+Uniquified 14 instance(s) referring to module 'XNR2UD0BWP30P140' in Golden
+Uniquified 90 instance(s) referring to module 'XNR2UD1BWP30P140' in Golden
+Uniquified 1 instance(s) referring to module 'SNPS_CLOCK_GATE_HIGH_Interpolator_0' in Golden
+Uniquified 242 instance(s) referring to module 'AO22D0BWP30P140' in Golden
+Uniquified 7 instance(s) referring to module 'NR2D0BWP30P140' in Golden
+Uniquified 30 instance(s) referring to module 'AO21D0BWP30P140' in Golden
+Uniquified 2 instance(s) referring to module 'OR2D0BWP30P140' in Golden
+Uniquified 4 instance(s) referring to module 'INR4D0BWP30P140' in Golden
+Uniquified 10 instance(s) referring to module 'NR4D0BWP30P140' in Golden
+Uniquified 2 instance(s) referring to module 'IND2D1BWP30P140' in Golden
+Uniquified 212 instance(s) referring to module 'IOA21D1BWP30P140' in Golden
+Uniquified 4 instance(s) referring to module 'AOI21D1BWP30P140' in Golden
+Uniquified 77 instance(s) referring to module 'CKND2D1BWP30P140' in Golden
+Uniquified 1938 instance(s) referring to module 'XOR2UD1BWP30P140' in Golden
+Uniquified 4 instance(s) referring to module 'ND4D1BWP30P140' in Golden
+Uniquified 6 instance(s) referring to module 'AN4D1BWP30P140' in Golden
+Uniquified 14 instance(s) referring to module 'NR2D1BWP30P140' in Golden
+Uniquified 172 instance(s) referring to module 'INVD1BWP30P140' in Golden
+Uniquified 28 instance(s) referring to module 'CKND0BWP30P140' in Golden
+Uniquified 1 instance(s) referring to module 'SNPS_CLOCK_GATE_HIGH_Control_Unit_PACKET_LEN10000_2' in Golden
+Uniquified 1900 instance(s) referring to module 'AN2D1BWP30P140' in Golden
+// Note: Added renaming rule 'LEC_UNIQUIFY_RULE' to match uniquified modules between Golden and Revised.
+Uniquified 46 module(s)
+CPU time     : 2.53    seconds
+Elapse time  : 3       seconds
+Memory usage : 287.22  M bytes
+// Command: write hier_compare dofile hier_standard_vs_ultra_compare.do \
+//              -replace \
+//              -prepend_string "analyze datapath -module -threads 4; usage; analyze datapath -wordlevel -verbose"
+// Warning: Golden or Revised have modules with number of instances less than 50. Skip it for hierarchical comparison
+//    (G) SNPS_CLOCK_GATE_HIGH_Control_Unit_PACKET_LEN10000_0
+//    (R) SNPS_CLOCK_GATE_HIGH_Control_Unit_PACKET_LEN10000_0
+// Warning: Module 'SNPS_CLOCK_GATE_HIGH_Control_Unit_PACKET_LEN10000_1_LEC_uniquify' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Golden or Revised have modules with number of instances less than 50. Skip it for hierarchical comparison
+//    (G) SNPS_CLOCK_GATE_HIGH_Control_Unit_PACKET_LEN10000_1
+//    (R) SNPS_CLOCK_GATE_HIGH_Control_Unit_PACKET_LEN10000_1
+// Warning: Module 'Control_Unit_PACKET_LEN10000_DW01_inc_0_DW01_inc_3' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Control_Unit_PACKET_LEN10000_test_1' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'SNPS_CLOCK_GATE_HIGH_SIPO_0' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'SIPO_0' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Golden or Revised have modules with number of instances less than 50. Skip it for hierarchical comparison
+//    (G) SNPS_CLOCK_GATE_HIGH_Interpolator_0_1
+//    (R) SNPS_CLOCK_GATE_HIGH_Interpolator_0_1
+// Warning: Module 'Interpolator_0_DW01_inc_0_DW01_inc_2' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_75_DW_mult_tc_161' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_74_DW_mult_tc_160' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_73_DW_mult_tc_159' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_72_DW_mult_tc_158' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW01_add_151_DW01_add_325' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW01_add_150_DW01_add_324' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW01_add_149_DW01_add_323' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_71_DW_mult_tc_153' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_70_DW_mult_tc_152' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_69_DW_mult_tc_151' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_68_DW_mult_tc_150' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW01_add_144_DW01_add_311' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW01_add_143_DW01_add_310' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW01_add_142_DW01_add_309' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_57_DW_mult_tc_129' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_56_DW_mult_tc_128' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_55_DW_mult_tc_127' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_54_DW_mult_tc_126' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW01_add_114_DW01_add_258' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW01_add_113_DW01_add_257' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW01_add_112_DW01_add_256' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_61_DW_mult_tc_133' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_60_DW_mult_tc_132' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_59_DW_mult_tc_131' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_58_DW_mult_tc_130' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW01_add_121_DW01_add_265' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW01_add_120_DW01_add_264' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW01_add_119_DW01_add_263' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_47_DW_mult_tc_105' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_39_DW_mult_tc_81' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_45_DW_mult_tc_103' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_36_DW_mult_tc_78' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_43_DW_mult_tc_101' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_31_DW_mult_tc_73' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_46_DW_mult_tc_104' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_44_DW_mult_tc_102' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_42_DW_mult_tc_100' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_67_DW_mult_tc_145' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_66_DW_mult_tc_143' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_52_DW_mult_tc_116' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_41_DW_mult_tc_83' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_40_DW_mult_tc_82' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_38_DW_mult_tc_80' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_37_DW_mult_tc_79' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_33_DW_mult_tc_75' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_32_DW_mult_tc_74' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_35_DW_mult_tc_77' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_34_DW_mult_tc_76' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_30_DW_mult_tc_72' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_27_DW_mult_tc_57' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_65_DW_mult_tc_142' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_64_DW_mult_tc_141' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_24_DW_mult_tc_54' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_63_DW_mult_tc_137' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_62_DW_mult_tc_136' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_15_DW_mult_tc_45' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_49_DW_mult_tc_111' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_48_DW_mult_tc_110' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_23_DW_mult_tc_53' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_22_DW_mult_tc_52' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_21_DW_mult_tc_51' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_20_DW_mult_tc_50' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_19_DW_mult_tc_49' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_18_DW_mult_tc_48' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_14_DW_mult_tc_44' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_13_DW_mult_tc_43' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_0_DW_mult_tc_12_DW_mult_tc_42' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'P2S_Interpolator_test_0' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Golden or Revised have modules with number of instances less than 50. Skip it for hierarchical comparison
+//    (G) SNPS_CLOCK_GATE_HIGH_FIR_LPF_TRANSPOSED_0_1
+//    (R) SNPS_CLOCK_GATE_HIGH_FIR_LPF_TRANSPOSED_0_1
+// Warning: Module 'FIR_LPF_TRANSPOSED_0_DW01_add_0_DW01_add_9' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_0_DW01_add_1_DW01_add_10' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_0_DW01_add_2_DW01_add_11' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_0_DW01_add_3_DW01_add_12' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_0_DW01_add_4_DW01_add_13' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_0_DW01_add_5_DW01_add_14' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_0_DW01_add_6_DW01_add_15' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_0_DW01_add_7_DW01_add_16' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_0_DW01_add_8_DW01_add_17' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_0_DW_mult_tc_4_DW_mult_tc_99' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_0_DW_mult_tc_3_DW_mult_tc_98' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_0_DW_mult_tc_2_DW_mult_tc_97' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_0_DW_mult_tc_1_DW_mult_tc_96' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_0_DW_mult_tc_0_DW_mult_tc_95' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'MinAJ2_Datapath_test_0' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Golden or Revised have modules with number of instances less than 50. Skip it for hierarchical comparison
+//    (G) SNPS_CLOCK_GATE_HIGH_SIPO_0_0
+//    (R) SNPS_CLOCK_GATE_HIGH_SIPO_0_0
+// Warning: Module 'SIPO_1' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Golden or Revised have modules with number of instances less than 50. Skip it for hierarchical comparison
+//    (G) SNPS_CLOCK_GATE_HIGH_Interpolator_0_0
+//    (R) SNPS_CLOCK_GATE_HIGH_Interpolator_0_0
+// Warning: Module 'Interpolator_1_DW01_inc_0_DW01_inc_1' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_75_DW_mult_tc_157' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_74_DW_mult_tc_156' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_73_DW_mult_tc_155' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_72_DW_mult_tc_154' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW01_add_151_DW01_add_318' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW01_add_150_DW01_add_317' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW01_add_149_DW01_add_316' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_71_DW_mult_tc_149' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_70_DW_mult_tc_148' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_69_DW_mult_tc_147' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_68_DW_mult_tc_146' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW01_add_144_DW01_add_304' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW01_add_143_DW01_add_303' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW01_add_142_DW01_add_302' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_57_DW_mult_tc_121' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_56_DW_mult_tc_120' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_55_DW_mult_tc_119' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_54_DW_mult_tc_118' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW01_add_114_DW01_add_244' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW01_add_113_DW01_add_243' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW01_add_112_DW01_add_242' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_61_DW_mult_tc_125' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_60_DW_mult_tc_124' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_59_DW_mult_tc_123' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_58_DW_mult_tc_122' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW01_add_121_DW01_add_251' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW01_add_120_DW01_add_250' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW01_add_119_DW01_add_249' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_44_DW_mult_tc_91' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_36_DW_mult_tc_66' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_46_DW_mult_tc_93' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_39_DW_mult_tc_69' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_42_DW_mult_tc_89' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_32_DW_mult_tc_62' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_45_DW_mult_tc_92' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_47_DW_mult_tc_94' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_43_DW_mult_tc_90' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_67_DW_mult_tc_144' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_66_DW_mult_tc_140' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_52_DW_mult_tc_114' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_34_DW_mult_tc_64' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_35_DW_mult_tc_65' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_37_DW_mult_tc_67' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_38_DW_mult_tc_68' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_30_DW_mult_tc_60' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_31_DW_mult_tc_61' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_40_DW_mult_tc_70' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_41_DW_mult_tc_71' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_33_DW_mult_tc_63' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_20_DW_mult_tc_30' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_65_DW_mult_tc_139' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_64_DW_mult_tc_138' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_23_DW_mult_tc_33' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_63_DW_mult_tc_135' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_62_DW_mult_tc_134' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_14_DW_mult_tc_24' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_49_DW_mult_tc_107' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_48_DW_mult_tc_106' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_26_DW_mult_tc_36' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_25_DW_mult_tc_35' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_24_DW_mult_tc_34' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_29_DW_mult_tc_39' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_28_DW_mult_tc_38' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_27_DW_mult_tc_37' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_17_DW_mult_tc_27' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_16_DW_mult_tc_26' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'Interpolator_1_DW_mult_tc_15_DW_mult_tc_25' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'P2S_Interpolator_test_1' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Golden or Revised have modules with number of instances less than 50. Skip it for hierarchical comparison
+//    (G) SNPS_CLOCK_GATE_HIGH_FIR_LPF_TRANSPOSED_0_0
+//    (R) SNPS_CLOCK_GATE_HIGH_FIR_LPF_TRANSPOSED_0_0
+// Warning: Module 'FIR_LPF_TRANSPOSED_1_DW01_add_0' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_1_DW01_add_1' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_1_DW01_add_2' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_1_DW01_add_3' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_1_DW01_add_4' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_1_DW01_add_5' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_1_DW01_add_6' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_1_DW01_add_7' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_1_DW01_add_8' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_1_DW_mult_tc_4_DW_mult_tc_88' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_1_DW_mult_tc_3_DW_mult_tc_87' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_1_DW_mult_tc_2_DW_mult_tc_86' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_1_DW_mult_tc_1_DW_mult_tc_85' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'FIR_LPF_TRANSPOSED_1_DW_mult_tc_0_DW_mult_tc_84' exists in Golden only. Skip it for hierarchical comparison
+// Warning: Module 'MinAJ2_Datapath_test_1' exists in Golden only. Skip it for hierarchical comparison
+// Note: Writing hierarchical compare dofile ...
+5 modules are output for hierarchical compare
+// Command: set dofile abort OFF
+// Command: set analyze option -auto
+// Command: set compare effort high
+// Command: run hier_compare hier_standard_vs_ultra_compare.do
+// Command: set_toplevel_constraints reset -Golden
+// Command: set_toplevel_constraints reset -Revised
+// Command: set_toplevel_constraints pin_constraints scan_en -constraint 0 -Golden
+// Command: set_toplevel_constraints pin_constraints scan_in1 -constraint 0 -Golden
+// Command: set_toplevel_constraints pin_constraints scan_in2 -constraint 0 -Golden
+// Command: set_toplevel_constraints pin_constraints scan_in3 -constraint 0 -Golden
+// Command: set_toplevel_constraints pin_constraints scan_en -constraint 0 -Revised
+// Command: set_toplevel_constraints pin_constraints scan_in1 -constraint 0 -Revised
+// Command: set_toplevel_constraints pin_constraints scan_in2 -constraint 0 -Revised
+// Command: set_toplevel_constraints pin_constraints scan_in3 -constraint 0 -Revised
+// Running Module Interpolator_1_LEC_uniquify and Interpolator_1
+// Command: set root module Interpolator_1_LEC_uniquify -Golden
+// Warning: There are 767 undriven nets in Golden
+// Warning: There are 767 undriven pins in Golden
+// Command: set root module Interpolator_1 -Revised
+// Command: set module property -instance /u_path_I/u_interp -Golden
+// Command: set module property -instance /u_path_I_u_interp -Revised
+// Command: report black box -NOHidden
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// (F1) Created 2 wire resolution gate(s) due to multiple-driven net(s)
+// (F14) Remodeled 161 gated-clock DFF/DLAT(s)
+// (F28) Converted 769 internal output port(s) to inout port(s)
+// (F30) Ignored 2 weak device(s) due to the existence of strong device(s)
+// Processing Revised ...
+// Modeling Revised ...
+// (F1) Created 2 wire resolution gate(s) due to multiple-driven net(s)
+// (F14) Remodeled 161 gated-clock DFF/DLAT(s)
+// (F28) Converted 2 internal output port(s) to inout port(s)
+// (F30) Ignored 2 weak device(s) due to the existence of strong device(s)
+CPU time     : 3.25    seconds
+Elapse time  : 4       seconds
+Memory usage : 345.00  M bytes
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            22     81     161       264     
+--------------------------------------------------------------------------------
+Revised           22     81     161       264     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Running automatic setup...
+// Automatic setup finished.
+CPU time     : 4.80    seconds
+Elapse time  : 5       seconds
+Memory usage : 348.00  M bytes
+// Command: analyze datapath -module -threads 4; usage; analyze datapath -wordlevel -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+CPU time     : 4.80    seconds
+Memory usage : 348.00  M bytes
+CPU time     : 5.43    seconds
+Elapse time  : 6       seconds
+Memory usage : 349.50  M bytes
+// Command: add compared points -all
+// 242 compared points added to compare list
+// Command: compare -noneq_stop 1   
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           81     108       189     
+--------------------------------------------------------------------------------
+Abort                0      53        53      
+================================================================================
+CPU time     : 1712.65 seconds
+Elapse time  : 1718    seconds
+Memory usage : 541.79  M bytes
+// Command: analyze abort -compare
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           81     161       242     
+================================================================================
+CPU time     : 2470.60 seconds
+Elapse time  : 2478    seconds
+Memory usage : 550.59  M bytes
+// Command: save hier_compare result
+// Command: set system mode setup
+// Command: add black box Interpolator_1_LEC_uniquify -module -hier -Golden
+// Command: add black box Interpolator_1 -module -hier -Revised
+Processed 1 out of 5 module pairs	EQ: 1	NEQ: 0	ABORT: 0
+// Running Module FIR_LPF_TRANSPOSED_test_0 and FIR_LPF_TRANSPOSED_test_0
+// Command: set root module FIR_LPF_TRANSPOSED_test_0 -Golden
+// Warning: There are 23 undriven nets in Golden
+// Warning: There are 23 undriven pins in Golden
+// Command: set root module FIR_LPF_TRANSPOSED_test_0 -Revised
+// Command: set module property -instance /u_path_I/u_fir -Golden
+// Command: set module property -instance /u_path_I_u_fir -Revised
+// Command: report black box -NOHidden
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// (F1) Created 2 wire resolution gate(s) due to multiple-driven net(s)
+// (F14) Remodeled 362 gated-clock DFF/DLAT(s)
+// (F28) Converted 25 internal output port(s) to inout port(s)
+// (F30) Ignored 2 weak device(s) due to the existence of strong device(s)
+// Processing Revised ...
+// Modeling Revised ...
+// (F14) Remodeled 362 gated-clock DFF/DLAT(s)
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            24     17     363       404     
+--------------------------------------------------------------------------------
+Revised           24     17     363       404     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Running automatic setup...
+// Automatic setup finished.
+CPU time     : 2470.91 seconds
+Elapse time  : 2478    seconds
+Memory usage : 550.79  M bytes
+// Command: analyze datapath -module -threads 4; usage; analyze datapath -wordlevel -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+CPU time     : 2470.91 seconds
+Memory usage : 550.79  M bytes
+// Command: add compared points -all
+// 380 compared points added to compare list
+// Command: compare -noneq_stop 1   
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           17     363       380     
+================================================================================
+CPU time     : 3608.35 seconds
+Elapse time  : 3619    seconds
+Memory usage : 552.84  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save hier_compare result
+// Command: set system mode setup
+// Command: add black box FIR_LPF_TRANSPOSED_test_0 -module -hier -Golden
+// Command: add black box FIR_LPF_TRANSPOSED_test_0 -module -hier -Revised
+Processed 2 out of 5 module pairs	EQ: 2	NEQ: 0	ABORT: 0
+// Running Module Interpolator_0_LEC_uniquify and Interpolator_0
+// Command: set root module Interpolator_0_LEC_uniquify -Golden
+// Warning: There are 767 undriven nets in Golden
+// Warning: There are 767 undriven pins in Golden
+// Command: set root module Interpolator_0 -Revised
+// Command: set module property -instance /u_path_Q/u_interp -Golden
+// Command: set module property -instance /u_path_Q_u_interp -Revised
+// Command: report black box -NOHidden
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// (F1) Created 2 wire resolution gate(s) due to multiple-driven net(s)
+// (F14) Remodeled 161 gated-clock DFF/DLAT(s)
+// (F28) Converted 769 internal output port(s) to inout port(s)
+// (F30) Ignored 2 weak device(s) due to the existence of strong device(s)
+// Processing Revised ...
+// Modeling Revised ...
+// (F1) Created 2 wire resolution gate(s) due to multiple-driven net(s)
+// (F14) Remodeled 161 gated-clock DFF/DLAT(s)
+// (F28) Converted 2 internal output port(s) to inout port(s)
+// (F30) Ignored 2 weak device(s) due to the existence of strong device(s)
+CPU time     : 3609.01 seconds
+Elapse time  : 3619    seconds
+Memory usage : 557.21  M bytes
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            22     81     161       264     
+--------------------------------------------------------------------------------
+Revised           22     81     161       264     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Running automatic setup...
+// Automatic setup finished.
+CPU time     : 3610.48 seconds
+Elapse time  : 3621    seconds
+Memory usage : 557.21  M bytes
+// Command: analyze datapath -module -threads 4; usage; analyze datapath -wordlevel -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+CPU time     : 3610.48 seconds
+Memory usage : 557.21  M bytes
+CPU time     : 3611.08 seconds
+Elapse time  : 3621    seconds
+Memory usage : 557.21  M bytes
+// Command: add compared points -all
+// 242 compared points added to compare list
+// Command: compare -noneq_stop 1   
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           81     108       189     
+--------------------------------------------------------------------------------
+Abort                0      53        53      
+================================================================================
+CPU time     : 5401.39 seconds
+Elapse time  : 5417    seconds
+Memory usage : 551.49  M bytes
+// Command: analyze abort -compare
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           81     161       242     
+================================================================================
+CPU time     : 6157.71 seconds
+Elapse time  : 6175    seconds
+Memory usage : 564.03  M bytes
+// Command: save hier_compare result
+// Command: set system mode setup
+// Command: add black box Interpolator_0_LEC_uniquify -module -hier -Golden
+// Command: add black box Interpolator_0 -module -hier -Revised
+Processed 3 out of 5 module pairs	EQ: 3	NEQ: 0	ABORT: 0
+// Running Module FIR_LPF_TRANSPOSED_test_1 and FIR_LPF_TRANSPOSED_test_1
+// Command: set root module FIR_LPF_TRANSPOSED_test_1 -Golden
+// Warning: There are 23 undriven nets in Golden
+// Warning: There are 23 undriven pins in Golden
+// Command: set root module FIR_LPF_TRANSPOSED_test_1 -Revised
+// Command: set module property -instance /u_path_Q/u_fir -Golden
+// Command: set module property -instance /u_path_Q_u_fir -Revised
+// Command: report black box -NOHidden
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// (F1) Created 2 wire resolution gate(s) due to multiple-driven net(s)
+// (F14) Remodeled 362 gated-clock DFF/DLAT(s)
+// (F28) Converted 25 internal output port(s) to inout port(s)
+// (F30) Ignored 2 weak device(s) due to the existence of strong device(s)
+// Processing Revised ...
+// Modeling Revised ...
+// (F14) Remodeled 362 gated-clock DFF/DLAT(s)
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            24     17     363       404     
+--------------------------------------------------------------------------------
+Revised           24     17     363       404     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// Running automatic setup...
+// Automatic setup finished.
+CPU time     : 6158.01 seconds
+Elapse time  : 6175    seconds
+Memory usage : 564.03  M bytes
+// Command: analyze datapath -module -threads 4; usage; analyze datapath -wordlevel -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+CPU time     : 6158.01 seconds
+Memory usage : 564.03  M bytes
+// Command: add compared points -all
+// 380 compared points added to compare list
+// Command: compare -noneq_stop 1   
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           17     363       380     
+================================================================================
+CPU time     : 7348.02 seconds
+Elapse time  : 7369    seconds
+Memory usage : 564.03  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save hier_compare result
+// Command: set system mode setup
+// Command: add black box FIR_LPF_TRANSPOSED_test_1 -module -hier -Golden
+// Command: add black box FIR_LPF_TRANSPOSED_test_1 -module -hier -Revised
+Processed 4 out of 5 module pairs	EQ: 4	NEQ: 0	ABORT: 0
+// Running Module ASIC_Top and ASIC_Top
+// Command: set root module ASIC_Top -Golden
+// Warning: Total black box modules referenced in Golden = 4
+// Command: set root module ASIC_Top -Revised
+// Warning: Total black box modules referenced in Revised = 4
+// Command: set module property -instance / -Golden
+// Command: set module property -instance / -Revised
+// Command: report black box -NOHidden
+HIER: (G R) FIR_LPF_TRANSPOSED_test_0
+HIER: (G R) FIR_LPF_TRANSPOSED_test_1
+HIER: (G) Interpolator_0_LEC_uniquify (R) Interpolator_0
+HIER: (G) Interpolator_1_LEC_uniquify (R) Interpolator_1
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// (F14) Remodeled 59 gated-clock DFF/DLAT(s)
+// Processing Revised ...
+// Modeling Revised ...
+// (F14) Remodeled 43 gated-clock DFF/DLAT(s)
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 150
+// Revised key points = 132
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    BBOX      Total   
+--------------------------------------------------------------------------------
+Golden            6      36     83     4         129     
+--------------------------------------------------------------------------------
+Revised           6      36     83     4         129     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       16     5         21      
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DLAT      Total   
+--------------------------------------------------------------------------------
+Unreachable       3         3       
+================================================================================
+// Running automatic setup...
+// Automatic setup finished.
+// Command: analyze datapath -module -threads 4; usage; analyze datapath -wordlevel -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+CPU time     : 7348.16 seconds
+Memory usage : 564.10  M bytes
+// Command: add compared points -all
+// 123 compared points added to compare list
+// Command: compare -noneq_stop 1   
+// Compare will stop on the 1st non-equivalent point
+================================================================================
+Compared points      PO     DFF    BBOX      Total   
+--------------------------------------------------------------------------------
+Equivalent           36     83     4         123     
+================================================================================
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save hier_compare result
+// Command: set system mode setup
+Processed 5 out of 5 module pairs	EQ: 5	NEQ: 0	ABORT: 0
+
+================================================================================
+Module Comparison Results
+--------------------------------------------------------------------------------
+Equivalent                     5
+--------------------------------------------------------------------------------
+Total                          5/5
+--------------------------------------------------------------------------------
+Hierarchical compare : Equivalent 
+================================================================================

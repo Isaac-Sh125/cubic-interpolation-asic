@@ -134,6 +134,30 @@ Abort                   : 0
 
 The LEC setup and runner are provided under `lec_rvg/`.
 
+### Standard-Compile vs Compile-Ultra Equivalence
+
+An additional gate-to-gate Conformal comparison was performed between a
+current-project standard `compile -gate_clock` implementation and the final
+`compile_ultra -gate_clock` synthesis implementation.
+
+The two synthesis verification scripts differ only in the compilation command.
+The functional comparison disables scan operation and uses:
+
+    set analyze option -auto
+    set compare effort high
+
+Final hierarchical result:
+
+    Equivalent module pairs : 5 / 5
+    Non-equivalent          : 0
+    Abort                   : 0
+
+This demonstrates that the two synthesis optimization strategies preserve the
+same functional behavior under the documented functional scan constraints.
+
+The isolated standard-compile flow is under `synthesis_standard_verify/`, and
+the gate-to-gate LEC flow is under `lec_standard_vs_ultra/`.
+
 ### MATLAB and Keysight VSA Signal-Quality Verification
 
 System-level 64-QAM signal quality was also evaluated using the MATLAB
@@ -440,7 +464,8 @@ Technology: **TSMC 28 nm**
 | RTL simulation | PASS |
 | Gate-level simulation | PASS |
 | Pad-level simulation | PASS |
-| Logic equivalence | PASS |
+| RTL-to-gate logic equivalence | PASS - 12 / 12 equivalent |
+| Standard-vs-ultra gate-level equivalence | PASS - 5 / 5 equivalent, NEQ=0, ABORT=0 |
 | Keysight VSA EVM, L=2..5 | PASS - representative captured RTL EVM ~176-267 m%rms, requirement <350 m%rms |
 | Synthesis | COMPLETE |
 | Placement and routing | COMPLETE |
