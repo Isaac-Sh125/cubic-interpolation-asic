@@ -108,7 +108,7 @@ if {[llength $LS] == 0} { snote "NO SAIF files found in $SAIF_DIR -- run GL_sim_
 # ---- per-L summary (measured, clock-gating aware) ----
 set out [open $PSD/saif_summary.txt w]
 puts $out "======================================================================"
-puts $out " MEASURED STATIC POWER (SAIF per L)  design=[dbGet top.name]   (mW)"
+puts $out " SAIF-BASED POST-ROUTE POWER (per L)  design=[dbGet top.name]   (mW)"
 puts $out " [clock format [clock seconds]]"
 puts $out " corner  : SlowView (ss 0.81V 125C, SlowRC/cworst)"
 puts $out " activity: real SAIF from GL_sim_saif (scope $SAIF_SCOPE -> block $CORE_INST)"

@@ -290,6 +290,13 @@ being transmitted.
 
 Each datapath contains a dedicated `FIR_LPF_TRANSPOSED` module.
 
+The MATLAB algorithmic reference uses a 64-tap FIR low-pass filter. The RTL
+implementation deliberately replaces this filter with a 10-tap symmetric,
+L-dependent hardware FIR. This is a hardware-complexity tradeoff rather than a
+coefficient-identical implementation of the MATLAB filter; system-level signal
+quality is therefore evaluated for the complete MATLAB and RTL processing
+chains.
+
 The hardware FIR contains 10 taps and uses one of four fixed coefficient banks,
 selected by the interpolation factor.
 

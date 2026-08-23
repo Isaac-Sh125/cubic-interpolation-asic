@@ -457,6 +457,17 @@ The generated ScanDEF distributes these cells evenly across the three chains:
     Chain 2 : 14 scan cells
     Chain 3 : 14 scan cells
 
+The resulting 42 scan cells do **not** represent full-scan coverage. The DFT
+analysis reported 1,138 sequential elements in the design, while only 42 cells
+were valid and accessible for scan insertion. Most of the remaining sequential
+elements are located behind clock-gated branches without a dedicated test-mode
+clock-gating bypass.
+
+The retained implementation therefore contains three 14-cell scan chains as a
+**partial scan insertion**. A future full-DFT implementation should make the
+clock-gating structure test-aware so that the remaining sequential elements can
+be reached during scan operation.
+
 The scan structure includes selected control, scheduler, FIR-valid and
 top-level sequential state.
 
