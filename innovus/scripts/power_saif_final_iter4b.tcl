@@ -110,13 +110,13 @@ if {[llength $LS] == 0} { snote "NO SAIF files found in $SAIF_DIR -- run GL_sim_
 # ---- per-L summary (measured, clock-gating aware) ----
 set out [open $PSD/saif_summary.txt w]
 puts $out "======================================================================"
-puts $out " MEASURED STATIC POWER (SAIF per L)  design=[dbGet top.name]   (mW)"
+puts $out " SAIF-BASED POST-ROUTE POWER  design=[dbGet top.name]   (mW)"
 puts $out " [clock format [clock seconds]]"
 puts $out " corner  : SlowView (ss 0.81V 125C, SlowRC/cworst)"
 puts $out " activity: real SAIF from GL_sim_saif (scope $SAIF_SCOPE -> block $CORE_INST)"
 puts $out "======================================================================"
 puts $out ""
-puts $out [format "%-10s %12s %10s %10s %10s %10s" "L" "chip" "core(I0)" "interp_I" "interp_Q" "fir_I"]
+puts $out [format "%-10s %12s %10s %10s %10s %10s %10s" "L" "chip" "core(I0)" "interp_I" "interp_Q" "fir_I" "fir_Q"]
 foreach l $LS {
     set row [list]
     lappend row [_chip_tot $PSD/saif/chip_L$l.rpt]
@@ -124,7 +124,8 @@ foreach l $LS {
     lappend row [_blk_pwr  $PSD/saif/interp_I_L$l.rpt I0/u_path_I_u_interp]
     lappend row [_blk_pwr  $PSD/saif/interp_Q_L$l.rpt I0/u_path_Q_u_interp]
     lappend row [_blk_pwr  $PSD/saif/fir_I_L$l.rpt    I0/u_path_I_u_fir]
-    puts $out [format "%-10s %12s %10s %10s %10s %10s" "L$l" {*}$row]
+    lappend row [_blk_pwr  $PSD/saif/fir_Q_L$l.rpt    I0/u_path_Q_u_fir]
+    puts $out [format "%-10s %12s %10s %10s %10s %10s %10s" "L$l" {*}$row]
 }
 puts $out ""
 puts $out "Compare vs vectorless 0.2 (power_signoff/summary.txt): SAIF core should be"
