@@ -1,0 +1,20 @@
+======================================================================
+ FINAL ITER4B L5 SAIF IR / RAIL ANALYSIS   design=top
+ Sun Aug 23 19:20:13 IDT 2026
+ nets: VDDC (0.81V, thr 0.7695=95%) / VSSC (0V, thr 0.081)
+ corner: SlowView (ss), QRC=cworst, T=125C
+======================================================================
+grid integrity: verifyConnectivity -type special ran (see ir_flow_log / innovus log for opens/shorts)
+PGV: generated techonly -> ./ir_signoff_iter4b_l5_final/pgv_techonly/pgv28_techonly.cl
+power pads: VDDC core pads=2  VSSC core pads=2  (vsrc_search=60um)
+RAIL: analyze_rail completed (analyze_rail -type domain -output ./ir_signoff_iter4b_l5_final PD_Core)
+
+WORST-CASE IR (SlowView ss 0.81V, techonly PGV, activity=L5 gate-level SAIF (core_L5.saif, scope design_tb/dut -> block I0)):
+  VDDC : min node V = 0.8070 V  ->  worst IR drop = 3.00 mV   (violations: 0, thr 0.7695V)
+  VSSC : worst ground bounce = 2.55 mV                       (violations: 0, thr 0.0810V)
+  Worst effective instance voltage = 0.8050 V  (= 5.00 mV total drop; PASS if > 0.7695V)
+
+GIF plots: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/{VDDC,VSSC}/ir_linear.gif ; HTML: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/HTML/
+Full net reports: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/{VDDC,VSSC}/VDDC.main.rpt / VSSC.main.rpt
+
+ir_rail complete. PGV_OK=1 RAIL_OK=1

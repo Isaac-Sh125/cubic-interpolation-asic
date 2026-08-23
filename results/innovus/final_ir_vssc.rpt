@@ -1,0 +1,101 @@
+POWER NET REPORT 
+Generated Date: Sun Aug 23 19:21:19 2026
+Host Name: micron9.eng.tau.ac.il
+
+
+==============================
+POWER NET 
+==============================
+Power Net: VSSC
+Voltage: 0.000
+Threshold: 0.081
+
+
+==============================
+POWER-GRID VIEW
+==============================
+Power-Grid Views Used: 130
+
+
+==============================
+POWER-GRID ATTRIBUTES
+==============================
+Total Resistor Elements: 578968
+    Please refer to ../VSSC/grid.gif for more details
+Top-level Resistor Elements:578968
+Cell Library Resistor Elements: 0
+Total Number of Current Taps: 178547
+    Please refer to ../VSSC/tc.gif for more details
+
+
+==============================
+IR DROP ANALYSIS
+==============================
+Layer based IR Drop Report: See Report
+Minimum, Average, Maximum IR drop: 0.000V 0.564mV 2.551mV
+    Please refer to ../VSSC/ir_linear.gif for more details
+Total Static Current Loaded: 0.0077359355054795742A
+Number of Violations: 0
+    Please refer to ../VSSC/ir_limit.gif for more details
+Minimum, Average, Maximum Vsrc Current: 0.0035417801700532436A, 0.0038679677527397871A, 0.0041941553354263306A
+
+
+==============================
+EFFECTIVE RESISTANCE ANALYSIS
+==============================
+Minimum, Average, Maximum Reff: 10.6352739, 52.773053280107412, 91.8700333
+
+
+==============================
+CURRENT DENSITY ANALYSIS
+==============================
+Minimum, Average, Maximum J/Jmax:
+Number of Violations: 0
+    Please refer to ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VSSC/rj.gif for more details
+
+
+==============================
+POWER SWITCH ANALYSIS
+==============================
+PowerGate Current I/Idsat violations: 
+    Please refer to ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VSSC/pi.gif for more details
+Minimum, Average, Maximum I/Idsat (pi): NA, NA, NA
+Minimum, Average, Maximum IRdrop Across PowerGate (pv): 0, 0, 0
+Power Switch ECO file for Soc Encounter: 
+
+
+==============================
+PACKAGE ANALYSIS
+==============================
+Voltage Drop Across Package (vu): NA, NA, NA
+
+
+==============================
+CAPACITANCE ANALYSIS
+==============================
+Decap Optimization method: area  
+Total Coupling Capacitance: NA
+    Please refer to ../VSSC/dd.gif for more details
+Grid Coupling Capacitance: NA
+Gate Coupling Capacitance (internal): NA
+Loading Coupling Capacitance: NA
+Capacitance Offered by Placed Decaps: NA
+Additional Capacitance Required: 0.000F
+    Please refer to ../VSSC/dr.gif for more details
+Total Feasible Capacitance: 0.000F
+Total Leakage Current of Placed Decaps: 0.000A
+Total Leakage Current of ECO Decaps: 0.000A
+What-if ECO File:   
+SoC Encounter ECO File: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1//VSSC/vs2fe_eco.tcl 
+
+
+==============================
+ADDITIONAL FILES
+==============================
+Instance Voltage File: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VSSC/VSSC.iv
+Dynamic IR drop Waveform File (dynamic): 
+Effective Instance Voltage File (dynamic): 
+
+Summary: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1//VSSC/results 
+
+

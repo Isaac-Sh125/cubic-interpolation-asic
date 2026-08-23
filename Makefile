@@ -148,8 +148,12 @@ saif:
 	  echo "ERROR: innovus/datain/saif/core_L$(L).saif missing - regenerate a post-layout"; \
 	  echo "       gate sim (innovus/build_pnr.cud) with SAIF dump into innovus/datain/saif/"; exit 1; fi
 
+# Final L=5 SAIF-based VDDC/VSSC core-domain IR / rail analysis
+ir:
+	cd innovus/work && /tools/common/wrappers/innovus -no_gui -files ../scripts/ir_rail_final_iter4b_l5.tcl -log ../logfile/ir_rail_final_iter4b_l5_final
+
 # ==========================================================================
-#  6   P R I M E T I M E     final STA (setup AND hold, all three corners)
+#  7   P R I M E T I M E     final STA (setup AND hold, all three corners)
 # ==========================================================================
 pt:
 	tcsh primetime/run_pt_final_iter4b.tcsh
@@ -182,13 +186,14 @@ flow_help:
 	@echo "     5  make pnr        Innovus place and route"
 	@echo "        make final_eco  validated post-route ECO chain"
 	@echo ""
-	@echo "   Final implementation:"
+	@echo "   Final implementation / analysis:"
 	@echo "        post-route ECO scripts: innovus/scripts/"
 	@echo "        make backend_prep_final  export final Iter4B PT netlist + SPEF"
-	@echo "     6  make pt          final setup/hold x slow/typ/fast PrimeTime matrix"
-	@echo ""
-	@echo "   Optional analysis:"
 	@echo "        make power       final Iter4B SAIF-based power analysis"
+	@echo "        make ir          final L5 core-domain static IR / rail analysis"
+	@echo "        make pt          final setup/hold x slow/typ/fast PrimeTime matrix"
+	@echo ""
+	@echo "   Activity support:"
 	@echo "        make saif        check SAIF availability"
 	@echo ""
 	@echo "   make flow             run main flow through P&R"
@@ -198,4 +203,4 @@ flow_help:
 	@echo "   L=$(L)                interpolation factor, supported 2..5"
 	@echo ""
 
-.PHONY: flow sim syn gls lec gls_pads gentop pnr pnr_stage final_eco backend_prep backend_prep_final power saif pt clean clean_all help flow_help
+.PHONY: flow sim syn gls lec gls_pads gentop pnr pnr_stage final_eco backend_prep backend_prep_final power saif ir pt clean clean_all help flow_help

@@ -29,7 +29,7 @@ Detailed documentation is organized as follows:
 | [Logic Synthesis](docs/SYNTHESIS.md) | Design Compiler flow, constraints, area, clock gating and scan |
 | [Physical Design](docs/PHYSICAL_DESIGN.md) | Floorplan, PG, placement, CTS, routing and final ECO closure |
 | [Static Timing Analysis](docs/STATIC_TIMING_ANALYSIS.md) | Final PrimeTime setup/hold matrix |
-| [Power Analysis](docs/POWER_ANALYSIS.md) | SAIF-based post-route L=2..5 power characterization |
+| [Power Analysis](docs/POWER_ANALYSIS.md) | SAIF-based post-route power and L5 core-domain IR/rail analysis |
 | [Final Results](docs/RESULTS.md) | Consolidated final numerical results |
 | [Reproducing the Flow](docs/REPRODUCING.md) | Validated Makefile execution sequence |
 
@@ -329,6 +329,33 @@ The complete per-L and per-block final power reports are stored in
 Detailed methodology and interpretation are available in
 [Power Analysis](docs/POWER_ANALYSIS.md).
 
+### Final L=5 Core-Domain IR Drop
+
+Static rail analysis was also performed on the final Iter4B implementation using
+the L=5 gate-level SAIF activity and the SlowView SS 0.81 V, 125 C / cworst
+analysis condition.
+
+| Metric | Final Result |
+|---|---:|
+| Minimum VDDC node voltage | **~0.807 V** |
+| Worst VDDC drop | **~3.00 mV** |
+| Maximum VSSC bounce | **~2.55 mV** |
+| Minimum effective instance voltage | **~0.805 V** |
+| Voltage-threshold violations | **0** |
+| Current taps matched | **39,509 / 39,509 (100%)** |
+| Dropped voltage sources | **0** |
+| Voltus solver errors | **0** |
+
+The reported drop is the worst location within the analyzed SlowView; it is not
+presented as an exhaustive worst-PVT rail sweep.
+
+The tech-only PGV representation reports disconnected pad-ring/filler/pad/corner
+sections outside the DSP hierarchy. No physically disconnected instance is
+reported inside `I0`. Accordingly, this result is reported as a project-level
+**core-domain IR analysis**, not unrestricted full-chip commercial rail signoff.
+
+Curated IR evidence is retained under `results/innovus/`.
+
 ---
 
 ## Repository Structure
@@ -365,6 +392,7 @@ repository.
 | Logic Synthesis | Synopsys Design Compiler Ultra |
 | Logic Equivalence | Cadence Conformal LEC |
 | Place & Route | Cadence Innovus |
+| Power / Rail Analysis | Cadence Innovus / Voltus |
 | Static Timing Analysis | Synopsys PrimeTime |
 
 Technology: **TSMC 28 nm**
@@ -389,10 +417,11 @@ Technology: **TSMC 28 nm**
 | PrimeTime clock-gating timing | PASS |
 | PrimeTime asynchronous timing | PASS |
 | SAIF power characterization L=2..5 | COMPLETE |
+| L5 core-domain IR / rail analysis | PASS (core-domain) |
 
 The final PrimeTime matrix is clean across all analyzed setup and hold
 conditions, with zero negative paths in all six corner/mode runs.
 
 The repository documents the implementation through final routed physical
-design, extracted PrimeTime static timing analysis and SAIF-based post-route
-power characterization.
+design, SAIF-based post-route power characterization, project-level L5
+core-domain IR/rail analysis, and extracted PrimeTime static timing analysis.

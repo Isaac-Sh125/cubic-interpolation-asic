@@ -1,0 +1,633 @@
+/tools/cadence/DDI/22.15/INNOVUS221/tools.lnx86/ssvtools/bin/64bit/voltus_rail -temp_directory_name /tmp/624279.1.normal/innovus_temp_1849223_micron9.eng.tau.ac.il_yitzhak2_Bvy2nQ -cmd /tmp/624279.1.normal/innovus_temp_1849223_micron9.eng.tau.ac.il_yitzhak2_Bvy2nQ/voltus_rail_1849223.cmd -machine micron9.eng.tau.ac.il -hbPort -1 
+* voltus_rail
+*	Version v22.15-s064_1 (02/18/2024 08:52:51)
+*	Copyright 2007 - 2017 Cadence Design Systems, Inc.
+*
+*	Run by yitzhak2 on Sun Aug 23 19:20:24 2026
+
+*	Executing 64 bit version on host: micron9.eng.tau.ac.il
+*
+* Current Process Limit (in bytes):
+*    Data Size	: 18014398509481983k
+*    File Size	: 18014398509481983k
+*    Memory	: 18014398509481983k
+*    Stack Size	: 18014398509481983k
+*    Descriptors: 1024 
+*
+Executing: nga_dp_hosts max_cpu=1 mode=local time_out=3600 
+Executing: layout_file /tmp/624279.1.normal/innovus_temp_1849223_micron9.eng.tau.ac.il_yitzhak2_Bvy2nQ/eps_out_1849223.def.gz 
+Executing: cell_library ./ir_signoff_iter4b_l5_final/pgv_techonly/pgv28_techonly.cl 
+Executing: use_cell_view type standard fast 
+Executing: use_cell_view type macro fast_accurate 
+Executing: use_cell_view type io fast_accurate 
+Executing: nga_setvar nga_enable_new_transient_analysis true 
+Executing: nga_setvar nga_current_redistribution true 
+Executing: net_voltage VDDC 0.81 0.7695 
+Executing: power_pin_supply_tolerance 0.567 1.053 net=VDDC 
+Executing: net_voltage VSSC 0 0.081 
+Executing: power_pin_supply_tolerance 0 0.3 net=VSSC 
+Executing: power_domain PD_Core pwrnet="VDDC" gndnet="VSSC" 
+Executing: current_data_file ./ir_signoff_iter4b_l5_final/power/static_VDDC.ptiavg 
+Executing: current_data_file ./ir_signoff_iter4b_l5_final/power/static_VSSC.ptiavg 
+Executing: power_pin VDDC file=/project/verif/users/yitzhak2/ws/ex_vlsi_1/final_script/innovus/work/./ir_signoff_iter4b_l5_final/vddc.pp 
+Executing: power_pin VSSC file=/project/verif/users/yitzhak2/ws/ex_vlsi_1/final_script/innovus/work/./ir_signoff_iter4b_l5_final/vssc.pp 
+
+
+Started Rail Analysis at 19:20:22 08/23/2026
+
+
+Multi-CPU Configuration:
+	#CPU: 1
+	Mode: local
+	Host: micron9.eng.tau.ac.il
+
+Executing: analyze PD_Core 0.81 avg 0.081 ir tc rc iv rv vc pv pi reff 
+
+
+Running OCI  extraction for /tmp/624279.1.normal/innovus_temp_1849223_micron9.eng.tau.ac.il_yitzhak2_Bvy2nQ/eps_out_1849223.def.gz ...
+
+Invoking: "/tools/cadence/DDI/22.15/INNOVUS221/tools.lnx86/ssvtools/bin/64bit/voltus_scheduler   -nt 1 -keeplog  -usecellid  -session_file ./work/sfe.session  -prev_session_file ./work/sfe.session.prev  -cmd ./work/voltus_scheduler.cmd" ...
+Extraction option setup as:
+setenv gray_data NONE
+setenv enable_cluster_overhang_via false
+setenv enable_dfm_mask_conflict_shape false
+Begin Preparing Data for Parasitic Extraction
+Extracting following DFM effects:
+MetalFill        : n/a
+WEE Effects      : r_only
+Erosion Effects  : r_only
+T/B Enlargements : ON
+R(w) Effects     : n/a
+R(w,s) Effects   : ON
+R(sw,st) Effects : ON
+TC(w) Effects    : ON
+Some effects indicate n/a because of non-availability of relevant input data (or) requested to be off.
+Ended Preparing Data for Parasitic Extraction: (cpu=0:00:03, real=0:00:03, mem(process/total/peak)=61.71MB/8266.02MB/4133.09MB)
+
+Invoking: "/tools/cadence/DDI/22.15/INNOVUS221/tools.lnx86/ssvtools/bin/64bit/voltus_scheduler -skip_prep -nt 1 -keeplog -usecellid -session_file ./work/sfe.session -prev_session_file ./work/sfe.session.prev -cmd ./work/voltus_scheduler.cmd -zx /tools/cadence/DDI/22.15/INNOVUS221/tools.lnx86/ssvtools/bin/64bit/voltus_extractor" ...
+Extraction option setup as:
+setenv gray_data NONE
+setenv enable_cluster_overhang_via false
+setenv enable_dfm_mask_conflict_shape false
+Begin Parasitic Extraction
+Extracting Progress:
+    0% at 19:20:28 08/23/2026
+  100% at 19:20:56 08/23/2026
+Ended Parasitic Extraction: (cpu=0:00:20, real=0:00:27, mem(process/total/peak)=22.97MB/6613.58MB/4324.23MB)
+
+
+Analyze Rail Settings:
+	Temp directory: /tmp/624279.1.normal/innovus_temp_1849223_micron9.eng.tau.ac.il_yitzhak2_Bvy2nQ
+	Output directory: ./ir_signoff_iter4b_l5_final
+	Run directory: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/
+
+
+Invoking: "/tools/cadence/DDI/22.15/INNOVUS221/tools.lnx86/ssvtools/bin/64bit/voltus_rail_smg -cmd ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/voltus_rail_smg.VSSC.cmd -l ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/voltus_rail_smg.VSSC.log" ...
+Begin Merging power grid
+Tech reference temperature: 25
+Target temperature: 125
+
+Grid Statistics of Net VSSC:
+- NODE
+  Total node: 418053
+    Top Level grid node: 418043
+      Top level interface node: 178537
+    Missing interface node: 10
+    Cell internal node: 0
+- ELEM
+  Total element: 578968
+    Top Level grid element: 578968
+    Cell internal element: 0
+- INST
+  Instance logically connected: 112389
+    Tech: 112389
+    StdCell: 0
+    Macro:
+      Early: 0
+      IR: 0
+      EM: 0
+    Current Region:  0
+  Dropped instance due to missing/incomplete cell library: 0
+- TAP
+  Total tap: 178547
+
+Ended Merging power grid: (cpu=0:00:04, real=0:00:03, mem(process/total/peak)=102.38MB/6668.67MB/4324.23MB)
+Invoking: "/tools/cadence/DDI/22.15/INNOVUS221/tools.lnx86/ssvtools/bin/64bit/voltus_rail_smg -cmd ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/voltus_rail_smg.VDDC.cmd -l ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/voltus_rail_smg.VDDC.log" ...
+Begin Merging power grid
+Tech reference temperature: 25
+Target temperature: 125
+
+Grid Statistics of Net VDDC:
+- NODE
+  Total node: 347590
+    Top Level grid node: 347580
+      Top level interface node: 112407
+    Missing interface node: 10
+    Cell internal node: 0
+- ELEM
+  Total element: 507305
+    Top Level grid element: 507305
+    Cell internal element: 0
+- INST
+  Instance logically connected: 112389
+    Tech: 112389
+    StdCell: 0
+    Macro:
+      Early: 0
+      IR: 0
+      EM: 0
+    Current Region:  0
+  Dropped instance due to missing/incomplete cell library: 0
+- TAP
+  Total tap: 112417
+
+Ended Merging power grid: (cpu=0:00:04, real=0:00:03, mem(process/total/peak)=102.01MB/6666.68MB/4324.23MB)
+
+Begin Preparing Data for Rail Analysis
+
+Net VSSC
+  Power Pin Location File: /project/verif/users/yitzhak2/ws/ex_vlsi_1/final_script/innovus/work/./ir_signoff_iter4b_l5_final/vssc.pp
+  # Voltage Source Added/Total (%): 2/2 (100.00%)
+
+  Power Database: ./ir_signoff_iter4b_l5_final/power/static_VSSC.ptiavg
+  # Current Taps Matched/Total (%): 39509/39509 (100.00%)
+  # Instances Matched: 39509
+
+Net VDDC
+  Power Pin Location File: /project/verif/users/yitzhak2/ws/ex_vlsi_1/final_script/innovus/work/./ir_signoff_iter4b_l5_final/vddc.pp
+  # Voltage Source Added/Total (%): 2/2 (100.00%)
+
+  Power Database: ./ir_signoff_iter4b_l5_final/power/static_VDDC.ptiavg
+  # Current Taps Matched/Total (%): 39509/39509 (100.00%)
+  # Instances Matched: 39509
+
+Begin PowerGrid Integrity Analysis
+
+Begin Redistribute Disconnected Cap
+Ended Redistribute Disconnected Cap: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=260.74MB/8036.21MB/4324.23MB)
+
+Ended PowerGrid Integrity Analysis: (cpu=0:00:01, real=0:00:02, mem(process/total/peak)=347.31MB/8036.21MB/4324.23MB)
+
+Ended Preparing Data for Rail Analysis: (cpu=0:00:02, real=0:00:04, mem(process/total/peak)=253.18MB/8036.21MB/4324.23MB)
+
+
+Begin Steady-State Analysis
+Ended Steady-State Analysis: (cpu=0:00:01, real=0:00:01, mem(process/total/peak)=449.68MB/8051.30MB/4324.23MB)
+
+
+Begin Report Generation
+
+
+Net VSSC:
+
+
+Begin Preparing Database for Report Generation
+
+Circuit profile:
+                                                      Current    Voltage
+Layer Name                       Nodes   Resistors    Sources    Sources
+----- --------------------  ----------  ----------  ---------  ---------
+0     M9                           248         238          0          1
+1     VIA8                           0         214          0          0
+2     M8                         22893       22877          0          1
+3     VIA7                           0       19463          0          0
+4     M7                         36219       33701      14150          0
+5     VIA6                           0       19463          0          0
+6     M6                         68692       66174      14150          0
+7     VIA5                           0       32617          0          0
+8     M5                         49096       46578      14150          0
+9     VIA4                           0       32617          0          0
+10    M4                         49091       46573      14150          0
+11    VIA3                           0       32617          0          0
+12    M3                         45473       42834      11780          0
+13    VIA2                           0       32623          0          0
+14    M2                         40129       37010         14          0
+15    VIA1                           0        7476          0          0
+16    M1                        106212      105893      98594          0
+                            ----------  ----------  ---------  ---------
+17    Circuit total             418054      578968     166988          2
+
+Note: 68380 current sources are disconnected.
+Ended Preparing Database for Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=776.04MB/9075.30MB/4324.23MB)
+
+Initializing Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=776.04MB/9075.30MB/4324.23MB)
+
+Begin IR Drop (Linear) Report Generation
+  Voltage: 0
+  Threshold: 0.081
+  Minimum, Average, Maximum IR Drop: 0.000V, 0.564mV, 2.551mV
+    Range 1(   2.232mV  -     2.552mV ):        85 (  0.03%)
+    Range 2(   1.914mV  -     2.232mV ):       573 (  0.17%)
+    Range 3(   1.595mV  -     1.914mV ):      2130 (  0.63%)
+    Range 4(   1.276mV  -     1.595mV ):      3798 (  1.12%)
+    Range 5(   0.957mV  -     1.276mV ):      6798 (  2.00%)
+    Range 6(   0.638mV  -     0.957mV ):     86348 ( 25.44%)
+    Range 7(   0.319mV  -     0.638mV ):    202899 ( 59.79%)
+    Range 8(    0.000V  -     0.319mV ):     36738 ( 10.83%)
+*** Note : 78684 disconnected nodes are excluded from the report.
+    Layer with maximum IR Drop:  M1
+      M9: 0.00078552 [0 - 0.00078552]
+      M8: 0.00082652 [0 - 0.00082652]
+      M7: 0.00085486 [1.2714e-07 - 0.00085499]
+      M6: 0.0008823 [1.3105e-07 - 0.00088243]
+      M5: 0.00090687 [1.3355e-07 - 0.00090701]
+      M4: 0.00093273 [1.3514e-07 - 0.00093287]
+      M3: 0.00095994 [1.3616e-07 - 0.00096008]
+      M2: 0.0010059 [1.3667e-07 - 0.0010061]
+      M1: 0.0025512 [1.3853e-07 - 0.0025514]
+  IR Report: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VSSC/VSSC.main.rpt
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VSSC/ir_linear.gif
+Ended IR Drop (Linear) Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=822.96MB/9075.30MB/4324.23MB)
+
+
+Begin IR Drop (Limit) Report Generation
+  Voltage: 0
+  Threshold: 0.081
+  Minimum, Average, Maximum IR Drop: 0.000V, 0.564mV, 2.551mV
+    Range 1(  81.000mV  -    81.008mV ):         0 (  0.00%)
+    Range 2(  74.250mV  -    81.000mV ):         0 (  0.00%)
+    Range 3(  67.500mV  -    74.250mV ):         0 (  0.00%)
+    Range 4(  60.750mV  -    67.500mV ):         0 (  0.00%)
+    Range 5(  54.000mV  -    60.750mV ):         0 (  0.00%)
+    Range 6(  47.250mV  -    54.000mV ):         0 (  0.00%)
+    Range 7(  40.500mV  -    47.250mV ):         0 (  0.00%)
+    Range 8(  -1.000uV  -    40.500mV ):    339369 (100.00%)
+*** Note : 78684 disconnected nodes are excluded from the report.
+    Layer with maximum IR Drop:  M1
+      M9: 0.00078552 [0 - 0.00078552]
+      M8: 0.00082652 [0 - 0.00082652]
+      M7: 0.00085486 [1.2714e-07 - 0.00085499]
+      M6: 0.0008823 [1.3105e-07 - 0.00088243]
+      M5: 0.00090687 [1.3355e-07 - 0.00090701]
+      M4: 0.00093273 [1.3514e-07 - 0.00093287]
+      M3: 0.00095994 [1.3616e-07 - 0.00096008]
+      M2: 0.0010059 [1.3667e-07 - 0.0010061]
+      M1: 0.0025512 [1.3853e-07 - 0.0025514]
+  IR Report: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VSSC/VSSC.main.rpt
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VSSC/ir_limit.gif
+Ended IR Drop (Limit) Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=825.28MB/9075.30MB/4324.23MB)
+
+
+Begin Tap Current Report Generation
+  Minimum, Average, Maximum Tap Current: -39.478uA, -78.451nA, 0.000A
+  Total Current: -7.736mA
+    Range 1(  -1.000GA  -    -1.000mA ):         0 (  0.00%)
+    Range 2(  -1.000mA  -  -100.000uA ):         0 (  0.00%)
+    Range 3(-100.000uA  -   -10.000uA ):        18 (  0.02%)
+    Range 4( -10.000uA  -    -1.000uA ):      1799 (  1.82%)
+    Range 5(  -1.000uA  -  -100.000nA ):     13958 ( 14.16%)
+    Range 6(-100.000nA  -   -10.000nA ):     20296 ( 20.58%)
+    Range 7( -10.000nA  -    -1.000nA ):      2959 (  3.00%)
+    Range 8(  -1.000nA  -      0.000A ):     59578 ( 60.42%)
+*** Note: 68380 disconnected taps (0.000A) are excluded from the report.
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VSSC/tc.gif
+Ended Tap Current Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=825.46MB/9075.30MB/4324.23MB)
+
+
+Begin Instance Based IR Drop Report Generation
+  Minimum, Average, Maximum Instance Based IR Drop: 0.137uV, 0.757mV, 2.551mV
+    Range 1(  81.000mV  -    81.008mV ):         0 (  0.00%)
+    Range 2(  74.250mV  -    81.000mV ):         0 (  0.00%)
+    Range 3(  67.500mV  -    74.250mV ):         0 (  0.00%)
+    Range 4(  60.750mV  -    67.500mV ):         0 (  0.00%)
+    Range 5(  54.000mV  -    60.750mV ):         0 (  0.00%)
+    Range 6(  47.250mV  -    54.000mV ):         0 (  0.00%)
+    Range 7(  40.500mV  -    47.250mV ):         0 (  0.00%)
+    Range 8(  -1.000uV  -    40.500mV ):     98608 (100.00%)
+*** Note : 68380 disconnected nodes are excluded from the report.
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VSSC/iv.gif
+Ended Instance Based IR Drop Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=829.43MB/9075.30MB/4324.23MB)
+
+
+Begin Effective Instance Voltage Report Generation
+Ended Effective Instance Voltage Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=829.43MB/9075.30MB/4324.23MB)
+
+
+Begin Voltage Source Current Report Generation
+  Minimum, Average, Maximum Voltage Source Current: 3.542mA, 3.868mA, 4.194mA
+  Total Current: 7.736mA
+    Range 1(   4.113mA  -     4.195mA ):         1 ( 50.00%)
+    Range 2(   4.031mA  -     4.113mA ):         0 (  0.00%)
+    Range 3(   3.950mA  -     4.031mA ):         0 (  0.00%)
+    Range 4(   3.868mA  -     3.950mA ):         0 (  0.00%)
+    Range 5(   3.786mA  -     3.868mA ):         0 (  0.00%)
+    Range 6(   3.705mA  -     3.786mA ):         0 (  0.00%)
+    Range 7(   3.623mA  -     3.705mA ):         0 (  0.00%)
+    Range 8(   3.541mA  -     3.623mA ):         1 ( 50.00%)
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VSSC/vc.gif
+Ended Voltage Source Current Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=829.43MB/9075.30MB/4324.23MB)
+
+
+Begin Resistor Current Report Generation
+  Minimum, Average, Maximum Resistor Current: 0.000A, 2.831uA, 4.194mA
+    Range 1(   1.000mA  -     1.000GA ):       114 (  0.02%)
+    Range 2( 100.000uA  -     1.000mA ):      2930 (  0.59%)
+    Range 3(  10.000uA  -   100.000uA ):      6464 (  1.30%)
+    Range 4(   1.000uA  -    10.000uA ):     73213 ( 14.72%)
+    Range 5(   0.100uA  -     1.000uA ):     86848 ( 17.46%)
+    Range 6(  10.000nA  -     0.100uA ):    122968 ( 24.72%)
+    Range 7(   1.000nA  -    10.000nA ):    148597 ( 29.87%)
+    Range 8(    0.000A  -     1.000nA ):     56271 ( 11.31%)
+*** Note : 81563 disconnected resistors are excluded from the report.
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VSSC/rc.gif
+Ended Resistor Current Report Generation: (cpu=0:00:01, real=0:00:01, mem(process/total/peak)=1233.19MB/9075.30MB/4616.00MB)
+
+
+Begin Resistor Voltage Report Generation
+  Minimum, Average, Maximum Resistor Voltage: 0.000V, 1.079uV, 0.390mV
+    Range 1(   0.341mV  -     0.390mV ):         4 (  0.00%)
+    Range 2(   0.292mV  -     0.341mV ):         7 (  0.00%)
+    Range 3(   0.244mV  -     0.292mV ):        25 (  0.01%)
+    Range 4(   0.195mV  -     0.244mV ):        30 (  0.01%)
+    Range 5(   0.146mV  -     0.195mV ):        70 (  0.01%)
+    Range 6(  97.436uV  -     0.146mV ):       105 (  0.02%)
+    Range 7(  48.718uV  -    97.436uV ):       468 (  0.09%)
+    Range 8(    0.000V  -    48.718uV ):    496696 ( 99.86%)
+*** Note : 81563 disconnected resistors are excluded from the report.
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VSSC/rv.gif
+Ended Resistor Voltage Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1239.19MB/9075.30MB/4622.00MB)
+
+
+Begin Power Gate I/Idsat Report Generation
+  No data found
+Ended Power Gate I/Idsat Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1239.20MB/9075.30MB/4622.01MB)
+
+
+Begin Power Gate Voltage Report Generation
+  No data found.
+Ended Power Gate Voltage Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1239.20MB/9075.30MB/4622.01MB)
+
+
+Begin Resistance of the Least Resistive Path Report Generation
+  Minimum, Average, Maximum Resistance of the Least Resistive Path: 10.635Ohm, 52.773Ohm, 91.870Ohm
+    Range 1(   81.716Ohm  -     91.879Ohm ):     13168 ( 11.96%)
+    Range 2(   71.561Ohm  -     81.716Ohm ):     14222 ( 12.91%)
+    Range 3(   61.407Ohm  -     71.561Ohm ):     14742 ( 13.38%)
+    Range 4(   51.253Ohm  -     61.407Ohm ):     14799 ( 13.44%)
+    Range 5(   41.098Ohm  -     51.253Ohm ):     16208 ( 14.72%)
+    Range 6(   30.944Ohm  -     41.098Ohm ):     14371 ( 13.05%)
+    Range 7(   20.790Ohm  -     30.944Ohm ):     13588 ( 12.34%)
+    Range 8(   10.634Ohm  -     20.790Ohm ):      9043 (  8.21%)
+*** Note : 2248 disconnected Instances are excluded from the report.
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VSSC/rlrp.gif
+Ended Resistance of the Least Resistive Path Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1283.36MB/9075.30MB/4666.18MB)
+
+
+Begin Voltage Across Vias and Contacts Report Generation
+Ended Voltage Across Vias and Contacts Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1283.36MB/9075.30MB/4666.18MB)
+
+
+Begin Weak Grid Connectivity Report
+Ended Weak Grid Connectivity Report: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1283.46MB/9075.30MB/4666.27MB)
+
+
+Begin Grid Integrity Report Generation
+  # Missing Cell Power-Grid Views: 0
+  # Physically Disconnected Instances: 2248
+  # Instances with Floating Power Pins: 2
+  # Disconnected Wire Segments: 15
+  # Weakly Connected Metal Segments: 24
+  # Dropped Voltage Sources: 0
+Ended Grid Integrity Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1283.46MB/9075.30MB/4666.27MB)
+
+
+
+Net VDDC:
+
+
+Begin Preparing Database for Report Generation
+
+Circuit profile:
+                                                      Current    Voltage
+Layer Name                       Nodes   Resistors    Sources    Sources
+----- --------------------  ----------  ----------  ---------  ---------
+0     M9                           262         251          0          1
+1     VIA8                           0         225          0          0
+2     M8                         23202       23181          0          1
+3     VIA7                           0       19742          0          0
+4     M7                         20482       17340          2          0
+5     VIA6                           0       19742          0          0
+6     M6                         53470       50328          2          0
+7     VIA5                           0       33170          0          0
+8     M5                         33586       30444          2          0
+9     VIA4                           0       32846          0          0
+10    M4                         33046       29904          2          0
+11    VIA3                           0       32846          0          0
+12    M3                         36432       33291       2252          0
+13    VIA2                           0       32846          0          0
+14    M2                         40566       37423         18          0
+15    VIA1                           0        7498          0          0
+16    M1                        106544      106228      98931          0
+                            ----------  ----------  ---------  ---------
+17    Circuit total             347591      507305     101209          2
+
+Note: 2260 current sources are disconnected.
+Ended Preparing Database for Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1283.59MB/9075.30MB/4666.41MB)
+
+Initializing Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1283.59MB/9075.30MB/4666.41MB)
+
+Begin IR Drop (Linear) Report Generation
+  Voltage: 0.81
+  Threshold: 0.7695
+  Minimum, Average, Maximum IR Drop: 0.807V, 0.809V, 0.810V
+    Range 1(    0.807V  -      0.808V ):       102 (  0.03%)
+    Range 2(    0.808V  -      0.808V ):       591 (  0.17%)
+    Range 3(    0.808V  -      0.808V ):      2668 (  0.78%)
+    Range 4(    0.808V  -      0.809V ):      4391 (  1.28%)
+    Range 5(    0.809V  -      0.809V ):      9351 (  2.72%)
+    Range 6(    0.809V  -      0.809V ):    123337 ( 35.83%)
+    Range 7(    0.809V  -      0.810V ):    178788 ( 51.94%)
+    Range 8(    0.810V  -      0.810V ):     24966 (  7.25%)
+*** Note : 3396 disconnected nodes are excluded from the report.
+    Layer with maximum IR Drop:  M1
+      M9: 0.00088793 [0.80911 - 0.81]
+      M8: 0.00093722 [0.80906 - 0.81]
+      M7: 0.00096756 [0.80903 - 0.81]
+      M6: 0.00099587 [0.809 - 0.81]
+      M5: 0.0010222 [0.80898 - 0.81]
+      M4: 0.0010507 [0.80895 - 0.81]
+      M3: 0.0010819 [0.80892 - 0.81]
+      M2: 0.0011254 [0.80887 - 0.81]
+      M1: 0.0026712 [0.80726 - 0.80993]
+  IR Report: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VDDC/VDDC.main.rpt
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VDDC/ir_linear.gif
+Ended IR Drop (Linear) Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1285.71MB/9075.30MB/4668.52MB)
+
+
+Begin IR Drop (Limit) Report Generation
+  Voltage: 0.81
+  Threshold: 0.7695
+  Minimum, Average, Maximum IR Drop: 0.807V, 0.809V, 0.810V
+    Range 1(    0.769V  -      0.769V ):         0 (  0.00%)
+    Range 2(    0.769V  -      0.773V ):         0 (  0.00%)
+    Range 3(    0.773V  -      0.776V ):         0 (  0.00%)
+    Range 4(    0.776V  -      0.780V ):         0 (  0.00%)
+    Range 5(    0.780V  -      0.783V ):         0 (  0.00%)
+    Range 6(    0.783V  -      0.786V ):         0 (  0.00%)
+    Range 7(    0.786V  -      0.790V ):         0 (  0.00%)
+    Range 8(    0.790V  -      0.810V ):    344194 (100.00%)
+*** Note : 3396 disconnected nodes are excluded from the report.
+    Layer with maximum IR Drop:  M1
+      M9: 0.00088793 [0.80911 - 0.81]
+      M8: 0.00093722 [0.80906 - 0.81]
+      M7: 0.00096756 [0.80903 - 0.81]
+      M6: 0.00099587 [0.809 - 0.81]
+      M5: 0.0010222 [0.80898 - 0.81]
+      M4: 0.0010507 [0.80895 - 0.81]
+      M3: 0.0010819 [0.80892 - 0.81]
+      M2: 0.0011254 [0.80887 - 0.81]
+      M1: 0.0026712 [0.80726 - 0.80993]
+  IR Report: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VDDC/VDDC.main.rpt
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VDDC/ir_limit.gif
+Ended IR Drop (Limit) Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1285.71MB/9075.30MB/4668.52MB)
+
+
+Begin Tap Current Report Generation
+  Minimum, Average, Maximum Tap Current: 0.000A, 78.212nA, 39.478uA
+  Total Current: 7.739mA
+    Range 1(   1.000mA  -     1.000GA ):         0 (  0.00%)
+    Range 2( 100.000uA  -     1.000mA ):         0 (  0.00%)
+    Range 3(  10.000uA  -   100.000uA ):        22 (  0.02%)
+    Range 4(   1.000uA  -    10.000uA ):      1802 (  1.82%)
+    Range 5( 100.000nA  -     1.000uA ):     13945 ( 14.09%)
+    Range 6(  10.000nA  -   100.000nA ):     20301 ( 20.52%)
+    Range 7(   1.000nA  -    10.000nA ):      2942 (  2.97%)
+    Range 8(    0.000A  -     1.000nA ):     59937 ( 60.57%)
+*** Note: 2260 disconnected taps (0.000A) are excluded from the report.
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VDDC/tc.gif
+Ended Tap Current Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1285.71MB/9075.30MB/4668.52MB)
+
+
+Begin Instance Based IR Drop Report Generation
+  Minimum, Average, Maximum Instance Based IR Drop: 0.807V, 0.809V, 0.810V
+    Range 1(    0.769V  -      0.770V ):         0 (  0.00%)
+    Range 2(    0.769V  -      0.773V ):         0 (  0.00%)
+    Range 3(    0.773V  -      0.776V ):         0 (  0.00%)
+    Range 4(    0.776V  -      0.780V ):         0 (  0.00%)
+    Range 5(    0.780V  -      0.783V ):         0 (  0.00%)
+    Range 6(    0.783V  -      0.786V ):         0 (  0.00%)
+    Range 7(    0.786V  -      0.790V ):         0 (  0.00%)
+    Range 8(    0.790V  -      0.810V ):     98949 (100.00%)
+*** Note : 2260 disconnected nodes are excluded from the report.
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VDDC/iv.gif
+Ended Instance Based IR Drop Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1285.71MB/9075.30MB/4668.53MB)
+
+
+Begin Effective Instance Voltage Report Generation
+
+ Avg EIV:
+  Minimum, Average, Maximum Effective Instance Voltage: 0.805V, 0.808V, 0.810V
+    Range 1(    0.805V  -      0.805V ):        24 (  0.02%)
+    Range 2(    0.805V  -      0.806V ):       302 (  0.27%)
+    Range 3(    0.806V  -      0.807V ):      2130 (  1.93%)
+    Range 4(    0.807V  -      0.807V ):      4248 (  3.86%)
+    Range 5(    0.807V  -      0.808V ):      4380 (  3.98%)
+    Range 6(    0.808V  -      0.808V ):     44461 ( 40.37%)
+    Range 7(    0.808V  -      0.809V ):     45416 ( 41.24%)
+    Range 8(    0.809V  -      0.810V ):      9178 (  8.33%)
+  *** Note: 2250 instance(s) don't have valid elapsed EIV results and they are excluded from histogram and gif file. For more details, please check the EIV report.
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VDDC_VSSC.avg_div.gif
+  GIF Limit plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VDDC_VSSC.avg_limit_div.gif
+  **** Note: Histogram and gif file are generated based on elapsed EIV results.
+Ended Effective Instance Voltage Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1291.71MB/9075.30MB/4674.56MB)
+
+
+Begin Voltage Source Current Report Generation
+  Minimum, Average, Maximum Voltage Source Current: -4.248mA, -3.869mA, -3.491mA
+  Total Current: -7.739mA
+    Range 1(  -4.249mA  -    -4.153mA ):         1 ( 50.00%)
+    Range 2(  -4.153mA  -    -4.059mA ):         0 (  0.00%)
+    Range 3(  -4.059mA  -    -3.964mA ):         0 (  0.00%)
+    Range 4(  -3.964mA  -    -3.869mA ):         0 (  0.00%)
+    Range 5(  -3.869mA  -    -3.775mA ):         0 (  0.00%)
+    Range 6(  -3.775mA  -    -3.680mA ):         0 (  0.00%)
+    Range 7(  -3.680mA  -    -3.586mA ):         0 (  0.00%)
+    Range 8(  -3.586mA  -    -3.491mA ):         1 ( 50.00%)
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VDDC/vc.gif
+Ended Voltage Source Current Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1291.71MB/9075.30MB/4674.56MB)
+
+
+Begin Resistor Current Report Generation
+  Minimum, Average, Maximum Resistor Current: 0.000A, 2.907uA, 4.470mA
+    Range 1(   1.000mA  -     1.000GA ):       147 (  0.03%)
+    Range 2( 100.000uA  -     1.000mA ):      2954 (  0.59%)
+    Range 3(  10.000uA  -   100.000uA ):      6049 (  1.20%)
+    Range 4(   1.000uA  -    10.000uA ):     70430 ( 13.98%)
+    Range 5(   0.100uA  -     1.000uA ):     85911 ( 17.05%)
+    Range 6(  10.000nA  -     0.100uA ):     83171 ( 16.50%)
+    Range 7(   1.000nA  -    10.000nA ):      2236 (  0.44%)
+    Range 8(    0.000A  -     1.000nA ):    253020 ( 50.21%)
+*** Note : 3387 disconnected resistors are excluded from the report.
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VDDC/rc.gif
+Ended Resistor Current Report Generation: (cpu=0:00:01, real=0:00:01, mem(process/total/peak)=1642.54MB/9075.30MB/5025.38MB)
+
+
+Begin Resistor Voltage Report Generation
+  Minimum, Average, Maximum Resistor Voltage: 0.000V, 1.092uV, 0.480mV
+    Range 1(   0.420mV  -     0.480mV ):         2 (  0.00%)
+    Range 2(   0.360mV  -     0.420mV ):         4 (  0.00%)
+    Range 3(   0.300mV  -     0.360mV ):        14 (  0.00%)
+    Range 4(   0.240mV  -     0.300mV ):        24 (  0.00%)
+    Range 5(   0.180mV  -     0.240mV ):        60 (  0.01%)
+    Range 6(   0.120mV  -     0.180mV ):        92 (  0.02%)
+    Range 7(  60.014uV  -     0.120mV ):       407 (  0.08%)
+    Range 8(    0.000V  -    60.014uV ):    503315 ( 99.88%)
+*** Note : 3387 disconnected resistors are excluded from the report.
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VDDC/rv.gif
+Ended Resistor Voltage Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1642.54MB/9075.30MB/5025.38MB)
+
+
+Begin Power Gate I/Idsat Report Generation
+  No data found
+Ended Power Gate I/Idsat Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1642.54MB/9075.30MB/5025.38MB)
+
+
+Begin Power Gate Voltage Report Generation
+  No data found.
+Ended Power Gate Voltage Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1642.54MB/9075.30MB/5025.38MB)
+
+
+Begin Resistance of the Least Resistive Path Report Generation
+  Minimum, Average, Maximum Resistance of the Least Resistive Path: 5.992Ohm, 54.394Ohm, 93.082Ohm
+    Range 1(   82.196Ohm  -     93.091Ohm ):     14420 ( 13.09%)
+    Range 2(   71.310Ohm  -     82.196Ohm ):     16792 ( 15.25%)
+    Range 3(   60.423Ohm  -     71.310Ohm ):     16079 ( 14.60%)
+    Range 4(   49.537Ohm  -     60.423Ohm ):     16412 ( 14.90%)
+    Range 5(   38.651Ohm  -     49.537Ohm ):     14480 ( 13.15%)
+    Range 6(   27.765Ohm  -     38.651Ohm ):     14279 ( 12.96%)
+    Range 7(   16.878Ohm  -     27.765Ohm ):     15762 ( 14.31%)
+    Range 8(    5.992Ohm  -     16.878Ohm ):      1917 (  1.74%)
+*** Note : 2248 disconnected Instances are excluded from the report.
+  GIF plot: ./ir_signoff_iter4b_l5_final/PD_Core_125C_avg_1/Reports/VDDC/rlrp.gif
+Ended Resistance of the Least Resistive Path Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1642.54MB/9075.30MB/5025.38MB)
+
+
+Begin Voltage Across Vias and Contacts Report Generation
+Ended Voltage Across Vias and Contacts Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1642.54MB/9075.30MB/5025.38MB)
+
+
+Begin Weak Grid Connectivity Report
+Ended Weak Grid Connectivity Report: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1642.54MB/9075.30MB/5025.38MB)
+
+
+Begin Grid Integrity Report Generation
+  # Missing Cell Power-Grid Views: 0
+  # Physically Disconnected Instances: 2248
+  # Instances with Floating Power Pins: 2
+  # Disconnected Wire Segments: 11
+  # Weakly Connected Metal Segments: 24
+  # Dropped Voltage Sources: 0
+Ended Grid Integrity Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1642.54MB/9075.30MB/5025.38MB)
+
+Ended Report Generation: (cpu=0:00:14, real=0:00:17, mem(process/total/peak)=1642.54MB/9075.30MB/5025.38MB)
+
+Executing: shutdown_launch_child 
+
+Rail Analysis Statistics:
+Warning messages:      0
+Error messages:        0
+
+Rail Analysis completed successfully.
+
+Finished Rail Analysis at 19:21:28 08/23/2026 (cpu=0:00:50, real=0:01:06, peak mem=5025.43MB)
+Current Innovus resource usage: (total cpu=0:01:39, real=0:02:36, mem=5025.43MB)

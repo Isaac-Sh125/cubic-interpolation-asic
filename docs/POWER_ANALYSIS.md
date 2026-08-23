@@ -729,3 +729,127 @@ over the same operating range.
 The results show the effect of interpolation-dependent activity on the core
 datapath and also demonstrate that the pad-integrated power domains contribute
 substantially to the final whole-chip power result.
+
+## 40. Final Core-Domain IR-Drop Analysis
+
+A final static rail analysis is performed on the completed Iter4B routed
+implementation.
+
+The retained analysis uses:
+
+    database       : final_hold_eco_iter4b_trial
+    activity       : L=5 gate-level SAIF
+    SAIF mapping   : design_tb/dut -> I0
+    analysis view  : SlowView
+    library corner : SS, 0.81 V, 125 C
+    RC condition   : cworst
+    power domain   : VDDC / VSSC
+    rail model     : run-local 28 nm tech-only PGV
+
+L=5 is used because it is the highest-rate and highest-power supported operating
+mode in the retained SAIF characterization.
+
+The rail PGV is stored inside the IR-analysis output directory rather than using
+the older shared PGV database.
+
+
+## 41. Final IR-Drop Result
+
+The final analyzed core-domain result is:
+
+| Metric | Result |
+|---|---:|
+| Nominal VDDC | 0.810 V |
+| Minimum VDDC node voltage | approximately 0.807 V |
+| Worst VDDC drop | approximately 3.00 mV |
+| VDDC drop / nominal supply | approximately 0.37% |
+| Maximum VSSC ground bounce | approximately 2.55 mV |
+| Minimum effective instance voltage | approximately 0.805 V |
+| Effective total drop | approximately 5.00 mV |
+| Effective drop / nominal VDDC | approximately 0.62% |
+| Voltage-threshold violations | 0 |
+
+The VDDC threshold used by the project-level check is:
+
+    0.7695 V
+
+which corresponds to 95% of the 0.81 V nominal core supply.
+
+The reported "worst" drop is the worst spatial location within the analyzed
+SlowView. It should not be interpreted as an exhaustive sweep over every
+possible power/rail PVT condition.
+
+
+## 42. Rail-Solver Integrity and Scope
+
+The final Voltus rail solver reports:
+
+    Current taps matched    : 39,509 / 39,509 (100.00%) on both rails
+    Dropped voltage sources : 0
+    Voltus warnings         : 0
+    Voltus errors           : 0
+
+The final VDDC rail current is approximately:
+
+    7.739 mA
+
+At 0.81 V this corresponds to approximately:
+
+    6.27 mW
+
+which is close to the independently reported L=5 DSP-core hierarchy power:
+
+    I0 power = 6.2380 mW
+
+This agreement provides an additional consistency check that the analyzed rail
+load represents the DSP core power at the expected magnitude.
+
+The fully padded top-level tech-only-PGV representation still reports physically
+disconnected pad-ring/filler/pad/corner sections. The retained integrity reports
+contain 2,248 such top-level instances on each analyzed rail, but:
+
+    physically disconnected instances inside I0 = 0
+
+Voltus also reports disconnected current-source/node sections associated with
+the same top-level representation. These counts are retained in the raw reports
+rather than hidden.
+
+For this reason the project result is stated as a successful **core-domain static
+IR analysis under the documented tech-only-PGV model**. It is not claimed as
+unrestricted full-chip commercial rail signoff.
+
+
+## 43. IR Analysis Artifacts
+
+The final IR script is:
+
+    innovus/scripts/ir_rail_final_iter4b_l5.tcl
+
+The curated interpretation is:
+
+    results/innovus/final_ir_drop_summary.txt
+
+The tool-generated final summary is:
+
+    results/innovus/final_ir_tool_summary.txt
+
+Retained raw evidence includes:
+
+    results/innovus/final_ir_vddc.rpt
+    results/innovus/final_ir_vssc.rpt
+    results/innovus/final_ir_vddc_pg_integrity.rpt
+    results/innovus/final_ir_vssc_pg_integrity.rpt
+    results/innovus/final_ir_voltus_rail.txt
+
+
+## 44. Reproducing IR Analysis
+
+From the project root, run:
+
+    make ir
+
+The target restores the final Iter4B routed database, annotates the L=5
+gate-level SAIF activity, generates static VDDC/VSSC current data, generates or
+reuses the run-local 28 nm tech-only PGV model, places ideal voltage sources at
+the identified core-supply pads, and runs static Voltus rail analysis on the
+VDDC/VSSC core domain.

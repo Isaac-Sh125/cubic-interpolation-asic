@@ -316,7 +316,33 @@ The similar I/Q values are consistent with the structurally symmetric channel
 architecture.
 
 
-## 17. Final Implementation Snapshot
+## 17. Final L5 Core-Domain IR Drop
+
+The final Iter4B L=5 static rail analysis reports:
+
+| Metric | Result |
+|---|---:|
+| Minimum VDDC node voltage | approximately 0.807 V |
+| Worst VDDC drop | approximately 3.00 mV |
+| Maximum VSSC bounce | approximately 2.55 mV |
+| Minimum effective instance voltage | approximately 0.805 V |
+| Voltage-threshold violations | 0 |
+| Current taps matched | 39,509 / 39,509 (100.00%) |
+| Dropped voltage sources | 0 |
+| Voltus solver warnings | 0 |
+| Voltus solver errors | 0 |
+
+No physically disconnected instance is reported inside the DSP hierarchy `I0`.
+The tech-only PGV model retains disconnected pad-ring/filler/pad/corner
+sections outside the core hierarchy, so the result is scoped to the project-level
+VDDC/VSSC core-domain analysis.
+
+The detailed interpretation is retained in:
+
+    results/innovus/final_ir_drop_summary.txt
+
+
+## 18. Final Implementation Snapshot
 
 The principal final project results are:
 
@@ -341,9 +367,11 @@ The principal final project results are:
 | L5 whole-chip power | 40.3975 mW |
 | L5 DSP-core power | 6.2380 mW |
 | SAIF annotation coverage | 98.287926% |
+| L5 core-domain VDDC IR drop | approximately 3.00 mV |
+| L5 minimum effective core voltage | approximately 0.805 V |
 
 
-## 18. Detailed Evidence
+## 19. Detailed Evidence
 
 Detailed supporting material is available in:
 
@@ -363,11 +391,12 @@ Curated and full tool reports are stored under:
     results/power/
 
 
-## 19. Final Result Summary
+## 20. Final Result Summary
 
 The CUBIC Interpolation DSP ASIC was implemented through RTL verification,
-technology mapping, fully padded physical design, extracted post-layout static
-timing analysis and activity-based post-route power characterization.
+technology mapping, fully padded physical design, activity-based post-route
+power characterization, project-level core-domain rail analysis and extracted
+post-layout static timing analysis.
 
 The final implementation demonstrates:
 
@@ -377,7 +406,9 @@ The final implementation demonstrates:
 - zero final Innovus electrical design-rule violations;
 - PrimeTime setup and hold closure with zero negative paths across all
   analyzed corners and timing classes;
-- SAIF-based mode-dependent power characterization for L=2 through L=5.
+- SAIF-based mode-dependent power characterization for L=2 through L=5;
+- project-level L=5 VDDC/VSSC core-domain IR analysis with approximately
+  3.00 mV worst VDDC drop and zero voltage-threshold violations.
 
 The detailed reports retained in the repository provide traceable evidence for
 each reported result.

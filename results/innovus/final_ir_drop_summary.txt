@@ -1,0 +1,62 @@
+CUBIC Interpolation ASIC - Final Iter4B Core-Domain IR/Rail Summary
+=======================================================================
+
+Analysis database
+-----------------
+Final routed/ECO database : final_hold_eco_iter4b_trial
+Activity source            : L5 gate-level SAIF
+SAIF mapping               : design_tb/dut -> I0
+Analysis view              : SlowView
+RC condition               : cworst
+Temperature                : 125 C
+Core supply                : VDDC = 0.81 V
+Rail model                 : freshly generated tech-only PGV
+
+Final voltage-drop results
+--------------------------
+Minimum VDDC node voltage  : approximately 0.8070 V
+Worst VDDC IR drop         : approximately 3.00 mV
+VDDC drop / nominal VDDC   : approximately 0.37 %
+
+Maximum VSSC ground bounce : approximately 2.55 mV
+
+Minimum effective voltage  : approximately 0.805 V
+Effective total drop       : approximately 5.00 mV
+Effective drop / VDDC      : approximately 0.62 %
+
+Voltage-threshold violations: 0
+
+Rail-solver checks
+------------------
+Current taps matched       : 39509 / 39509 (100.00 %) on both rails
+Dropped voltage sources    : 0
+Voltus rail warnings       : 0
+Voltus rail errors         : 0
+Innovus final-run errors   : 0
+
+Total rail current
+------------------
+VDDC total current         : approximately 7.739 mA
+Equivalent power at 0.81 V : approximately 6.27 mW
+
+This is consistent with the independently reported L5 core-hierarchy
+(I0) power of approximately 6.238 mW.
+
+PG-integrity interpretation
+---------------------------
+The tech-only PGV representation of the fully padded top reports 2248
+physically disconnected pad-ring/filler/pad/corner instances on each
+analyzed core rail. No physically disconnected instances are reported
+inside the DSP core hierarchy I0.
+
+Voltus also reports disconnected current-source/node sections associated
+with those disconnected top-level sections. These are retained as a
+documented modeling limitation rather than hidden.
+
+Conclusion
+----------
+The final Iter4B implementation passes the project-level core-domain
+static IR-drop check under the documented L5-SAIF / SlowView /
+tech-only-PGV methodology. The result is reported as a core-domain rail
+analysis and is not claimed as unrestricted full-chip commercial rail
+signoff.
