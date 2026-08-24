@@ -5,26 +5,35 @@
 
 Purpose
 -------
-System-level signal quality was evaluated using Keysight PathWave Vector
-Signal Analysis (VSA) with a 64-QAM demodulation setup.
+Keysight PathWave Vector Signal Analysis (VSA) was used to verify system-level
+64-QAM signal quality at two chronological stages of the project.
 
-The same underlying 60 MS/s communication stimulus was evaluated for the
-supported interpolation factors L = 2, 3, 4, and 5.
+Stage 1 - Pre-RTL fixed-point feasibility
+-----------------------------------------
+Before RTL development, `cubic_hardware.m` was used as a hardware-oriented
+fixed-point MATLAB model.
 
-Three sets of VSA screenshots are preserved:
+The purpose of this model was to reproduce the expected finite-word-length
+hardware behavior and verify the feasibility of the cubic interpolation
+algorithm before committing to an RTL implementation.
 
-  1. MATLAB fixed-point interpolation output before the low-pass FIR
-  2. MATLAB fixed-point output after the MATLAB low-pass FIR
-  3. RTL output after the hardware FIR
+The MATLAB output was evaluated in Keysight VSA using the supervisor-provided
+64-QAM system reference.
 
-The MATLAB and RTL post-filter processing chains do not use identical FIR
-implementations:
+After the fixed-point MATLAB results demonstrated acceptable signal quality,
+the design was implemented in synthesizable RTL.
 
-  MATLAB reference FIR : 64 taps
-  RTL hardware FIR     : 10 taps, symmetric, L-dependent coefficient bank
+Stage 2 - RTL signal-quality validation
+---------------------------------------
+After RTL implementation, the captured post-FIR RTL I/Q outputs were converted
+to Keysight-compatible MAT files and evaluated using the same system-level
+Keysight VSA methodology and reference.
 
-Therefore, the MATLAB-versus-RTL comparison is used as a system-level
-signal-quality comparison and is not claimed as bit-exact equivalence.
+The MATLAB and RTL results therefore represent two chronological validation
+stages.
+
+They are NOT presented as a direct sample-by-sample or bit-exact MATLAB-to-RTL
+comparison.
 
 ----------------------------------------------------------------------
  Sampling Rates
@@ -42,80 +51,92 @@ Output sample rates:
     L=5 : 300 MS/s
 
 ----------------------------------------------------------------------
- Interpretation of the EVM Screenshots
+ Representative EVM Measurements
 ----------------------------------------------------------------------
 
-Keysight VSA reports EVM continuously during analysis. The displayed EVM is
-not treated as a mathematically fixed constant: small variation can occur with
-the active measurement interval and analyzer state.
+Keysight VSA reports EVM continuously during analysis. The displayed value can
+vary slightly with the active measurement interval and analyzer state.
 
-The values below are therefore representative point-in-time values read from
-the preserved screenshots. They document the approximate measured operating
-range and are not presented as immutable exact values.
+The preserved screenshots are therefore treated as representative captured
+measurements.
 
-All EVM values are displayed by Keysight VSA in m%rms.
+All values below are reported by Keysight VSA in m%rms.
 
        MATLAB        MATLAB          RTL
        pre-FIR       post-FIR        post-FIR
-  L    [m%rms]       [m%rms]         [m%rms]
+  L    [m%rms]       [m%rms]        [m%rms]
  ------------------------------------------------
-  2     ~223           ~215            ~218
-  3     ~193           ~197            ~177
-  4     ~201           ~227            ~176
-  5     ~222           ~228            ~267
+  2      223.44         215.39         217.53
+  3      192.98         196.82         177.20
+  4      201.39         227.29         176.42
+  5      221.91         228.30         267.23
 
-Representative screenshot readings were approximately:
-
-  L=2 : MATLAB pre 223.44, MATLAB post 215.39, RTL 217.53 m%rms
-  L=3 : MATLAB pre 192.98, MATLAB post 196.82, RTL 177.20 m%rms
-  L=4 : MATLAB pre 201.39, MATLAB post 227.29, RTL 176.42 m%rms
-  L=5 : MATLAB pre 221.91, MATLAB post 228.30, RTL 267.23 m%rms
-
-These values should be interpreted as captured VSA observations rather than
-fixed constants.
-
-----------------------------------------------------------------------
- RTL Requirement Check
-----------------------------------------------------------------------
-
-Project EVM requirement:
+Project signal-quality requirement:
 
     EVM < 350 m%rms
 
-In all four preserved RTL measurements, the displayed EVM remained below the
-specified 350 m%rms limit.
+The pre-RTL MATLAB measurements established that the hardware-oriented
+fixed-point implementation was feasible before RTL development.
 
-The observed RTL results are approximately in the range:
+The later RTL measurements demonstrate that all four implemented RTL operating
+modes also satisfy the project EVM requirement.
 
-    176 to 267 m%rms
+Representative captured RTL EVM range:
 
-for the captured measurements of L = 2, 3, 4, and 5.
-
-Therefore, the preserved Keysight VSA measurements demonstrate that all four
-supported RTL operating modes satisfy the project EVM requirement.
+    approximately 176 to 267 m%rms
 
 ----------------------------------------------------------------------
- FIR Interpretation
+ MATLAB and RTL FIR Implementations
 ----------------------------------------------------------------------
 
-The main purpose of the low-pass FIR stage is suppression of the spectral
-images introduced by interpolation / upsampling.
+The pre-RTL MATLAB feasibility model and the final RTL use different FIR
+implementations:
 
-The VSA screenshots show that the effect of the FIR on EVM is mode-dependent.
-The project therefore does not claim that FIR filtering always reduces EVM.
+    MATLAB fixed-point FIR : 64 taps
+    RTL hardware FIR       : 10 taps, symmetric, L-dependent coefficients
 
-The final system requirement is evaluated using the complete post-filter
-signal for each interpolation factor.
+Therefore, the MATLAB post-FIR and RTL post-FIR sample sequences are not
+expected to be bit-exact equivalents.
 
-Because the MATLAB reference uses a 64-tap FIR while the RTL uses a 10-tap
-hardware-oriented FIR, differences between the MATLAB and RTL VSA results are
-expected and represent the behavior of the complete processing chains.
+Keysight VSA is used to verify the system-level signal quality independently at
+each development stage.
 
 ----------------------------------------------------------------------
- Evidence
+ Reference Terminology
 ----------------------------------------------------------------------
 
-MATLAB VSA screenshots:
+Two different references appear in the complete project verification flow.
+
+1. Keysight system reference
+
+   The supervisor-provided 64-QAM reference used during system-level Keysight
+   VSA verification.
+
+   It was used first for the pre-RTL MATLAB feasibility model and later for the
+   RTL signal-quality verification.
+
+2. RTL-derived digital regression baseline
+
+       out/output_golden.txt
+
+   Despite its historical filename, this file is the preserved validated L=5
+   RTL output sequence.
+
+   It is byte-identical to:
+
+       results/verification/rtl_output_post_LPF/rtl_output_POST_LPF_L_5.txt
+
+   and is used later to verify digital behavior preservation through RTL
+   regression, synthesized gate-level simulation and pad-level simulation.
+
+The Keysight system reference and `out/output_golden.txt` are therefore
+different references serving different verification purposes.
+
+----------------------------------------------------------------------
+ Preserved Evidence
+----------------------------------------------------------------------
+
+Pre-RTL MATLAB VSA screenshots:
 
     results/verification/matlab/pre_filter/L2.JPG
     results/verification/matlab/pre_filter/L3.JPG
@@ -134,18 +155,17 @@ RTL VSA screenshots:
     results/verification/rtl/L4.JPG
     results/verification/rtl/L5.JPG
 
+MATLAB numeric outputs:
+
+    results/verification/matlab_results/
+
+RTL post-FIR numeric outputs:
+
+    results/verification/rtl_output_post_LPF/
+
 VSA conversion utilities:
 
     verification/keysight/float_iq_to_vsa.m
     verification/keysight/hex_iq_to_vsa.m
-
-The RTL converter interprets the final hardware FIR output as signed 16-bit
-fixed-point data with 14 fractional bits and generates the Keysight-compatible
-MAT variables:
-
-    Y
-    XDelta
-    InputZoom
-    XStart
 
 ======================================================================

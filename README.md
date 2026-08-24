@@ -93,104 +93,93 @@ intermediate samples according to the selected interpolation factor.
 
 ## Verification
 
-Verification was performed at several abstraction levels.
+Verification follows the actual chronological project-development sequence.
 
-### RTL Simulation
+### Pre-RTL Fixed-Point Feasibility
 
-RTL simulation was performed with Synopsys VCS using the project streaming
-testbench and input vectors.
+Before synthesizable RTL development, `verification/matlab/cubic_hardware.m`
+was used as a hardware-oriented fixed-point feasibility model.
 
-For the main `L = 5` case, the RTL output contains **49,978 samples** and
-matches the project golden output byte-for-byte.
+Its output was evaluated in Keysight PathWave VSA using the supervisor-provided
+64-QAM system reference.
 
-### Gate-Level Simulation
+Representative captured MATLAB post-FIR EVM values were:
 
-The synthesized TSMC 28 nm gate-level netlist was simulated using the same
-stimulus and compared against the golden reference. This is a functional
-post-synthesis gate-level simulation; no SDF back-annotation is applied.
-
-The gate-level output matches the RTL/golden output.
-
-### Pad-Level Gate Simulation
-
-The pad-integrated chip-level netlist was also simulated using the same L=5
-stimulus. The padded simulation runs in zero-delay mode using the real TSMC
-28 nm I/O Verilog model; only the mechanical `PCORNER_G` cell is represented
-by a simulation stub. Its complete 49,978-sample output is byte-identical to
-the canonical golden reference.
-
-### Logic Equivalence Checking
-
-Cadence Conformal LEC was used for hierarchical RTL-to-gate-netlist
-equivalence verification.
-
-Validated hierarchical comparison results:
-
-```text
-Equivalent module pairs : 12 / 12
-Non-equivalent          : 0
-Abort                   : 0
-```
-
-The LEC setup and runner are provided under `lec_rvg/`.
-
-### Standard-Compile vs Compile-Ultra Equivalence
-
-An additional gate-to-gate Conformal comparison was performed between a
-current-project standard `compile -gate_clock` implementation and the final
-`compile_ultra -gate_clock` synthesis implementation.
-
-The two synthesis verification scripts differ only in the compilation command.
-The functional comparison disables scan operation and uses:
-
-    set analyze option -auto
-    set compare effort high
-
-Final hierarchical result:
-
-    Equivalent module pairs : 5 / 5
-    Non-equivalent          : 0
-    Abort                   : 0
-
-This demonstrates that the two synthesis optimization strategies preserve the
-same functional behavior under the documented functional scan constraints.
-
-The isolated standard-compile flow is under `synthesis_standard_verify/`, and
-the gate-to-gate LEC flow is under `lec_standard_vs_ultra/`.
-
-### MATLAB and Keysight VSA Signal-Quality Verification
-
-System-level 64-QAM signal quality was also evaluated using the MATLAB
-fixed-point model and Keysight PathWave Vector Signal Analysis (VSA).
-
-The same underlying 60 MS/s I/Q stimulus was used for the preserved
-L=2, 3, 4 and 5 evaluations.
-
-The MATLAB algorithmic reference uses a 64-tap FIR, while the final RTL uses a
-10-tap symmetric L-dependent hardware FIR. The MATLAB and RTL post-filter
-signals are therefore compared at the system-signal-quality level and are not
-claimed to be bit-exact equivalent.
-
-Keysight VSA reports EVM continuously, so the displayed value can vary slightly
-with the active measurement interval and analyzer state. Representative
-captured RTL readings are approximately:
-
-| L | Representative RTL EVM |
+| L | MATLAB post-FIR EVM |
 |---:|---:|
-| 2 | ~218 m%rms |
-| 3 | ~177 m%rms |
-| 4 | ~176 m%rms |
-| 5 | ~267 m%rms |
+| 2 | 215.39 m%rms |
+| 3 | 196.82 m%rms |
+| 4 | 227.29 m%rms |
+| 5 | 228.30 m%rms |
 
-Across the preserved measurements, the RTL EVM is approximately
-**176-267 m%rms**, below the project requirement of **350 m%rms** for every
-supported interpolation factor.
+These results established acceptable fixed-point signal quality before the RTL
+implementation was developed.
 
-The preserved screenshots and detailed interpretation are available under
-`results/verification/`, and the conversion utilities are under
-`verification/keysight/`.
+### RTL Signal-Quality Validation
 
----
+After RTL implementation, the post-FIR RTL outputs were converted to
+Keysight-compatible MAT files and evaluated using the same system-level VSA
+methodology and reference.
+
+Representative captured RTL results are:
+
+| L | Output Rate | RTL EVM |
+|---:|---:|---:|
+| 2 | 120 MS/s | 217.53 m%rms |
+| 3 | 180 MS/s | 177.20 m%rms |
+| 4 | 240 MS/s | 176.42 m%rms |
+| 5 | 300 MS/s | 267.23 m%rms |
+
+All four preserved RTL modes satisfy:
+
+    EVM < 350 m%rms
+
+The pre-RTL MATLAB model uses a 64-tap FIR, while the final RTL uses a
+10-tap symmetric L-dependent FIR. The two result sets therefore represent
+chronological system-level validation stages and are not claimed to be a
+direct bit-exact MATLAB-to-RTL comparison.
+
+### RTL-Derived Digital Regression Baseline
+
+After the L=5 RTL implementation had already been validated, its complete
+49,978-sample output sequence was preserved under the historical filename:
+
+    out/output_golden.txt
+
+Despite the filename, this file is an RTL-derived digital regression baseline.
+It is distinct from the supervisor-provided reference used during Keysight VSA
+verification.
+
+It is byte-identical to:
+
+    results/verification/rtl_output_post_LPF/rtl_output_POST_LPF_L_5.txt
+
+and both files have SHA-256:
+
+    6c669c2771e14a7b7e9a83124db0354d2bdda95fd6f41fd549d216fbc017c693
+
+The RTL regression, synthesized functional GLS and zero-delay pad-level GLS all
+reproduce this complete sequence byte-for-byte.
+
+### Logical Equivalence Checking
+
+Cadence Conformal hierarchical RTL-to-gate LEC reports:
+
+    12 / 12 module pairs equivalent
+    NEQ   = 0
+    ABORT = 0
+
+A separate standard-compile versus `compile_ultra` gate-to-gate comparison
+reports:
+
+    5 / 5 module pairs equivalent
+    NEQ   = 0
+    ABORT = 0
+
+Detailed verification evidence is documented in:
+
+    docs/VERIFICATION.md
+    results/verification/
 
 ## Synthesis
 

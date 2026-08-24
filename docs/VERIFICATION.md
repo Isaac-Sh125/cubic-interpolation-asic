@@ -2,30 +2,69 @@
 
 ## 1. Verification Strategy
 
-The CUBIC Interpolation DSP ASIC was verified at multiple abstraction levels in
-order to confirm functional consistency from the synthesizable RTL through the
-gate-level and pad-integrated implementations.
+The verification methodology follows the actual project development sequence
+and contains three complementary stages.
 
-The digital verification flow contains four complementary checks:
+### 1.1 Pre-RTL Fixed-Point Feasibility
 
-    Canonical Golden Reference
+Before synthesizable RTL was developed, the project used:
+
+    verification/matlab/cubic_hardware.m
+
+as a hardware-oriented fixed-point MATLAB feasibility model.
+
+The purpose of this model was to reproduce the expected finite-word-length
+hardware behavior and verify the feasibility of the cubic interpolation
+algorithm before committing to the RTL implementation.
+
+The generated MATLAB I/Q outputs were evaluated in Keysight PathWave VSA using
+the supervisor-provided 64-QAM system reference.
+
+This stage demonstrated acceptable signal quality before RTL development.
+
+### 1.2 RTL Signal-Quality Validation
+
+After the pre-RTL feasibility stage, the design was implemented in
+synthesizable RTL.
+
+The captured post-FIR RTL outputs for L=2, 3, 4 and 5 were then converted to
+Keysight-compatible MAT files and evaluated using the same system-level
+Keysight VSA methodology and reference.
+
+All preserved RTL operating modes satisfy:
+
+    EVM < 350 m%rms
+
+The MATLAB and RTL results therefore represent two chronological system-level
+validation stages.
+
+They are not presented as a direct sample-by-sample or bit-exact
+MATLAB-to-RTL comparison.
+
+### 1.3 Downstream Digital Preservation
+
+After the L=5 RTL implementation had already been validated at the system
+level, its complete output sequence was preserved under the historical
+filename:
+
+    out/output_golden.txt
+
+Despite its filename, this file is an RTL-derived digital regression baseline.
+
+The downstream digital regression verifies that later implementation stages
+preserve the already validated RTL behavior:
+
+    Validated L=5 RTL baseline
               |
               +----------------------+
               |                      |
               v                      v
-       RTL Simulation          Gate-Level Simulation
+       RTL regression          Gate-Level Simulation
               |                      |
               +----------+-----------+
                          |
                          v
-                  Exact File Compare
-
-    RTL Design
-        |
-        +------ Conformal LEC ------ Synthesized Netlist
-        |
-        v
-    Hierarchical Equivalence
+                  Byte-Exact Compare
 
     Pad-Wrapped Gate Design
               |
@@ -33,28 +72,42 @@ The digital verification flow contains four complementary checks:
        Pad-Level Simulation
               |
               v
-       Exact Golden Compare
+                  Byte-Exact Compare
 
-The primary complete regression documented in this repository uses the L=5
-operating configuration.
+Cadence Conformal LEC independently provides formal RTL-to-gate logical
+equivalence checking.
+
+The primary complete downstream digital regression uses L=5.
 
 
-## 2. Canonical Golden Reference
+## 2. Validated RTL-Derived Regression Baseline
 
-The repository contains the canonical digital output reference:
+The historical file:
 
     out/output_golden.txt
 
-The reference consists of hexadecimal I/Q sample pairs representing the expected
-post-interpolation and post-FIR output sequence.
+contains the preserved validated L=5 RTL output sequence.
 
-For the primary L=5 regression, the reference contains:
+It is byte-identical to:
 
-    49,978 output samples
+    results/verification/rtl_output_post_LPF/rtl_output_POST_LPF_L_5.txt
 
-This file is used as the common comparison target for the RTL, synthesized
-gate-level and pad-level simulations.
+Both files contain:
 
+    49,978 I/Q output samples
+
+and share the SHA-256 digest:
+
+    6c669c2771e14a7b7e9a83124db0354d2bdda95fd6f41fd549d216fbc017c693
+
+This was verified directly using both SHA-256 comparison and byte-for-byte
+file comparison.
+
+This RTL-derived regression baseline is distinct from the supervisor-provided
+64-QAM system reference used during Keysight VSA verification.
+
+Its purpose is to verify preservation of already validated RTL behavior through
+RTL regression, synthesized gate-level simulation and pad-level simulation.
 
 ## 3. RTL Functional Simulation
 
@@ -105,10 +158,10 @@ For L=5, the RTL result is written to:
     out/rtl_output_POST_LPF_L_5.txt
 
 
-## 4. RTL-to-Golden Regression
+## 4. RTL Regression Against the Validated Baseline
 
-The complete L=5 RTL output was compared directly against the canonical golden
-reference using a byte-for-byte file comparison.
+A fresh L=5 RTL regression output was compared directly against the preserved
+validated RTL baseline using a byte-for-byte file comparison.
 
 The compared files are:
 
@@ -121,7 +174,7 @@ Both files contain:
 
 The exact comparison result is:
 
-    RTL vs Golden: PASS
+    RTL regression vs baseline: PASS
 
 The two files also produce the same SHA-256 digest:
 
@@ -154,10 +207,10 @@ For the L=5 regression, the generated result is:
     GLS/work/GLS_with_chanis_rtl_output_POST_LPF_L_5.txt
 
 
-## 6. Gate-Level-to-Golden Regression
+## 6. Gate-Level Regression Against the Validated RTL Baseline
 
 The complete synthesized gate-level output was compared against the same
-canonical reference used for RTL verification.
+validated RTL-derived regression baseline.
 
 Both files contain:
 
@@ -165,9 +218,9 @@ Both files contain:
 
 The exact comparison result is:
 
-    Gate-Level Simulation vs Golden: PASS
+    Gate-Level Simulation vs RTL baseline: PASS
 
-The gate-level output and golden reference also have the identical SHA-256
+The gate-level output and validated RTL baseline also have the identical SHA-256
 digest:
 
     6c669c2771e14a7b7e9a83124db0354d2bdda95fd6f41fd549d216fbc017c693
@@ -265,7 +318,7 @@ logical connectivity and preservation of the functional signal path through the
 pad-integrated hierarchy.
 
 
-## 11. Pad-Level-to-Golden Regression
+## 11. Pad-Level Regression Against the Validated RTL Baseline
 
 For the L=5 regression, the pad-level output is:
 
@@ -277,10 +330,10 @@ The output contains:
 
 The exact comparison result is:
 
-    Pad-Level GLS vs Golden: PASS
+    Pad-Level GLS vs RTL baseline: PASS
 
-The pad-level output produces the same SHA-256 digest as the golden, RTL and
-core gate-level results:
+The pad-level output produces the same SHA-256 digest as the RTL baseline,
+RTL regression and core gate-level results:
 
     6c669c2771e14a7b7e9a83124db0354d2bdda95fd6f41fd549d216fbc017c693
 
@@ -293,9 +346,9 @@ through the pad-integrated simulation hierarchy.
 The primary L=5 regression provides a direct comparison across four output
 representations:
 
-| Representation | Lines | Golden Comparison |
+| Representation | Lines | Baseline Comparison |
 |---|---:|---|
-| Canonical reference | 49,978 | Reference |
+| Validated RTL baseline | 49,978 | Reference |
 | RTL simulation | 49,978 | PASS |
 | Synthesized GLS | 49,978 | PASS |
 | Pad-level GLS | 49,978 | PASS |
@@ -338,7 +391,7 @@ The primary verification-related source files are:
 | `gentop/run_pads.tcsh` | Pad-level simulation runner |
 | `lec_rvg/run_lec.tcsh` | Conformal LEC runner |
 | `lec_rvg/scripts/hier.do` | Hierarchical LEC procedure |
-| `out/output_golden.txt` | Canonical digital output reference |
+| `out/output_golden.txt` | Validated RTL-derived L=5 regression baseline |
 | `results/lec/LEC_SUMMARY.txt` | RTL-to-final-gate formal equivalence summary |
 | `synthesis_standard_verify/scripts/synthesis_standard.tcl` | Isolated standard-compile synthesis verification flow |
 | `synthesis_standard_verify/dataout/ASIC_Top_netlist.v` | Standard-compile gate netlist used for gate-to-gate LEC |
@@ -362,20 +415,20 @@ The primary verification-related source files are:
 The current repository documents and preserves evidence for:
 
 - RTL functional simulation;
-- exact RTL-to-golden comparison;
+- exact RTL-regression-to-baseline comparison;
 - synthesized gate-level functional simulation;
-- exact gate-level-to-golden comparison;
+- exact gate-level-to-RTL-baseline comparison;
 - hierarchical RTL-to-gate logical equivalence;
 - pad-integrated functional simulation;
-- exact pad-level-to-golden comparison;
+- exact pad-level-to-RTL-baseline comparison;
 - MATLAB floating-point and fixed-point signal-processing references;
 - MATLAB pre-FIR and post-FIR Keysight VSA measurements for L=2..5;
 - RTL post-FIR Keysight VSA measurements for L=2..5;
 - preserved numeric MATLAB and RTL result files for all four interpolation factors.
 
 The complete L=5 regression provides a 49,978-sample end-to-end digital
-comparison across the canonical reference, RTL, synthesized gate-level and
-pad-level implementations.
+comparison across the validated RTL baseline, RTL regression, synthesized
+gate-level and pad-level implementations.
 
 
 ## 16. Digital Verification Summary
@@ -385,9 +438,9 @@ front-end representation changes.
 
 For the primary L=5 regression:
 
-    RTL vs Golden        : PASS
-    GLS vs Golden        : PASS
-    Pad GLS vs Golden    : PASS
+    RTL vs RTL baseline  : PASS
+    GLS vs RTL baseline  : PASS
+    Pad GLS vs RTL baseline : PASS
 
 All compared output files contain 49,978 samples and are byte-identical.
 
@@ -403,68 +456,57 @@ of the digital implementation through synthesis and pad-level integration.
 
 ## 17. MATLAB and Keysight VSA Signal-Quality Verification
 
-In addition to the exact digital regressions, system-level communication-signal
-quality was evaluated using the project MATLAB model and Keysight PathWave
-Vector Signal Analysis (VSA).
+Keysight PathWave VSA verification was performed at two chronological stages
+of the project.
 
-### 17.1 MATLAB Verification Model
+The first stage occurred before RTL development and was used to establish
+fixed-point algorithm feasibility.
 
-The preserved MATLAB verification model uses a common 60 MS/s 64-QAM input
-stimulus and evaluates interpolation factors L=2, 3, 4 and 5.
+The second stage occurred after RTL implementation and verified the
+communication-signal quality of the implemented hardware datapath.
 
-The original per-L input copies were verified byte-for-byte identical before
-being consolidated into:
+### 17.1 Pre-RTL Hardware-Oriented MATLAB Model
 
-    results/verification/matlab_results/iqdata_60M_use.txt
-
-Their common SHA-256 digest is:
-
-    e99d42d73d85492f9651673bacf4e1d8c8b079dd0d3d88082ef9e003d083f07a
-
-The fixed-point MATLAB interpolation datapath uses signed 16-bit signal
-representation with 14 fractional bits. Interior interpolation uses Catmull-Rom
-cubic interpolation and the sequence edges use the corresponding quadratic
-edge treatment.
-
-The MATLAB reference filtering stage uses a 64-tap FIR with normalized cutoff
-1/L.
-
-The configurable project-facing source is:
+Before RTL implementation:
 
     verification/matlab/cubic_hardware.m
 
-The preserved numeric results for each L contain:
+was used as a hardware-oriented fixed-point feasibility model.
 
-- floating-point cubic reference output;
-- fixed-point PRE-LPF output;
-- fixed-point POST-LPF output.
+The model supports:
 
-### 17.2 MATLAB and RTL FIR Difference
+    L = 2, 3, 4, 5
 
-The final RTL does not implement the coefficient-identical 64-tap MATLAB FIR.
+and processes a 60 MS/s 64-QAM input signal.
 
-Instead, the RTL uses a 10-tap symmetric hardware FIR with a dedicated
-coefficient bank for each interpolation factor.
+The fixed-point interpolation datapath uses signed 16-bit signal
+representation with 14 fractional bits.
 
-Keysight VSA is therefore used to evaluate the complete MATLAB and RTL
-processing chains at the system-signal-quality level. The post-filter signals
-are not presented as bit-exact MATLAB-to-RTL equivalents.
+Interior interpolation uses Catmull-Rom cubic interpolation, while the sequence
+edges use the implemented quadratic edge treatment.
 
-### 17.3 Keysight VSA Method
+The MATLAB feasibility model also contains a 64-tap fixed-point low-pass FIR
+with normalized cutoff 1/L.
 
-MATLAB I/Q text outputs are converted to Keysight-compatible MAT
-files using:
+The generated MATLAB I/Q outputs were converted to Keysight-compatible MAT
+files and evaluated using the supervisor-provided 64-QAM system reference.
 
-    verification/keysight/float_iq_to_vsa.m
+This was the pre-RTL feasibility checkpoint.
 
-RTL hexadecimal outputs are converted using:
+Only after this stage demonstrated acceptable signal quality was the design
+implemented in synthesizable RTL.
+
+### 17.2 RTL Signal-Quality Validation
+
+After RTL implementation, the captured post-FIR RTL results were converted
+using:
 
     verification/keysight/hex_iq_to_vsa.m
 
-The RTL converter interprets the final FIR output as signed 16-bit fixed-point
-data with 14 fractional bits.
+and evaluated using the same system-level Keysight VSA methodology and
+supervisor-provided reference.
 
-The output sampling rates used by VSA are:
+The output sampling rates are:
 
 | L | Output Sample Rate |
 |---:|---:|
@@ -473,79 +515,116 @@ The output sampling rates used by VSA are:
 | 4 | 240 MS/s |
 | 5 | 300 MS/s |
 
-### 17.4 Representative EVM Measurements
+All four preserved RTL operating modes satisfy the project requirement:
 
-Keysight VSA reports EVM continuously. The displayed reading can vary slightly
-with the active measurement interval and analyzer state.
+    EVM < 350 m%rms
 
-For this reason, the preserved screenshots are treated as representative
-point-in-time measurements rather than immutable exact constants.
+### 17.3 MATLAB and RTL FIR Difference
 
-Representative captured values are:
+The pre-RTL MATLAB feasibility model and final RTL use different FIR
+implementations:
+
+    MATLAB fixed-point FIR : 64 taps
+    RTL hardware FIR       : 10 taps, symmetric, L-dependent coefficient bank
+
+Therefore, the MATLAB post-FIR and RTL post-FIR sample sequences are not
+expected to be bit-exact equivalents.
+
+The MATLAB and RTL result sets should be interpreted as two chronological
+system-level validation stages rather than as a direct MATLAB-to-RTL
+sample-by-sample comparison.
+
+### 17.4 Reference Terminology
+
+Two different references appear in the complete project verification flow.
+
+#### Keysight System Reference
+
+The supervisor-provided 64-QAM system reference was used during Keysight VSA
+verification.
+
+It was used first for the pre-RTL MATLAB feasibility model and later for the
+RTL signal-quality verification.
+
+#### RTL-Derived Digital Regression Baseline
+
+The file:
+
+    out/output_golden.txt
+
+belongs to the later downstream digital-regression stage.
+
+Despite its historical filename, it is the preserved validated L=5 RTL output
+sequence.
+
+It is byte-identical to:
+
+    results/verification/rtl_output_post_LPF/rtl_output_POST_LPF_L_5.txt
+
+This RTL-derived baseline is used to verify preservation through RTL regression,
+synthesized GLS and pad-level GLS.
+
+The Keysight system reference and `out/output_golden.txt` are therefore
+different references serving different verification purposes.
+
+### 17.5 Representative EVM Measurements
+
+Keysight VSA reports EVM continuously during analysis, so the displayed value
+can vary slightly with the active measurement interval and analyzer state.
+
+The preserved screenshots are treated as representative captured measurements.
 
 | L | MATLAB pre-FIR | MATLAB post-FIR | RTL post-FIR |
 |---:|---:|---:|---:|
-| 2 | ~223 m%rms | ~215 m%rms | ~218 m%rms |
-| 3 | ~193 m%rms | ~197 m%rms | ~177 m%rms |
-| 4 | ~201 m%rms | ~227 m%rms | ~176 m%rms |
-| 5 | ~222 m%rms | ~228 m%rms | ~267 m%rms |
-
-The corresponding screenshot readings at the captured instants were
-approximately:
-
-    L=2 : MATLAB pre 223.44, MATLAB post 215.39, RTL 217.53 m%rms
-    L=3 : MATLAB pre 192.98, MATLAB post 196.82, RTL 177.20 m%rms
-    L=4 : MATLAB pre 201.39, MATLAB post 227.29, RTL 176.42 m%rms
-    L=5 : MATLAB pre 221.91, MATLAB post 228.30, RTL 267.23 m%rms
+| 2 | 223.44 m%rms | 215.39 m%rms | 217.53 m%rms |
+| 3 | 192.98 m%rms | 196.82 m%rms | 177.20 m%rms |
+| 4 | 201.39 m%rms | 227.29 m%rms | 176.42 m%rms |
+| 5 | 221.91 m%rms | 228.30 m%rms | 267.23 m%rms |
 
 The project requirement is:
 
     EVM < 350 m%rms
 
-All four preserved RTL operating-mode measurements satisfy this requirement.
-The representative RTL readings span approximately 176-267 m%rms.
+The preserved pre-RTL MATLAB measurements established acceptable fixed-point
+signal quality before RTL development.
 
-The FIR stage is intended primarily to suppress interpolation-generated
-spectral images. The VSA measurements show that the EVM change across the
-MATLAB FIR is mode-dependent, so the project does not claim that FIR filtering
-monotonically reduces EVM.
+The later RTL measurements demonstrate that every implemented interpolation
+mode also satisfies the required system-level EVM target.
 
-### 17.5 Preserved VSA Evidence
+Representative captured RTL EVM spans approximately:
 
-MATLAB PRE-LPF screenshots:
+    176-267 m%rms
+
+### 17.6 Preserved VSA Evidence
+
+Pre-RTL MATLAB VSA screenshots:
 
     results/verification/matlab/pre_filter/
-
-MATLAB POST-LPF screenshots:
-
     results/verification/matlab/post_filter/
 
-RTL POST-LPF screenshots:
+MATLAB numeric results:
+
+    results/verification/matlab_results/
+
+RTL VSA screenshots:
 
     results/verification/rtl/
 
-The detailed VSA summary is:
-
-    results/verification/keysight_vsa_summary.txt
-
-### 17.6 Preserved RTL Outputs
-
-The preserved post-FIR RTL result files contain:
-
-| L | Captured Output Samples |
-|---:|---:|
-| 2 | 19,990 |
-| 3 | 29,986 |
-| 4 | 39,982 |
-| 5 | 49,978 |
-
-These files are stored under:
+RTL post-FIR numeric outputs:
 
     results/verification/rtl_output_post_LPF/
 
-The L=5 output is the same complete 49,978-sample sequence used by the
-Golden/RTL/GLS/pad-level byte-for-byte regression described earlier.
+Detailed VSA interpretation:
 
+    results/verification/keysight_vsa_summary.txt
+
+VSA conversion utilities:
+
+    verification/keysight/float_iq_to_vsa.m
+    verification/keysight/hex_iq_to_vsa.m
+
+The preserved L=5 RTL output contains 49,978 samples and is byte-identical to
+the later digital regression baseline `out/output_golden.txt`.
 
 ## 18. Standard-Compile vs Compile-Ultra Gate-to-Gate LEC
 

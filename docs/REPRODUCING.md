@@ -136,7 +136,7 @@ This target:
 2. invokes `RTL/run_sim.tcsh`;
 3. compiles and runs the RTL using VCS;
 4. writes the captured output under `out/`;
-5. compares the L=5 output against the canonical golden reference.
+5. compares the L=5 output against the validated RTL-derived regression baseline.
 
 The principal output is:
 
@@ -257,7 +257,7 @@ The canonical padded GLS uses the real TSMC 28 nm I/O Verilog model. The only
 additional simulation stub is the mechanical `PCORNER_G` cell.
 
 For the primary L=5 regression, the generated output is compared with the same
-canonical golden reference.
+validated RTL-derived regression baseline.
 
 The validated pad-level result is byte-identical to the RTL and core GLS
 outputs.

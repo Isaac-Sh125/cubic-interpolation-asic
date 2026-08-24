@@ -562,8 +562,8 @@ transition.
 First, the synthesized gate-level netlist is simulated using the same primary
 L=5 regression stimulus as the RTL.
 
-The complete 49,978-sample gate-level output is byte-identical to the canonical
-golden output.
+The complete 49,978-sample gate-level output is byte-identical to the validated
+RTL-derived L=5 regression baseline.
 
 Second, hierarchical logical equivalence checking is performed between the RTL
 and synthesized representation.

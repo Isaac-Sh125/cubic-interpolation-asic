@@ -1,23 +1,53 @@
-# MATLAB Fixed-Point Verification Model
+# Pre-RTL MATLAB Fixed-Point Feasibility Model
 
-`cubic_hardware.m` is the consolidated MATLAB fixed-point verification model
-used for interpolation factors L = 2, 3, 4, and 5.
+`cubic_hardware.m` is the consolidated hardware-oriented MATLAB fixed-point
+model used before the synthesizable RTL implementation of the CUBIC
+Interpolation DSP ASIC.
 
-The original verification data was generated using four per-L script copies.
-A direct comparison showed that those copies differed only in:
+## Purpose
 
-- the selected interpolation factor L;
-- the PRE-LPF output filename;
-- the POST-LPF output filename.
+The MATLAB model was developed as a pre-RTL feasibility step.
 
-The interpolation, edge handling, fixed-point arithmetic, polynomial
-coefficients and FIR implementation were otherwise identical.
+Its purpose was to model the expected hardware behavior using finite-word-length
+arithmetic and verify that the cubic interpolation algorithm could satisfy the
+required 64-QAM signal quality before committing to an RTL implementation.
 
-The project-facing version therefore accepts L as an argument:
+The actual development sequence was:
+
+    Cubic interpolation concept
+            |
+            v
+    Hardware-oriented fixed-point MATLAB model
+            |
+            v
+    Keysight PathWave VSA validation
+            |
+            v
+    RTL implementation
+            |
+            v
+    Keysight PathWave VSA validation of RTL output
+
+The MATLAB fixed-point outputs were evaluated in Keysight PathWave VSA using
+the project-provided 64-QAM system reference/configuration.
+
+After this pre-RTL feasibility stage produced acceptable signal-quality
+results, the design was implemented in synthesizable RTL.
+
+The later RTL outputs were then evaluated independently using the same
+system-level Keysight VSA methodology.
+
+The MATLAB and RTL results therefore represent two chronological validation
+stages. They are not a direct sample-by-sample or bit-exact MATLAB-to-RTL
+comparison.
+
+## Supported Operating Modes
+
+The consolidated model accepts:
 
     cubic_hardware(L, output_dir)
 
-Supported values are:
+with:
 
     L = 2, 3, 4, 5
 
@@ -30,32 +60,90 @@ The model uses:
 - signed 16-bit fixed-point signal representation with 14 fractional bits;
 - Catmull-Rom cubic interpolation for interior samples;
 - quadratic edge handling;
-- 64-tap MATLAB FIR with normalized cutoff 1/L.
+- a 64-tap fixed-point MATLAB FIR with normalized cutoff 1/L.
 
-The MATLAB 64-tap FIR is an algorithmic reference implementation. The final
-RTL uses a different hardware-oriented 10-tap symmetric FIR with an
-L-dependent coefficient bank. MATLAB and RTL post-filter outputs are therefore
-evaluated as complete signal-processing chains rather than as bit-exact
-equivalent signals.
+## MATLAB FIR and Final RTL FIR
 
-The arithmetic/local-function region of this consolidated script was compared
-against the original L=5 script after ignoring whitespace differences. The
-normalized algorithm SHA-256 was identical:
+The pre-RTL MATLAB model uses a 64-tap FIR.
 
-    788bf41b224c3f2b67647665a0ad63f20739cd0a950f40678632dd53f2e61e20
+The final RTL implementation uses a different hardware-oriented 10-tap
+symmetric FIR with a dedicated coefficient bank for each interpolation factor.
 
-The preserved verification outputs are stored under:
+For this reason, the MATLAB post-FIR and RTL post-FIR sequences are not expected
+to be bit-exact equivalents.
+
+The relevant project requirement is instead verified independently at the
+system level using Keysight VSA.
+
+## Keysight VSA Results
+
+Representative captured MATLAB EVM values are:
+
+| L | MATLAB pre-FIR | MATLAB post-FIR |
+|---:|---:|---:|
+| 2 | 223.44 m%rms | 215.39 m%rms |
+| 3 | 192.98 m%rms | 196.82 m%rms |
+| 4 | 201.39 m%rms | 227.29 m%rms |
+| 5 | 221.91 m%rms | 228.30 m%rms |
+
+The project signal-quality requirement is:
+
+    EVM < 350 m%rms
+
+The preserved MATLAB measurements therefore demonstrated acceptable
+fixed-point signal quality before RTL development.
+
+## Reference Terminology
+
+Two different references appear in the project and must not be confused.
+
+### Keysight System Reference
+
+The pre-RTL MATLAB output, and later the RTL output, were evaluated in Keysight
+VSA using the project-provided 64-QAM system reference/configuration.
+
+This is the system-level reference used for EVM evaluation.
+
+### RTL-Derived Digital Regression Baseline
+
+The later file:
+
+    out/output_golden.txt
+
+is different.
+
+Despite its historical filename, this file is the preserved validated L=5 RTL
+output sequence.
+
+It is byte-identical to:
+
+    results/verification/rtl_output_post_LPF/rtl_output_POST_LPF_L_5.txt
+
+and is used as a digital regression baseline to verify that later RTL reruns,
+synthesized gate-level simulation and pad-level simulation preserve the already
+validated RTL behavior.
+
+It is not the external system reference used during the pre-RTL MATLAB
+feasibility verification.
+
+## Preserved MATLAB Evidence
+
+Numeric MATLAB results are stored under:
 
     results/verification/matlab_results/
 
-The common 60 MS/s stimulus is stored once at:
+For every supported interpolation factor, the preserved files include:
+
+    float_reference_cubic.txt
+    cubic_fixed16_strict_output_PRE_LPF_L_<L>.txt
+    cubic_fixed16_strict_output_POST_LPF_L_<L>.txt
+
+The common 60 MS/s stimulus is stored at:
 
     results/verification/matlab_results/iqdata_60M_use.txt
 
-The original per-L stimulus copies were verified byte-for-byte identical before
-consolidation.
-
-The Keysight VSA screenshots generated from the MATLAB results are stored under:
+Keysight VSA screenshots generated from the MATLAB fixed-point results are
+stored under:
 
     results/verification/matlab/pre_filter/
     results/verification/matlab/post_filter/

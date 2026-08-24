@@ -27,57 +27,83 @@ corresponding to approximately:
     961.5 MHz
 
 
-## 2. Digital Functional Verification
+## 2. Verification Results
 
-The primary complete regression uses the L=5 operating configuration.
+Verification was performed in the same sequence in which the design was
+developed.
 
-The canonical output contains:
+### Pre-RTL MATLAB Fixed-Point Feasibility
 
-    49,978 complex I/Q output samples
+Before RTL implementation, the hardware-oriented fixed-point model
+`cubic_hardware.m` was evaluated in Keysight PathWave VSA using the
+supervisor-provided 64-QAM system reference.
 
-The following representations were compared against the same golden reference:
+Representative captured results are:
 
-| Representation | Samples | Result |
-|---|---:|---|
-| RTL simulation | 49,978 | PASS |
-| Synthesized gate-level simulation | 49,978 | PASS |
-| Pad-level gate simulation | 49,978 | PASS |
+| L | MATLAB pre-FIR | MATLAB post-FIR |
+|---:|---:|---:|
+| 2 | 223.44 m%rms | 215.39 m%rms |
+| 3 | 192.98 m%rms | 196.82 m%rms |
+| 4 | 201.39 m%rms | 227.29 m%rms |
+| 5 | 221.91 m%rms | 228.30 m%rms |
 
-All four files, including the golden reference, are byte-identical.
+This stage established fixed-point algorithm feasibility before RTL
+development.
 
-Their common SHA-256 digest is:
+### RTL Keysight VSA Validation
 
-    6c669c2771e14a7b7e9a83124db0354d2bdda95fd6f41fd549d216fbc017c693
+After RTL implementation, the post-FIR RTL output was evaluated using the same
+system-level Keysight methodology and reference.
 
-
-### System-Level MATLAB / Keysight VSA Verification
-
-Keysight VSA was used to evaluate representative 64-QAM EVM for the MATLAB
-reference processing chain and the final RTL processing chain.
-
-The displayed VSA EVM is a live analyzer measurement, so the preserved values
-are treated as representative captured readings rather than fixed constants.
-
-| L | MATLAB post-FIR EVM | RTL post-FIR EVM | RTL Requirement |
+| L | Output Rate | RTL post-FIR EVM | Status |
 |---:|---:|---:|---|
-| 2 | ~215 m%rms | ~218 m%rms | PASS |
-| 3 | ~197 m%rms | ~177 m%rms | PASS |
-| 4 | ~227 m%rms | ~176 m%rms | PASS |
-| 5 | ~228 m%rms | ~267 m%rms | PASS |
+| 2 | 120 MS/s | 217.53 m%rms | PASS |
+| 3 | 180 MS/s | 177.20 m%rms | PASS |
+| 4 | 240 MS/s | 176.42 m%rms | PASS |
+| 5 | 300 MS/s | 267.23 m%rms | PASS |
 
-Across the preserved screenshots, representative RTL EVM is approximately
-176-267 m%rms. All captured RTL modes satisfy the project requirement:
+Project requirement:
 
     EVM < 350 m%rms
 
-The MATLAB reference uses a 64-tap FIR, while the final RTL uses a 10-tap
-symmetric L-dependent FIR. These measurements therefore compare complete
-signal-processing-chain quality rather than bit-exact post-filter equivalence.
+All preserved RTL modes satisfy the requirement.
 
-Detailed evidence is available in:
+The MATLAB feasibility model and final RTL use different FIR implementations
+and are therefore not presented as a direct bit-exact MATLAB-to-RTL
+comparison.
 
-    results/verification/keysight_vsa_summary.txt
+### RTL-Derived L=5 Digital Regression Baseline
 
+After system-level RTL validation, the complete L=5 RTL output was preserved
+under the historical filename:
+
+    out/output_golden.txt
+
+This file is an RTL-derived regression baseline, not the supervisor-provided
+system reference used by Keysight.
+
+It is byte-identical to:
+
+    results/verification/rtl_output_post_LPF/rtl_output_POST_LPF_L_5.txt
+
+Both contain:
+
+    49,978 complex I/Q output samples
+
+with SHA-256:
+
+    6c669c2771e14a7b7e9a83124db0354d2bdda95fd6f41fd549d216fbc017c693
+
+The downstream preservation regression reports:
+
+| Representation | Samples | Baseline Comparison |
+|---|---:|---|
+| RTL regression | 49,978 | PASS |
+| Synthesized gate-level simulation | 49,978 | PASS |
+| Pad-level gate simulation | 49,978 | PASS |
+
+The result confirms byte-exact preservation of the already validated RTL
+behavior through synthesis and pad integration.
 
 ## 3. Logical Equivalence
 

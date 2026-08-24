@@ -1,6 +1,11 @@
 function cubic_hardware(L, output_dir)
 % CUBIC_HARDWARE
-% Fixed-point MATLAB reference flow for the CUBIC interpolation ASIC.
+% Pre-RTL hardware-oriented fixed-point feasibility model for the
+% CUBIC interpolation ASIC.
+%
+% This model was developed before the synthesizable RTL to evaluate
+% finite-word-length behavior and system-level signal quality before
+% committing to the RTL implementation.
 %
 % The same implementation is used for interpolation factors L = 2, 3, 4, 5.
 %

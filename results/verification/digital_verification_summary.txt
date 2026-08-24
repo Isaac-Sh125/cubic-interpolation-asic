@@ -5,19 +5,43 @@ Digital Verification Summary
 Primary regression configuration:
   Interpolation factor: L=5
 
-Reference output:
+Validated RTL-derived regression baseline:
   out/output_golden.txt
+
+Baseline provenance:
+  The historical filename `output_golden.txt` contains the preserved validated
+  L=5 RTL output sequence.
+
+  It is byte-identical to:
+
+    results/verification/rtl_output_post_LPF/rtl_output_POST_LPF_L_5.txt
+
+  Both files contain 49,978 I/Q output samples and share the SHA-256 digest:
+
+    6c669c2771e14a7b7e9a83124db0354d2bdda95fd6f41fd549d216fbc017c693
+
+  This RTL-derived regression baseline is different from the supervisor-provided
+  64-QAM system reference used during Keysight VSA signal-quality verification.
+
+Purpose of the digital regression:
+  After the RTL implementation had already been validated at the system level
+  using Keysight VSA, the validated L=5 RTL sequence was preserved as a digital
+  baseline.
+
+  The purpose of the following comparisons is to verify that later digital
+  implementation stages preserve the already validated RTL behavior.
 
 Complete output length:
   49,978 I/Q output samples
 
-Byte-for-byte regression:
-  RTL simulation vs golden       : PASS
-  Gate-level simulation vs golden: PASS
-  Pad-level GLS vs golden        : PASS
+Byte-for-byte preservation regression:
+  RTL regression output vs baseline     : PASS
+  Gate-level simulation vs baseline     : PASS
+  Pad-level GLS vs baseline              : PASS
 
 Simulation scope:
   Synthesized GLS : functional gate-level simulation, no SDF back-annotation
+
   Padded GLS      : functional zero-delay simulation using the real TSMC 28 nm
                     I/O Verilog model; PCORNER_G is a mechanical simulation stub
 
@@ -39,3 +63,12 @@ Logical equivalence checking:
 
 Detailed LEC evidence:
   results/lec/LEC_SUMMARY.txt
+
+Verification interpretation:
+  Keysight VSA verifies system-level 64-QAM signal quality.
+
+  The byte-exact RTL / GLS / pad-level regression verifies preservation of the
+  already validated RTL digital behavior through later implementation stages.
+
+  Cadence Conformal LEC independently verifies logical equivalence between the
+  RTL and synthesized representations.
