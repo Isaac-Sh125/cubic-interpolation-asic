@@ -82,7 +82,7 @@ The file:
 
 belongs to a later digital-regression stage.
 
-Despite its historical filename, it is the preserved validated L=5 RTL output
+It is the preserved validated L=5 RTL output
 sequence. It is byte-identical to:
 
     results/verification/rtl_output_post_LPF/rtl_output_POST_LPF_L_5.txt

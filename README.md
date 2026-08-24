@@ -100,7 +100,7 @@ Verification follows the actual chronological project-development sequence.
 Before synthesizable RTL development, `verification/matlab/cubic_hardware.m`
 was used as a hardware-oriented fixed-point feasibility model.
 
-Its output was evaluated in Keysight PathWave VSA using the supervisor-provided
+Its output was evaluated in Keysight PathWave VSA using the project-provided
 64-QAM system reference.
 
 Representative captured MATLAB post-FIR EVM values were:
@@ -142,12 +142,12 @@ direct bit-exact MATLAB-to-RTL comparison.
 ### RTL-Derived Digital Regression Baseline
 
 After the L=5 RTL implementation had already been validated, its complete
-49,978-sample output sequence was preserved under the historical filename:
+49,978-sample output sequence was preserved as:
 
     out/output_golden.txt
 
-Despite the filename, this file is an RTL-derived digital regression baseline.
-It is distinct from the supervisor-provided reference used during Keysight VSA
+This file is an RTL-derived digital regression baseline.
+It is distinct from the project-provided reference used during Keysight VSA
 verification.
 
 It is byte-identical to:

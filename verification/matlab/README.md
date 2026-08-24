@@ -112,7 +112,7 @@ The later file:
 
 is different.
 
-Despite its historical filename, this file is the preserved validated L=5 RTL
+This file is the preserved validated L=5 RTL
 output sequence.
 
 It is byte-identical to:

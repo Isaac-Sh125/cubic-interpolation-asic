@@ -680,8 +680,6 @@ A more extensive cleanup is available through:
 The cleanup targets preserve principal source inputs, staged project data and
 selected repository artifacts according to the Makefile definitions.
 
-Do not run cleanup commands if temporary tool outputs are still needed for an
-active debugging or analysis session.
 
 
 ## 30. Getting Command Help

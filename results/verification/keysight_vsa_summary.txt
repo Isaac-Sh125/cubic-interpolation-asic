@@ -17,7 +17,7 @@ The purpose of this model was to reproduce the expected finite-word-length
 hardware behavior and verify the feasibility of the cubic interpolation
 algorithm before committing to an RTL implementation.
 
-The MATLAB output was evaluated in Keysight VSA using the supervisor-provided
+The MATLAB output was evaluated in Keysight VSA using the project-provided
 64-QAM system reference.
 
 After the fixed-point MATLAB results demonstrated acceptable signal quality,
@@ -109,7 +109,7 @@ Two different references appear in the complete project verification flow.
 
 1. Keysight system reference
 
-   The supervisor-provided 64-QAM reference used during system-level Keysight
+   The project-provided 64-QAM reference used during system-level Keysight
    VSA verification.
 
    It was used first for the pre-RTL MATLAB feasibility model and later for the
@@ -119,7 +119,7 @@ Two different references appear in the complete project verification flow.
 
        out/output_golden.txt
 
-   Despite its historical filename, this file is the preserved validated L=5
+   This file is the preserved validated L=5
    RTL output sequence.
 
    It is byte-identical to:

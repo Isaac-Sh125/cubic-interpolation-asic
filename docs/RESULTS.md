@@ -36,7 +36,7 @@ developed.
 
 Before RTL implementation, the hardware-oriented fixed-point model
 `cubic_hardware.m` was evaluated in Keysight PathWave VSA using the
-supervisor-provided 64-QAM system reference.
+project-provided 64-QAM system reference.
 
 Representative captured results are:
 
@@ -75,11 +75,11 @@ comparison.
 ### RTL-Derived L=5 Digital Regression Baseline
 
 After system-level RTL validation, the complete L=5 RTL output was preserved
-under the historical filename:
+as:
 
     out/output_golden.txt
 
-This file is an RTL-derived regression baseline, not the supervisor-provided
+This file is an RTL-derived regression baseline, not the project-provided
 system reference used by Keysight.
 
 It is byte-identical to:

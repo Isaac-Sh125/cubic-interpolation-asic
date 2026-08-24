@@ -18,7 +18,7 @@ hardware behavior and verify the feasibility of the cubic interpolation
 algorithm before committing to the RTL implementation.
 
 The generated MATLAB I/Q outputs were evaluated in Keysight PathWave VSA using
-the supervisor-provided 64-QAM system reference.
+the project-provided 64-QAM system reference.
 
 This stage demonstrated acceptable signal quality before RTL development.
 
@@ -49,7 +49,7 @@ filename:
 
     out/output_golden.txt
 
-Despite its filename, this file is an RTL-derived digital regression baseline.
+This file is a validated RTL-derived digital regression baseline.
 
 The downstream digital regression verifies that later implementation stages
 preserve the already validated RTL behavior:
@@ -82,7 +82,7 @@ The primary complete downstream digital regression uses L=5.
 
 ## 2. Validated RTL-Derived Regression Baseline
 
-The historical file:
+The file:
 
     out/output_golden.txt
 
@@ -103,7 +103,7 @@ and share the SHA-256 digest:
 This was verified directly using both SHA-256 comparison and byte-for-byte
 file comparison.
 
-This RTL-derived regression baseline is distinct from the supervisor-provided
+This RTL-derived regression baseline is distinct from the project-provided
 64-QAM system reference used during Keysight VSA verification.
 
 Its purpose is to verify preservation of already validated RTL behavior through
@@ -489,7 +489,7 @@ The MATLAB feasibility model also contains a 64-tap fixed-point low-pass FIR
 with normalized cutoff 1/L.
 
 The generated MATLAB I/Q outputs were converted to Keysight-compatible MAT
-files and evaluated using the supervisor-provided 64-QAM system reference.
+files and evaluated using the project-provided 64-QAM system reference.
 
 This was the pre-RTL feasibility checkpoint.
 
@@ -504,7 +504,7 @@ using:
     verification/keysight/hex_iq_to_vsa.m
 
 and evaluated using the same system-level Keysight VSA methodology and
-supervisor-provided reference.
+project-provided reference.
 
 The output sampling rates are:
 
@@ -540,7 +540,7 @@ Two different references appear in the complete project verification flow.
 
 #### Keysight System Reference
 
-The supervisor-provided 64-QAM system reference was used during Keysight VSA
+The project-provided 64-QAM system reference was used during Keysight VSA
 verification.
 
 It was used first for the pre-RTL MATLAB feasibility model and later for the
@@ -554,7 +554,7 @@ The file:
 
 belongs to the later downstream digital-regression stage.
 
-Despite its historical filename, it is the preserved validated L=5 RTL output
+It is the preserved validated L=5 RTL output
 sequence.
 
 It is byte-identical to:

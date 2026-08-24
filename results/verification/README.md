@@ -11,7 +11,7 @@ Before RTL development, `verification/matlab/cubic_hardware.m` was used as a
 hardware-oriented fixed-point MATLAB model.
 
 Its outputs were evaluated in Keysight PathWave VSA using the
-supervisor-provided 64-QAM system reference.
+project-provided 64-QAM system reference.
 
 Evidence:
 
@@ -45,11 +45,11 @@ All four supported RTL modes satisfy the requirement.
 ## 3. Downstream Digital Preservation
 
 After the L=5 RTL output had been validated, the complete output sequence was
-preserved under the historical filename:
+preserved as:
 
     ../../out/output_golden.txt
 
-Despite its filename, this is an RTL-derived regression baseline.
+This is an RTL-derived regression baseline.
 
 It is byte-identical to:
 
@@ -69,7 +69,7 @@ Cadence Conformal LEC independently verifies RTL-to-gate logical equivalence.
 
 ## Important Reference Distinction
 
-The supervisor-provided 64-QAM system reference used by Keysight VSA is not the
+The project-provided 64-QAM system reference used by Keysight VSA is not the
 same object as `out/output_golden.txt`.
 
 The first is the system-level reference used for EVM verification.

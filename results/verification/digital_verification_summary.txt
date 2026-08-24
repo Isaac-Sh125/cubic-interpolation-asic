@@ -9,7 +9,7 @@ Validated RTL-derived regression baseline:
   out/output_golden.txt
 
 Baseline provenance:
-  The historical filename `output_golden.txt` contains the preserved validated
+  The file `output_golden.txt` contains the preserved validated
   L=5 RTL output sequence.
 
   It is byte-identical to:
@@ -20,7 +20,7 @@ Baseline provenance:
 
     6c669c2771e14a7b7e9a83124db0354d2bdda95fd6f41fd549d216fbc017c693
 
-  This RTL-derived regression baseline is different from the supervisor-provided
+  This RTL-derived regression baseline is different from the project-provided
   64-QAM system reference used during Keysight VSA signal-quality verification.
 
 Purpose of the digital regression:
