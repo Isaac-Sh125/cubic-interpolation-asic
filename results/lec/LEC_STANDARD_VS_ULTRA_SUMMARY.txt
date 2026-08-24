@@ -67,11 +67,6 @@ The final hierarchical result demonstrates functional equivalence between the
 two current-project synthesized implementations under the documented functional
 scan constraints.
 
-Some synthesis-generated hierarchical modules are black-boxed at higher levels
-after their corresponding lower-level module pairs are handled by the
-hierarchical comparison. This is part of the hierarchical LEC methodology and
-does not represent a failed comparison.
-
 Evidence
 --------
 LEC procedure:

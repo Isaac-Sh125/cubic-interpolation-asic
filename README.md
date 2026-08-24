@@ -405,14 +405,11 @@ analysis condition.
 | Dropped voltage sources | **0** |
 | Voltus solver errors | **0** |
 
-The reported drop is the worst location within the analyzed SlowView; it is not
-presented as an exhaustive worst-PVT rail sweep.
+The analysis covers the DSP-core VDDC/VSSC domain using the documented
+28 nm tech-only PGV model at the stated L=5 SlowView condition.
 
-The tech-only PGV representation reports disconnected pad-ring/filler/pad/corner
-sections outside the DSP hierarchy. No physically disconnected instance is
-reported inside `I0`. Accordingly, this result is scoped to a **core-domain IR analysis** under the documented tech-only PGV model and should not be interpreted as a full-chip rail-signoff result.
-
-Curated IR evidence is available under `results/innovus/`.
+Detailed rail-analysis methodology and integrity reports are provided in
+[Power Analysis](docs/POWER_ANALYSIS.md) and under `results/innovus/`.
 
 ---
 

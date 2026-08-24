@@ -601,11 +601,6 @@ For the final ASIC_Top pair, Conformal compares:
 
 All 123 final top-level compared points are equivalent.
 
-The comparison log also reports different pre-mapping key-point counts and
-unreachable points between the two synthesized structures. These are not
-reported as non-equivalent or aborted comparison points; the final mapped
-hierarchical result is equivalent.
-
 Detailed evidence is stored in:
 
     results/lec/LEC_STANDARD_VS_ULTRA_SUMMARY.txt

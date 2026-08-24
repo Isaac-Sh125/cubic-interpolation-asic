@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 // =============================================================================
 // tb_asic_saif.sv  -  SAIF-per-L power stimulus for final_cubic (28nm)
-// Adapted from Pchip/GL_sim/tb_asic.sv (yitzhak2 golden GLS testbench).
+// SAIF-oriented gate-level testbench derived from the canonical GLS testbench.
 // Same DUT, same stimulus files, same clocking; the ONLY additions are:
 //   * L selected at RUNTIME via +L=<2|3|4|5>  (one build, four runs -
 //     supports runtime selection of the interpolation factor L)
